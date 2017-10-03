@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+  #video {
+    background-color: #fff;
+    box-shadow: 0 2px 2px #717171;
+    padding: 0;
+  }
+  
+    #video > h2 {
+      background-color: #d84315;
+      color: #fff;
+      margin-bottom: 0;
+      padding-left: .925rem;
+      max-width: 1280px;
+    }
+  
+    #video > div:not(#items-container) { padding: 0; }
+  
+      #video iframe { padding: 0; }
+  
+    #items-container {
+      height: 460px;
+      overflow-y: scroll;
+    }
+
+    #video-info {
+      background-color: #000;
+      padding: .925rem;
+      color: #fff;
+      height: 125px;
+      border-top: 1px solid #D84315;
+    }
+      
+      #video-info p {
+        margin-bottom: 0;
+        margin-top: .5rem;
+      }
+      
+      
+      /*example*/
+   #playlists-container{overflow-y:scroll;height:485px;}   
+  .player-container {border-right:1px solid #000;}    
+  .playlists{margin-bottom:0;}
+  .playlists li.is-active .playlist_name{ border-bottom: 3px solid #D84315; }
+  .playlist_name:hover, .playlist_name:focus{color:#FF7043;border-bottom-color:#FF7043;}
+  .playlists .video-item:hover{ cursor: pointer; }
+  .playlist_name{background-color:#f0f0f0; color:#D84315; font-size:1.3rem; border-left:none; border-top-color:#ccc; border-bottom-color:#ccc;}
+  .video-items{padding:0;border:none;}
+    .video-item{padding:.5rem 0;background-color:rgba(0, 0, 0, 0.78);color:#fff;}
+      .video-item:not(:last-child){border-bottom:1px solid rgba(206, 206, 206, 0.38);}
+  .video-item_preview{padding-right:0;}
+  .video-item_footer{padding:0 .925rem 0 0;}
+  .playing{background-color:#000!important;}
+  #start_preview{background:#336699 url("../img/logo.svg")no-repeat 50% 20%;height:485px;max-width:747px;position:absolute;padding:0;background-size:15%;}
+  #start_preview p{color:#fff;font-size:2rem;margin-top:30%;}
+  #video-info{background-color:#000;color:#fff;font-size:.8rem;padding:.5rem .925rem;}
+  #video-info div{padding:0;}
+  
+  /* Small only */
+  @media screen and (max-width: 39.9375em) {
+    
+    .upload-date-container{margin-top: .5rem;}
+    .rating-container{text-align:right;}
+    
+  }

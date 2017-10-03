@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+#header{
+	 max-width: 100%;
+	 width: 100%;
+	 background-color: #336699;
+}
+	#header > header{
+		background-color: inherit;
+		padding-bottom: 1rem;
+		padding-top: 1.5rem;
+	}
+		#head-title{
+			margin: 0 auto;
+			max-width: 1280px;
+		}
+				#logo > .logo-image{
+					width: 70px;
+					display: block;
+					margin: 0 auto;
+				}
+			#brand{
+				padding-left: 0;
+				/*font-family: "Trebuchet MS", sans-serif;*/
+				letter-spacing: -.005rem;
+    			font-style: normal;
+    			font-weight: normal;
+			}
+				#industry{
+					font-size: 2.2rem;
+					color: #fff;
+				}
+				#department{
+					font-size: 1rem;
+					color: #cccccc;
+				}

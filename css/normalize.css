@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+
+
+.ads{
+    background-color: #e0e0e0;
+    background-size: 90px;
+}
+    .ads > div.callout, .ads .column.column-block .callout{
+        border: none;
+    }
+    .ads > div.callout{
+        background-color: rgba(255, 255, 255, 0)!important;
+        padding: 0 1rem!important;/* убрать импотента =)) после изменения файла ads.css по части padding'а */
+    }
+        .ads > div.callout > div{
+            border-left: 6px solid #996633;
+            padding-left: .5rem;
+            background-color: rgba(255, 255, 255, .7);
+            border-radius: 3px;
+        }
+            .ads > div.callout > div .article-header > a{
+                font-size: 1.4rem;
+            }
+    .ads .column.column-block .callout{
+        border-left: 4px solid #CC9933;
+        padding: .1rem .1rem .1rem .5rem;
+        background-color: rgba(255, 255, 255, .7);
+    }
+        .ads .column.column-block .callout > .article-header{
+            font-size: .9rem;
+        }

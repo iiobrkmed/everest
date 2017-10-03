@@ -1,0 +1,162 @@
+@charset "UTF-8";  
+  
+  #main_informatization {
+    background-color: #fff;
+    padding: .925rem;
+  }
+  
+    #main_informatization > h2 {
+      background-color: #DCEDC8;
+      margin-left: -.925rem;
+      padding-left: .925rem;
+    }
+    
+    #main_informatization h3.subheader { color: #757575; }
+        
+      #main_informatization h3.subheader small { color: inherit; }
+    
+    #main_informatization .main-stat {
+      padding-left: 0;
+      height: 400px;
+    }
+      
+      #main_informatization #napriem {
+        border: 2px solid #01579B;
+        margin-top: 1rem;  
+      }
+      
+        #main_informatization #napriem > thead {
+          background-color: #01579B;
+          color: #fff;
+        }
+        
+        #main_informatization #napriem > tbody { font-size: .85rem; }
+    
+          #main_informatization #napriem > tbody tr:last-child { border-top: 1px solid #01579B; }
+    
+      #main_informatization #lk {
+        border: 2px solid #039BE5;
+        margin-top: 2rem;
+      }
+      
+        #main_informatization #lk > thead {
+          background-color: #039BE5;
+          color: #fff;
+        }
+        
+          #main_informatization #lk > tbody { font-size: .85rem; }
+    
+            #main_informatization #lk > tbody tr:last-child { border-top: 1px solid #039BE5; }
+    
+    
+        #main_informatization table:hover { cursor: pointer; }
+      
+          #main_informatization .selected { color: #ccc !important; }
+        
+        #main_informatization .go-to-napriem { margin-top: 1rem; }
+        
+    #main_informatization #chart-container {
+      padding-right: 0;
+      background-color: #fff;
+    }
+    
+      #main_informatization #overflow-chart {
+        width: 815px;
+        overflow-x: scroll;
+      }
+      
+        #main_informatization #informatization-chart {
+          width: 3400px;
+          height: 400px;
+          margin: 0 auto;
+        }
+        
+          #main_informatization text {
+            font-family: sans-serif;
+            text-shadow: none;
+            font-weight: bold;
+          }
+          
+          #main_informatization .highcharts-plot-band-label { font-size: 1.3rem; } 
+      
+          #main_informatization  .highcharts-point.highcharts-color-1 { fill: #01579B; } 
+          
+          #main_informatization  .highcharts-point.highcharts-color-0 { fill: #039BE5; }
+          
+          #main_informatization .highcharts-axis.highcharts-xaxis path {
+            stroke: #82B1FF;
+            opacity: .25;
+          }
+      
+          #main_informatization .highcharts-plot-bands-0 path.year:nth-child(3) {
+            fill: #fff;
+            fill-opacity: 0;
+          }
+          
+          #main_informatization .highcharts-plot-bands-0 path.year:nth-child(2) {
+            fill: #dadada;
+            fill-opacity: .6;
+          }
+          
+          #main_informatization .highcharts-plot-bands-0 path.year:nth-child(1) {
+            fill: #dadada;
+            fill-opacity: 1;
+          }
+      
+          #main_informatization .highcharts-legend { display: none; }
+        
+          #main_informatization .highcharts-plot-band-label  {
+            top: 13px !important;
+            font-family: "Arial", sans-serif;
+            border: 1px solid #000;
+            padding: .3rem;
+            border-radius: 3px;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: #f7f7f7;
+          }
+          
+    #informatizatoin_news div {
+      padding-left: 0;
+    }
+      
+      #informatization_news div:first-child {
+        padding-right: .4625rem;
+      }
+      
+      #informatization_news div:last-child {
+        padding-left: .4625rem;
+      }
+      
+      #informatizatoin_news .article {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px transparent;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+      }
+      
+        #informatizatoin_news .article:hover,
+          #informatizatoin_news .article:focus,
+          #informatizatoin_news .article:active {
+            -webkit-transform: scale(1.015);
+            transform: scale(1.015);
+        }
+      
+        #main_informatization .article-header {
+          font-size: 1.3rem;
+          margin-bottom: 0;
+        }
+        
+        #main_informatization .article footer i {
+          color: #b7b7b7;
+          font-size: 1.4rem;
+        }
+        
+        #main_informatization .article .created {
+          color: #848484;
+        }

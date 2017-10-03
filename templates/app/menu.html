@@ -1,0 +1,22 @@
+{% load menu_tags %}
+{% load mptt_tags %}
+
+{% recursetree nodes %}
+  {% if node.top_divider %}<li class="divider"><hr></li>{% endif %}
+	<li class="{% if not node|menu_slug %}disabled {% endif %}{% if not node.is_leaf_node %}parent {% endif %}menu-item {{ node.css_class }}" role="menuitem">
+		<a tabindex="4" href={% if node|menu_slug %}"{{ node|menu_slug }}" title="{{ node.title }}" {% else %}"#" title="Пункт меню не имеет привязки!"{% endif %} class="large-12 medium-12 small-12 columns">
+			<div class="large-9 medium-9 small-9 columns menu-title">
+				{{ node.title }}
+			</div>
+			<div class="large-3 medium-3 small-3 columns menu-logo">
+				<div class="menu-logo-image"></div>
+			</div>
+		</a>
+		{% if not node.is_leaf_node %}
+        <ul class="menu children nested">
+			{{ children }}
+		</ul>
+		{% endif %}    
+	</li>
+  {% if node.bottom_divider %}<li class="divider"><hr></li>{% endif %}
+{% endrecursetree %}

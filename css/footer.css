@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+/****************
+*     footer    *
+****************/
+
+#footer-brkmed{
+	max-width: 100%;
+	background-color: #336699;
+}
+
+		#footer-brkmed .footer-container{
+			max-width: 1280px;
+			margin: 0 auto;
+			color: #fff;	
+		}
+			#footer-brkmed ul.about-org{
+
+			}
+			#footer-brkmed .social{
+
+			}
+				#footer-brkmed ul.right{
+
+				}
+		#footer-brkmed .about-organization-container{
+			background-color: #003366;
+		}
+			#footer-brkmed .about-organization{
+
+			}
+				#footer-brkmed .copyright{
+					color: #99CCFF;
+				}
+					#footer-brkmed div.row{
+
+					}
+						#footer-brkmed div.row p{
+
+						}
+					#footer-brkmed div.row{
+
+					}
+						#footer-brkmed span.rate{
+
+						}
+		#footer-brkmed .sub-footer{
+			background-color: #003366;
+		}
+			#footer-brkmed .sub-footer a{
+
+			}

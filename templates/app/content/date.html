@@ -1,0 +1,12 @@
+{% if article.date_visible != 'NONE' %}
+    {% if article.date_visible == 'MIXED' %}
+        <time datetime="{{ article.date_created_ru }}" class="created">{{ article.date_created_ru }}</time>
+        <time datetime="{{ article.date_changed_ru }}" class="changed">{{ article.date_changed_ru }}</time>
+    {% endif %}
+    {% if article.date_visible == 'CREATED' %}
+        <time datetime="{{ article.date_created_ru }}" class="created">{{ article.date_created_ru }}</time>
+    {% endif %}
+    {% if article.date_visible == 'UPDATED' %}
+        <time datetime="{{ article.date_changed_ru }}" class="changed">{{ article.date_changed_ru }}</time>
+    {% endif %}
+{% endif %}

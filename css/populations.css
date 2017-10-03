@@ -1,0 +1,47 @@
+#populations .callout {
+    margin: 0 0 1.875rem 0;
+    border-radius: 0;
+    border: 2px solid #336666;
+}
+@media print, screen and (min-width: 40em) {
+    #populations h3 {
+        font-size: 1.3276rem;
+        font-weight: bold;
+        color: #336666;
+    }
+}
+#populations h2 {
+    margin-left: 0.9375rem;
+    margin-bottom: 0.9375rem;
+    margin-top: 0.9375rem;
+    margin-right: 0.9375rem;
+    padding-left: 0.9375rem;
+    background-color: #336666;
+    color: #fff;
+}
+#populations ul {
+    margin-left: 0;
+}
+#populations li {
+    display: block;
+    list-style-type: none;
+}
+#populations li:before {
+    content: "";
+    display: block;
+    float: left;
+    margin-top: 8px;
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #CC9933;
+}
+#populations li a {
+    display: block;
+    padding-left: 10px;
+    text-decoration: underline;  
+}
+#populations li a:hover {
+    text-decoration: none;  
+}

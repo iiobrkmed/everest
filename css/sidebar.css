@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+/**********
+* sidebar *
+**********/
+
+#sidebar{
+    /*box-shadow: 0 3px 10px 1px #d0d0d0;*/
+/*     padding-right: 0; */
+    background-color: rgba(185, 185, 185, 0.5);
+}
+	.hotline{
+		background-image: url('/static/img/banner/hotline.svg');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	#secondary-menu li{
+		margin-bottom: .5rem;
+		box-shadow: 0px 2px 2px 1px #444444;
+	}
+		#secondary-menu li a{
+			background-color: #003366;
+			padding: 0;
+			/*box-shadow: inset 0 0 35px #002040;*/
+		}
+			#secondary-menu .menu-title{
+				color: #ffffff;
+				padding-top: .5rem;
+				font-size: .95rem;
+			}
+			#secondary-menu .menu-logo{
+				min-height: 60px;
+				min-width: 55px;
+				border-radius: 2px;
+				background-color: #353535;
+				background-image: url('/static/img/menu/secondary-menu-icons-01.svg');
+				background-size: 60px;
+				background-repeat: no-repeat;
+/* 				box-shadow: inset 0 0 35px #151515; */
+			}
+			#secondary-menu li:first-child .menu-logo{background-position: 7px 0;}
+			#secondary-menu li:nth-child(2) .menu-logo{background-position: 7px -60px;}
+			#secondary-menu li:nth-child(3) .menu-logo{background-position: 7px -120px;}
+			#secondary-menu li:nth-child(4) .menu-logo{background-position: 7px -180px;}
+			#secondary-menu li:nth-child(5) .menu-logo{background-position: 7px -240px;}
+			#secondary-menu li:nth-child(6) .menu-logo{background-position: 7px -300px;}
+			#secondary-menu li:nth-child(7) .menu-logo{background-position: 7px -360px;}
+			#secondary-menu li:nth-child(8) .menu-logo{background-position: 7px -420px;}
+			#secondary-menu li:nth-child(9) .menu-logo{background-position: 7px -480px;}
+			#secondary-menu li:nth-child(10) .menu-logo{background-position: 7px -540px;}
+
+	.panel.alert li{
+		border: 2px solid #003366;
+		border-radius: 2px;
+		margin-bottom: .6rem;
+		box-shadow: 0px 2px 2px 1px #c5c5c5;
+		background-color: inherit;
+	}
+		.panel.alert a{
+			color: #003366;
+			font-size: .95rem;
+		}
+
+#sidebar .banner-nsok{
+	background-image: url('/static/img/banner/nsok.svg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+	#sidebar .banner-nsok img{
+		
+	}

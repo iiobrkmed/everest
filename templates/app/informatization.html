@@ -1,0 +1,64 @@
+  <div class="row" id="main_informatization" data-magellan-target="main_informatization">   
+    <h2>Информатизация</h2> 
+    <h3 class="subheader"><small>Показатели информатизации</small></h3>
+    <div class="row">
+      <div class="large-4 medium-6 small-12 columns main-stat">
+        <table class="data" id="napriem" data-index="0">
+          <thead>
+            <tr>
+              <th colspan="2" class="text-center"><b>Записалось на прием к врачу</b></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>За июль 2017&nbsp;г.</td>
+              <td class="text-center">40&nbsp;906&nbsp;чел.</td>
+            </tr>
+            <tr>
+              <td><b>Всего</b></td>
+              <td class="text-center"><b>967&nbsp;668&nbsp;чел.</b></td>		
+            </tr>
+          </tbody>
+        </table>
+        <table class="data" id="lk" data-index="1">
+          <thead>
+            <tr>
+              <th colspan="2" class="text-center"><b>Зарегистрировались в личном кабинете</b></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>За июль 2017&nbsp;г.</td>
+              <td class="text-center">3&nbsp;657&nbsp;чел.</td>
+            </tr>
+            <tr>
+              <td><b>Всего</b></td>
+              <td class="text-center"><b>344&nbsp;513&nbsp;чел.</b></td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="https://napriem.info/" class="large-12 medium-12 small-12 columns go-to-napriem button" title="Записаться на прием к врачу">Записаться</a>
+      </div>
+        <div class="large-8 medium-6 small-12 columns" id="chart-container">
+          <div id="overflow-chart">
+            <div id="informatization-chart"></div>
+          </div>
+        </div>
+    </div>
+    <h3 class="subheader"><small>Новости информатизации</small></h3>
+    <div class="row" id="informatization_news">
+      {% for article in informatization %}
+        <article class="large-6 medium-6 small-12 columns callout article">    
+          <header>
+            <h3 class="article-header text-center">
+              <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+            </h3>
+          </header>
+          <footer class="text-right">
+            <i class="fi-calendar large"></i>&nbsp;{% include 'app/content/date.html' with article=article %}</time>
+          </footer>
+        </article>
+      {% endfor %}
+    </div>
+    <a href="/informat/" class="large-6 medium-8 small-12 columns  large button go-to-informat">Перейти в раздел «Информатизация здравоохранения» <i class="fi-arrow-right large"></i></a>   
+  </div>

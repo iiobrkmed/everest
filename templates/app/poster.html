@@ -1,0 +1,24 @@
+{% if general_ad %}
+    <div class="columns small-12 medium-12 large-4 general_poster">
+        <h3 class="article-header">
+            <a href="{{ general_ad.slug }}">
+                <span>{{ general_ad.title }}</span>
+            </a>
+        </h3>
+        <div class="left">
+            {% include 'app/content/date.html' with article=general_ad %}
+        </div>
+    </div>
+{% endif %}
+{% for ad in ads %}
+    <div class="columns small-12 medium-12 large-4 {% if not general_ad %}{% if forloop.first %}general_{% endif %}{% endif %}poster{% if forloop.last %} end{% endif %}">
+        <h3 class="article-header">
+            <a href="{{ ad.slug }}">
+                <span>{{ ad.title }}</span>
+            </a>
+        </h3>
+        <div class="left">
+           {% include 'app/content/date.html' with article=ad %}
+        </div>
+    </div>
+{% endfor %}
