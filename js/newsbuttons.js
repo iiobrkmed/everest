@@ -19,9 +19,3 @@ $(".listen").hover(
         $(".read .news-btn-label").addClass("text-color-red");
     }
 );
-<<<<<<< HEAD
-
-// comment 5
-=======
-// comment 99
->>>>>>> c054e6154ee9dfaeaa112e65c1e5a2eae66ffca9
