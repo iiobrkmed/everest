@@ -1,11 +1,11 @@
 {% load thumbnail %}
 
 {% load el_pagination_tags %}
-{% paginate 8 news %}
+{% paginate 10 news %}
 
 <div class="row" id="main-content" data-magellan-target="main-content" data-equalizer>
 	{% for article in news %}
-	<article class="large-6 medium-6 small-12 columns article" data-equalizer-watch>    
+	<article class="{% if forloop.counter > 4 %}large-4{% else %}large-6{% endif %} medium-6 small-12 columns article" data-equalizer-watch>    
 		<a href="{{ article.get_absolute_url }}">
 		<div class="article-body">
 			<figure class="news-item">
