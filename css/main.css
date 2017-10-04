@@ -2,7 +2,7 @@
 
 body{
 	font-family: "Verdana";
-	background-color: #f3f3f3;
+	background-color: #eeeeee;
 	letter-spacing: -.005rem;
 }
 h1, h2, h3, h4, h5, h6{
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6{
 #content{
 	background-color: inherit;
 }
-	#main-news, #main-content{
+	#main-news{
 		background-color: #fff;
 		box-shadow: 0 2px 2px #717171;
 	}

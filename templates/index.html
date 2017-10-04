@@ -64,7 +64,6 @@
     <div class="row" id="content" data-equalizer> 
 {#  MAIN_CONTENT  #}
       <div class="large-9 medium-8 small-12 columns" id="news" data-magellan-target="news" data-equalizer-watch>
-        <h2 class="news-header">Новости</h2>
         {% block ads %}
           <div class="row" id="main-news">
             {% include 'app/poster.html' with ads=ads general_ad=general_ad %}
@@ -76,6 +75,7 @@
         {% endblock postcards %}
 {#  /POSTCARDS  #}
 {#  NEWS  #}
+        <h2 class="news-header">Новости</h2>
          {% block news %}
             {% include 'app/news.html' with news=news %}
          {% endblock news %}
