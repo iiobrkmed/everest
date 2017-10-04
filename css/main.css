@@ -8,13 +8,16 @@ body{
 h1, h2, h3, h4, h5, h6{
 	font-family: "Verdana";
 }
+a{
+	color: #1468a0;
+}
 #navigation-menu{
 	padding: 0;
 	background-color: #fff;
 	box-shadow: 0 0px 3px 0px #5d5d5d;
 	/*border-bottom: 1px solid #003366;*/
 	max-width:100%;
-	z-index: 999999;
+	z-index: 1000;
 }
 	#navi-center{
 		width: 1280px;

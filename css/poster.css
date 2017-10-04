@@ -35,6 +35,7 @@
 		    border-left: 3px solid #996633;
 		    padding-bottom: .2rem;
 		    padding-left: .3rem;
+		    max-width: 80%;
 		}
 		#main-news .general_poster .left{
 			border-left: 3px solid #996633;
@@ -53,7 +54,7 @@
 
 		}
 			#main-news .general_poster .article-header span, #main-news .poster .article-header span{
-				border-bottom: 1px solid #aadbea;
+				border-bottom: 1px solid;
 			}
 		#main-news .poster time, #main-news .general_poster time{
 			font-size: .8rem;
