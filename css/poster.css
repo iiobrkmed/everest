@@ -6,29 +6,51 @@
 }
 
 #main-news{
-	padding: 1.5rem 1rem;
-	background-color: #fff;
+/* 	padding: 1.5rem 1rem; */
+	margin-top: 1rem;
+	padding;
+	background-color: #f5f5f5;
 }
 	#main-news .general_poster, #main-news .poster{
 		padding-top: .5rem;
 		padding-bottom: .5rem;
 	}
 	#main-news .general_poster{
-		border-left: 6px solid #996633;
+/* 		border-left: 6px solid #996633; */
+		background-color: #ffffff;
+		border-bottom: 1px solid #ebebeb;
+		padding-top: .8rem;
+		padding-bottom: .8rem;
 	}
 	#main-news .poster{
-		border-left: 4px solid #CC9933;
+/* 		border-left: 3px solid #CC9933; */
 		margin-bottom: .4rem;
 		margin-top: .4rem;
+		background-color: inherit;
 	}
 		#main-news .general_poster .article-header {
-		    font-size: 1rem;
-		    font-weight: bold;
-		    margin-bottom: .2rem;
+		    font-size: 1.1rem;
+/* 		    font-weight: bold; */
+		    margin-bottom: 0;
+		    border-left: 3px solid #996633;
+		    padding-bottom: .2rem;
+		    padding-left: .3rem;
+		}
+		#main-news .general_poster .left{
+			border-left: 3px solid #996633;
+			padding-left: .3rem;
 		}
 		#main-news .poster .article-header{
 			font-size: .9rem;
 			margin-bottom: 0;
+			border-left: 3px solid #CC9933;
+			padding-left: .3rem;
+			padding-bottom: .2rem;
+		}
+		#main-news .poster .left{
+			border-left: 3px solid #CC9933;
+			padding-left: .3rem;
+
 		}
 			#main-news .general_poster .article-header span, #main-news .poster .article-header span{
 				border-bottom: 1px solid #aadbea;

@@ -61,11 +61,11 @@
   {% block content %}
 
 
-    <div class="row" id="content" data-equalizer> 
+    <div class="row" id="content"> 
 {#  MAIN_CONTENT  #}
-      <div class="large-9 medium-8 small-12 columns" id="news" data-magellan-target="news" data-equalizer-watch>
+      <div class="large-9 medium-8 small-12 columns" id="news" data-magellan-target="news">
         {% block ads %}
-          <div class="row" id="main-news">
+          <div class="row" id="main-news" data-equalizer="posts">
             {% include 'app/poster.html' with ads=ads general_ad=general_ad %}
           </div>
         {% endblock ads %}
@@ -83,7 +83,7 @@
 {#  /NEWS  #}
 {#  ASIDE  #}
       {% block sidebar %}
-        <aside class="large-3 medium-4 small-12 columns" id="sidebar" data-equalizer-watch>
+        <aside class="large-3 medium-4 small-12 columns" id="sidebar">
           <nav id="banner-menu">
             <ul class="menu vertical">
               {% show_menu 'banner_menu' %}
@@ -240,34 +240,12 @@
 <div id="top"><div id="scroller" class="b-top" style="display: none;"><span class="b-top-but">↑ <span>наверх</span></span></div></div>
 
   <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+  <!-- <script type="text/javascript" src="{% static 'js/poster.js' %}"></script> -->
   <script type="text/javascript" src="{% static 'js/foundation.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/newsbuttons.js' %}"></script>
 
-  <script type="text/javascript">
-    var postersHeight = $("#main-news").height();
-        var generalHeight = $(".general_poster").height();
-        var paddingHeight = Math.round((postersHeight - generalHeight)/2) + "px";
-    function windowSize(){        
-        if ($("body").width() > "1023") {
-            $(".general_poster").css({
-	            "margin-bottom": paddingHeight,
-	            "margin-top": paddingHeight
-	        });
-	    } else if ($("body").width() < "1023") {
-            $(".general_poster").css({
-                "margin-bottom": 0,
-                "margin-top": 0
-            });
-        }
-    }
-    $(window).on("load", windowSize);
-    $(window).on("resize", windowSize);        
-</script>
-<script type="text/javascript">
-    $("#main-news .poster:last-child").addClass("end");
-</script>
-
+  
 
 {#  <script type="text/javascript" src="{% static 'js/cd252cfd38d9.js' %}"></script>  #}
 

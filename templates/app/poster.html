@@ -1,5 +1,5 @@
 {% if general_ad %}
-    <div class="columns small-12 medium-12 large-4 general_poster">
+    <div class="columns small-12 medium-12 large-12 general_poster">
         <h3 class="article-header">
             <a href="{{ general_ad.slug }}">
                 <span>{{ general_ad.title }}</span>
@@ -11,7 +11,7 @@
     </div>
 {% endif %}
 {% for ad in ads %}
-    <div class="columns small-12 medium-12 large-4 {% if not general_ad %}{% if forloop.first %}general_{% endif %}{% endif %}poster{% if forloop.last %} end{% endif %}">
+    <div class="columns small-12 medium-12 large-4 {% if not general_ad %}{% if forloop.first %}large-12 general_{% endif %}{% endif %}poster{% if forloop.last %} end{% endif %}" data-equalizer-watch="posts">
         <h3 class="article-header">
             <a href="{{ ad.slug }}">
                 <span>{{ ad.title }}</span>
