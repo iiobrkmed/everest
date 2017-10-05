@@ -6,15 +6,35 @@
 
 #sidebar{
     /*box-shadow: 0 3px 10px 1px #d0d0d0;*/
-    padding: 0 .01rem 0 .5rem;
+    padding: 1.5rem .01rem 0 .5rem;
 /*     background-color: rgb(0, 51, 102); */
 }
-	.hotline{
-		background-image: url('/static/img/banner/hotline.svg');
+
+
+/* banners - top sidebar */
+	#banner-menu li{
+		min-height: 75px;
+		position: relative;
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
+		margin-bottom: .5rem;
 	}
+		#banner-menu li a{
+			position: absolute;
+			height: 100%;
+		}
+			#banner-menu .menu-title{
+				visibility: hidden;
+			}
+	.hotline{
+		background-image: url('/static/img/sidebar/hotline.svg');
+	}
+
+
+/*****************
+* secondary menu *
+*****************/
 #secondary-menu{
 	background-color: #003366;
 }
@@ -25,7 +45,7 @@
 		background-color: #003366;
 	}
 	#secondary-menu li:nth-child(even){
-		background-color: #003c77;
+		background-color: #00386f;
 	}
 		#secondary-menu li a{
 			padding: 0;

@@ -3,52 +3,67 @@
 {% load el_pagination_tags %}
 {% paginate 10 news %}
 
-<div class="row" id="main-content" data-magellan-target="main-content" data-equalizer>
+<div class="row" id="main-content" data-magellan-target="main-content">
 	{% for article in news %}
-	<article class="{% if forloop.counter > 4 %}large-4{% else %}large-6{% endif %} medium-6 small-12 columns article" data-equalizer-watch>    
-		<a href="{{ article.get_absolute_url }}">
-		<div class="article-body">
-			<figure class="news-item">
-				{% if article.get_main_image %}
-				{% thumbnail article.get_main_image.img 450x230 box=article.get_main_image.cropping crop upscale detail as im %} 
-					<img src="{{ im.url }}" alt="{{ article.get_main_image.alt }}" title="{{ article.get_main_image.title }}" width="{{ im.width }}" height="{{ im.height }}"/>
-				{% else %}
-					<img src="/media/uploads/pictures/default-news.jpg" alt="{{ article.title }}" title="{{ article.title }}" width="450" height="230"/>
-				{% endif %}
-				{% include 'app/content/date.html' %}
-				<div class="read-listen-alerts">
-					<div class="read">
-						<div class="news-logo read-active"></div>
-						<div class="news-btn-label text-color-red">
-							Читать
-						</div>
-					</div>
-					<div class="listen" onclick="">
-						<div class="news-logo"></div>
-						<div class="news-btn-label">
-							Слушать
-						</div>
-					</div>
-				</div>
-				<figcaption class="article-header"><h3>{{ article.title }}</h3></figcaption>
-			</figure>
 
-			{% autoescape off %}
-				<!--{% if article.cut_text %}
-					{{ article.short_text }}
-						{% else %}
-					{{ article.text }}
-				{% endif %}-->
-		</div>
-			{% endautoescape %}
-		</a>
-		<div class="audio-container">
-			<div class="loader" style="display:none;">
-				<div class="fountainG">
+	{% if forloop.first %}
+        <div data-equalizer="bignews">
+    {% endif %}
+
+    {% if forloop.counter == 5 %}
+        </div>
+        <div data-equalizer="smallnews">
+    {% endif %} 
+
+		<article class="{% if forloop.counter > 4 %}large-4 smallnews{% else %}large-6{% endif %} medium-6 small-12 columns article">    
+			<a href="{{ article.get_absolute_url }}">
+			<div class="article-body">
+				<figure class="news-item">
+					{% if article.get_main_image %}
+					{% thumbnail article.get_main_image.img 450x230 box=article.get_main_image.cropping crop upscale detail as im %} 
+						<img src="{{ im.url }}" alt="{{ article.get_main_image.alt }}" title="{{ article.get_main_image.title }}" width="{{ im.width }}" height="{{ im.height }}"/>
+					{% else %}
+						<img src="/media/uploads/pictures/default-news.jpg" alt="{{ article.title }}" title="{{ article.title }}" width="450" height="230"/>
+					{% endif %}
+					{% include 'app/content/date.html' %}
+					<div class="read-listen-alerts">
+						<div class="read">
+							<div class="news-logo read-active"></div>
+							<div class="news-btn-label text-color-red">
+								Читать
+							</div>
+						</div>
+						<div class="listen" onclick="">
+							<div class="news-logo"></div>
+							<div class="news-btn-label">
+								Слушать
+							</div>
+						</div>
+					</div>
+					<figcaption class="article-header"  {% if forloop.counter > 4 %}data-equalizer-watch="smallnews"{% else %}data-equalizer-watch="bignews"{% endif %}><h3>{{ article.title }}</h3></figcaption>
+				</figure>
+
+				{% autoescape off %}
+					<!--{% if article.cut_text %}
+						{{ article.short_text }}
+							{% else %}
+						{{ article.text }}
+					{% endif %}-->
+			</div>
+				{% endautoescape %}
+			</a>
+			<div class="audio-container">
+				<div class="loader" style="display:none;">
+					<div class="fountainG">
+					</div>
 				</div>
 			</div>
-		</div>
-	</article>
+		</article>
+
+	{% if forloop.last %}
+        </div>
+    {% endif %} 
+
 	{% endfor %}
 
 	<div class="large-12 medium-12 small-12 columns">
