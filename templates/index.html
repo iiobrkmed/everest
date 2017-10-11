@@ -24,6 +24,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/main-informatization.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/video.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/useresources.css' %}">
   <link rel="alternate" type="application/rss+xml" title="Последние новости здравоохранения Брянской области" href="http://www.brkmed.ru/latest/feed/">  
 </head>
 
@@ -75,7 +76,7 @@
         {% endblock postcards %}
 {#  /POSTCARDS  #}
 {#  NEWS  #}
-        <h2 class="news-header">Новости</h2>
+        <h2 class="chapter news-header">Новости</h2>
          {% block news %}
             {% include 'app/news.html' with news=news %}
          {% endblock news %}
@@ -96,15 +97,8 @@
             </ul>
           </nav>
 
-          <nav class="panel alert">
-            <ul class="vertical menu">
-              <li><a href="http://survey.brkmed.ru/" target="_blank">Поликлиника начинается с&nbsp;регистратуры</a></li>
-              <li><a href="http://www.bryanskobl.ru/opendata/" target="_blank">Открытые данные</a></li>
-              <li><a href="http://www.brkmed.ru/article/protivodejstvie-korrupcii/">Противодействие коррупции</a></li>
-              <li><a href="http://pb.brkmed.ru/map/">Карта медицинских организаций</a></li>
-              <li><a href="http://www.brkmed.ru/article/antidopingovoe-obespechenie/">Антидопинговое обеспечение</a></li>
-              <li></li>
-            </ul>
+          <nav class="panel-links">
+           {% include 'app/panellinks.html' %}
           </nav>
 
           <div class="banner-nsok">
@@ -147,84 +141,16 @@
 
   {% block interview %}
     <section class="row" id="interview" data-magellan-target="interview">
-      <h2 class="thick-header">Интервью с врачом</h2>
-      <div class="orbit" role="region" data-orbit style="height: 10rem;">
-                <div class="orbit-wrapper">
-                <div class="orbit-controls">
-                  <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-                  <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-              </div>
-              <ul class="orbit-container">
-                    <li class="orbit-slide is-active">
-                      <figure class="orbit-figure">
-                        <img src="./Департамент здравоохранения Брянской области. Официальный сайт_files/25.jpg" class="orbit-image">
-                        <figcaption class="orbit-caption">
-                          Интервью с заведующим отоларингологическим отделением Брянской областной больницы № 1
-                        </figcaption>
-                      </figure>
-                    </li>
-                  </ul>
-                  <nav class="orbit-bullets">
-                  <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-              </nav>
-                </div>
-              </div>
+      <h2 class="chapter interview-header">Интервью с врачом</h2>
+      
     </section>
   {% endblock %}
 
-{#    {% block video %}
-    <!-- <section class="row" id="broadcast" data-magellan-target="broadcast">
-          <div class="large-12 columns broadcast-container" >
-          <div class="large-12 columns broadcast" style="padding: 0;">
-            <ul class="accordion" style="margin-bottom:7px;">
-              <li style="margin-top: 15px;">
-                <div class="title" style="background: #f2f2f2 url(/static/brkmed/images/webcam-icon.png) 20px center no-repeat; border: solid 1px #ccc; margin: 0; padding: 15px 10px 15px 90px;">
-                  <p style="font-size: .9em;"><strong>Видеозапись региональной научно-практической конференции от 14 апреля 2017 г.</strong></p>
-                  <p>Тема: <em>«Современные возможности фармакотерапии на стационарном и амбулаторном этапах»</em></p>
-                </div>
-                <div class="content" style="background: rgb(251, 251, 251); padding: 15px 0px; text-align: center;">
-                  <iframe width="640" height="360" src="./Департамент здравоохранения Брянской области. Официальный сайт_files/1L1IEYPgGdA.html" style="border:none;" allowfullscreen=""></iframe>
-                  <iframe width="640" height="360" src="./Департамент здравоохранения Брянской области. Официальный сайт_files/Twh5--WmMK4.html" style="border:none;" allowfullscreen=""></iframe>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="large-12 columns broadcast" style="padding: 0;">
-            <ul class="accordion">
-              <li style="margin-top: 15px;">
-                <div class="title" style="background: #f2f2f2 url(/static/brkmed/images/webcam-icon.png) 20px center no-repeat; border: solid 1px #ccc; margin: 0; padding: 15px 10px 15px 90px;">
-                  <p style="font-size: .9em;"><strong>Видеозапись региональной научно-практической конференции от 25 ноября 2016 г.</strong></p>
-                  <p>Тема: <em>«Первая медицинская помощь лицам, находящимся в состоянии клинической смерти»</em></p>
-                </div>
-                <div class="content" style="background: #fbfbfb; padding: 15px 0; text-align: center;">
-                  <iframe width="640" height="360" src="./Департамент здравоохранения Брянской области. Официальный сайт_files/CjSq8mHTLh0.html" style="border:none;" allowfullscreen=""></iframe>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="large-12 columns broadcast" style="padding: 0;">
-            <ul class="accordion">
-              <li>
-                <div class="title" style="background: #f2f2f2 url(/static/brkmed/images/webcam-icon.png) 20px center no-repeat; border: solid 1px #ccc; margin: 0; padding: 15px 10px 15px 90px;">
-                  <p style="font-size: .9em;"><strong>Видеозапись региональной научно-практической конференции от 24 ноября 2016 г.</strong></p>
-                  <p>Тема: <em>«Первая медицинская помощь лицам, находящимся в состоянии клинической смерти»</em></p>
-                </div>
-                <div class="content" style="background: #fbfbfb; padding: 15px 0; text-align: center;">
-                  <iframe width="560" height="315" src="./Департамент здравоохранения Брянской области. Официальный сайт_files/xCpDmR5vqYs.html" style="border:none" allowfullscreen=""></iframe>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div> -->
-        
-        
-        
-        {% block infographic %}
-          {% include 'app/infographic.html' %}
-        {% endblock %}
-    </section>
-  {% endblock %}  #}
-
+	<div class="row"><h2 class="chapter video-header">Видео</h2></div>
+	{% block video %}
+        {% include 'app/video.html' %}
+    {% endblock %}
+    
   {% block useresources %}
     {% include 'app/useresources.html' %}
   {% endblock %}

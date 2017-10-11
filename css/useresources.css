@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+
+/*******************
+* Полезные ресурсы *
+*******************/
+
+
+#docs{
+	max-width: 100%;
+	padding: 0 1rem;
+	background-color: #e6e6e6;
+}
+
+	#docs .docs-header{
+		border-left: 3px solid #330066;
+	}
+
+	.first-line, .second-line, .third-line{
+		padding: 0;
+	}

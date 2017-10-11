@@ -6,14 +6,20 @@
     padding: 0;
   }
   
-    #video > h2 {
-      background-color: #d84315;
-      color: #fff;
-      margin-bottom: 0;
-      padding-left: .925rem;
-      max-width: 1280px;
+    .video-header {
+      border-left: 3px solid red;
     }
-  
+        
+    .youtube-logo{
+      min-height: 4rem;
+      background-image: url('/static/img/logos/youtube-logo-light.svg');
+      background-repeat: no-repeat;
+      border-top: 1px solid #cccccc;
+      background-position: -.5rem;
+      /*background-image: url('/static/img/logos/youtube-logo-dark.svg');
+      background-color: #292929;*/
+    }
+
     #video > div:not(#items-container) { padding: 0; }
   
       #video iframe { padding: 0; }

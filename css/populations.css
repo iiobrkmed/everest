@@ -1,47 +1,66 @@
-#populations .callout {
-    margin: 0 0 1.875rem 0;
-    border-radius: 0;
-    border: 2px solid #336666;
+#populations {
+    padding: 0 0.5rem;
 }
-@media print, screen and (min-width: 40em) {
-    #populations h3 {
-        font-size: 1.3276rem;
-        font-weight: bold;
-        color: #336666;
+    h2.populations-header {
+        color: #272727;
+        font-size: 2.5rem;
+        margin: 1.5rem 0.5rem 1rem;
+        padding: 0 .5rem;
+        border-left: 3px solid #336666;
+        line-height: 0.9;
     }
-}
-#populations h2 {
-    margin-left: 0.9375rem;
-    margin-bottom: 0.9375rem;
-    margin-top: 0.9375rem;
-    margin-right: 0.9375rem;
-    padding-left: 0.9375rem;
-    background-color: #336666;
-    color: #fff;
-}
-#populations ul {
-    margin-left: 0;
-}
-#populations li {
-    display: block;
-    list-style-type: none;
-}
-#populations li:before {
-    content: "";
-    display: block;
-    float: left;
-    margin-top: 8px;
-    width: 0;
-    height: 0;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-    border-left: 4px solid #CC9933;
-}
-#populations li a {
-    display: block;
-    padding-left: 10px;
-    text-decoration: underline;  
-}
-#populations li a:hover {
-    text-decoration: none;  
+    #populations .population-block {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+
+    #populations .callout {
+        border-radius: 0 border: 2px solid #336666;
+    }
+
+        #populations h3 {
+            margin-left: -1rem;
+            margin-bottom: 1rem;
+            margin-top: -1rem;
+            margin-right: -1rem;
+            padding: 0.5rem;
+            background-color: #336666;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        #populations ul {
+            margin-left: 0;
+        }
+            #populations li {
+                display: block;
+                list-style-type: none;
+                padding: 0.25rem 0;
+                /*border-left: 3px solid #336666;*/
+            }
+            #populations li:before {
+                content: "";
+                display: block;
+                float: left;
+                margin-top: 8px;
+                width: 0;
+                height: 0;
+                border-top: 4px solid transparent;
+                border-bottom: 4px solid transparent;
+                border-left: 4px solid #CC9933;
+            }
+                #populations li a {
+                    font-size: .88rem;
+                    display: block;
+                    padding-left: 0.5rem;
+                    text-decoration: underline;  
+                }
+                #populations li a:hover {
+                    text-decoration: none;  
+                }
+
+@media print, screen and (min-width: 1024px) and (max-width: 1570px) {
+    #populations .population-block.large-2 {
+        width: 25%;
+    }
 }
