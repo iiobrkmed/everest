@@ -11,11 +11,53 @@
 	padding: 0 1rem;
 	background-color: #e6e6e6;
 }
-
+#docs a{
+	font-size: .85rem;
+}
 	#docs .docs-header{
 		border-left: 3px solid #330066;
+	}
+
+	#docs .card-section{
+		padding: .5rem 0;
 	}
 
 	.first-line, .second-line, .third-line{
 		padding: 0;
 	}
+
+.first-line a{
+	display: table-cell;
+}
+	.useres-logo{
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 60px; 
+		border-radius: 50px;
+/* 		border: 1px solid; */
+		box-shadow: inset 0 0 35px #fff;
+	}
+	.useres-logo.pr-razv{
+		background-image: url('/static/img/useres/pr-razvitiya.svg');
+	}
+	.useres-logo.npr{
+		background-image: url('/static/img/useres/npr.png');
+	}
+	.useres-logo.edin-ross{
+		background-image: url('/static/img/useres/edin-ros.svg');
+	}
+	.ukazi .useres-logo{
+		background-image: url('/static/img/useres/logo-president.svg');
+	}
+
+	.useres-name{
+		vertical-align: middle;
+/* 		padding-left: .5rem; */
+	}
+
+.most-important-1 .card-section:nth-child(3) .useres-name,
+.most-important-1 .card-section:nth-child(1) .useres-name,
+.most-important-2 .card-section:nth-child(1) .useres-name{
+	padding-top: 3%;
+}

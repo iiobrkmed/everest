@@ -5,38 +5,43 @@
 
 	<!-- Первая линия (Повышенный приоритет) -->
 	<div class="row first-line" data-equalizer="first-line">
-		<div class="large-3 medium-6 small-12 columns card most-important" data-equalizer-watch="first-line">
+		<div class="large-3 medium-6 small-12 columns card most-important-1" data-equalizer-watch="first-line">
 			<div class="card-section">
 				<a href="http://www.brkmed.ru/article/programma-razvitie-zdravoohraneniya-bryanskoj-oblasti-2013-2020-gody/">
-					<span class="programm-razvitie"></span>Программа "Развитие здравоохранения Брянской области"
+					<div class="large-2 medium-2 small-2 columns useres-logo pr-razv"></div>
+					<div class="large-10 medium-10 small-10 columns useres-name">Программа "Развитие здравоохранения Брянской области"</div>
 				</a>
 			</div>
 			<div class="card-section">
 				<a href="http://www.brkmed.ru/article/o-hode-realizacii-prioritetnogo-nacionalnogo-proekta-zdorove-na-territorii-bryanskoj-oblasti/">
-					<span class="programm-pnp"></span>Приоритетный национальный проект «Здоровье» на территории Брянской области
+					<div class="large-2 medium-2 small-2 columns useres-logo npr"></div>
+					<div class="large-10 medium-10 small-10 columns useres-name">Приоритетный национальный проект «Здоровье» на территории Брянской области</div>
 				</a>
 			</div>
 			<div class="card-section">
 				<a href="http://www.brkmed.ru/article/29_proekt-partii-edinaya-rossiya-kachestvo-zhizni-zdorove/">
-					<span class="programm-modernizaciya"></span>Проект Партии «Единая Россия» — «Качество Жизни (Здоровье)»
+					<div class="large-2 medium-2 small-2 columns useres-logo edin-ross"></div>
+					<div class="large-10 medium-10 small-10 columns useres-name">Проект Партии «Единая Россия» — «Качество Жизни (Здоровье)»</div>
 				</a>
 			</div>
 		</div>
 
-		<div class="large-3 medium-6 small-12 columns card most-important" data-equalizer-watch="first-line">
+		<div class="large-3 medium-6 small-12 columns card most-important-2" data-equalizer-watch="first-line">
 			<div class="card-section ukazi">
-				<a href="http://www.brkmed.ru/article/ukazy-prezidenta-rossijskoj-federacii/"><span></span>Указы Президента Российской Федерации</a>
+				<a href="http://www.brkmed.ru/article/ukazy-prezidenta-rossijskoj-federacii/">
+					<div class="large-2 medium-2 small-2 columns useres-logo"></div>
+					<div class="large-10 medium-10 small-10 columns useres-name">Указы Президента Российской Федерации</div>
+				</a>
 			</div>
-			<div class="card-divider">Для врачей-клиницистов</div>
 			<div class="card-section klinic-rek">
 				<a href="http://cr.rosminzdrav.ru/" target="_blank">Клинические рекомендации</a>
 			</div>
 			<div class="card-section metod-rek">
-				<a href="http://www.brkmed.ru/edocs/folders/304/">Методические рекомендации</a>
+				<a href="http://www.brkmed.ru/edocs/folders/304/">Методические рекомендации для врачей-клиницистов</a>
 			</div>						
 		</div>
 
-		<div class="large-3 medium-6 small-12 columns card most-important" data-equalizer-watch="first-line">
+		<div class="large-3 medium-6 small-12 columns card most-important-3" data-equalizer-watch="first-line">
 			<div class="card-section">
 				<a href="http://www.brkmed.ru/media/uploads/documents/others/plan-deyatelnosti-dz-na-2014-2018-godyi.doc">План деятельности департамента здравоохранения Брянской области на 2013-2018 годы</a>
 			</div>
@@ -48,7 +53,7 @@
 			</div>			
 		</div>
 
-		<div class="large-3 medium-6 small-12 columns card most-important" data-equalizer-watch="first-line">
+		<div class="large-3 medium-6 small-12 columns card most-important-4" data-equalizer-watch="first-line">
 			<div class="card-section ocenka">
 				<a href="http://www.brkmed.ru:8081/media/uploads/documents/others/prikaz-minzdrava-rossii-ot-07072015-n-422an-ob-utverzhdeni.doc">Приказ Министерства здравоохранения Российской Федерации от 7 июля 2015 г. № 422ан "Об утверждении критериев оценки качества медицинской помощи"</a>
 			</div>
@@ -63,7 +68,7 @@
 	<div class="row second-line" data-equalizer="second-line">
 		<div class="large-3 medium-6 small-12 columns card second-important other-depatments" data-equalizer-watch="second-line">
 			<div class="card-section">
-				<a href="http://rosminzdrav.ru/" target="_blank"><img src="{% static 'img/links-background/gerb-minzdrav.svg' %}"><!--Министерство здравоохранения РФ--></a>
+				<a href="http://rosminzdrav.ru/" target="_blank"><img src="{% static 'img/useres/gerb-minzdrav.svg' %}"><!--Министерство здравоохранения РФ--></a>
 			</div>
 			<div class="card-section">
 				<a href="http://www.bryanskobl.ru/" target="_blank">Правительство Брянской области</a>
@@ -112,7 +117,7 @@
 	<div class="row third-line" data-equalizer="third-line">
 		<div class="large-3 medium-6 small-12 columns card outside-links" data-equalizer-watch="third-line">
 			<a href="http://www.takzdorovo.ru/" target="_blank">
-				<img src="#" alt="Здоровая Россия">
+				<img src="{% static 'img/useres/zdorovaya-rossiya.jpg' %}" alt="Здоровая Россия">
 			</a>
 			<a href="https://www.gosuslugi.ru/" id="gosuslugiAnimated"></a>
 		</div>
