@@ -1,0 +1,70 @@
+<section class="row" id="main_informatization" data-magellan-target="main_informatization" data-equalizer="main-container-height" data-equalize-on="medium"> 
+  <h2 class="informatization-header">Информатизация</h2> 
+  <div class="row" data-equalizer="column-height" data-equalize-on="medium">
+    <div class="large-4 medium-5 small-12 columns informat_news-container" data-equalizer-watch="main-container-height">
+      <h3 class="subheader"><small>Новости</small></h3>
+      <div class="row" id="informatization_news" data-equalizer-watch="column-height">
+        {% for article in informatization %}
+          <article class="large-12 medium-12 small-12 columns article">    
+            <header>
+              <h3 class="article-header text-left">
+                <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+              </h3>
+            </header>
+            <footer class="text-left">
+              <time datetime="">{% include 'app/content/date.html' with article=article %}</time>
+            </footer>
+          </article>
+        {% endfor %}
+        <a href="/informat/" class="button go-to-informat float-right">Перейти в раздел «Информатизация здравоохранения» <i class="fi-arrow-right large"></i></a>
+      </div>
+    </div>
+    <div class="large-8 medium-7 small-12 columns main-stat-container" data-equalizer-watch="main-container-height">
+      <h3 class="subheader"><small>Показатели</small></h3>
+      <div class="large-12 medium-12 small-12 columns" data-equalizer-watch="column-height">
+        <div class="large-4 medium-12 small-12 columns main-stat">
+          <table class="data" id="napriem" data-index="0">
+            <thead>
+              <tr>
+                <th colspan="2" class="text-center"><b>Записалось на прием к врачу</b></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>За июль 2017&nbsp;г.</td>
+                <td class="text-center">40&nbsp;906&nbsp;чел.</td>
+              </tr>
+              <tr>
+                <td><b>Всего</b></td>
+                <td class="text-center"><b>967&nbsp;668&nbsp;чел.</b></td>		
+              </tr>
+            </tbody>
+          </table>
+          <table class="data" id="lk" data-index="1">
+            <thead>
+              <tr>
+                <th colspan="2" class="text-center"><b>Зарегистрировались в личном кабинете</b></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>За июль 2017&nbsp;г.</td>
+                <td class="text-center">3&nbsp;657&nbsp;чел.</td>
+              </tr>
+              <tr>
+                <td><b>Всего</b></td>
+                <td class="text-center"><b>344&nbsp;513&nbsp;чел.</b></td>
+              </tr>
+            </tbody>
+          </table>
+          <a href="https://napriem.info/" class="large-12 medium-12 small-12 columns go-to-napriem button" title="Записаться на прием к врачу">Записаться</a>
+        </div>
+        <div class="large-8 medium-12 small-12 columns" id="chart-container">
+          <div id="overflow-chart">
+            <div id="informatization-chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

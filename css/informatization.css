@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+    .block-breadcrumbs {
+        background-color: #fff;
+        padding: .925rem;
+        box-shadow: 0 0px 2px #bfbfbf;
+    }
+        
+        .block-breadcrumbs ul {
+            margin-bottom: 0;
+        }
+    
+    #informatization-title {
+        border-left: 3px solid #1D5399;
+        padding: 0 .5rem;
+        margin: 1rem 0 1rem 0;
+    }
+    
+    .informatization-part {
+        background-color: #fff;
+        margin-bottom: .925rem;
+        box-shadow: 0 2px 5px #cecece;
+        padding: .925rem;
+    }
+    
+        #informatization-indicators-chart #overflow-chart {
+          width: 100%;
+          overflow-x: scroll;
+        }
+        
+            #informatization-indicators-chart #informatization-chart {
+                width: 3400px;
+                height: 400px;
+                margin: 0 auto;
+            }
+          
+            #informatization-indicators-chart text {
+                font-family: sans-serif;
+                text-shadow: none;
+                font-weight: bold;
+            }
+            
+            #informatization-indicators-chart .highcharts-plot-band-label { font-size: 1.3rem; } 
+        
+            #informatization-indicators-chart  .highcharts-point.highcharts-color-1 { fill: #01579B; } 
+            
+            #informatization-indicators-chart  .highcharts-point.highcharts-color-0 { fill: #039BE5; }
+            
+            #informatization-indicators-chart .highcharts-axis.highcharts-xaxis path {
+                stroke: #82B1FF;
+                opacity: .25;
+            }
+        
+            #informatization-indicators-chart .highcharts-plot-bands-0 path.year:nth-child(3) {
+                fill: #fff;
+                fill-opacity: 0;
+            }
+            
+            #informatization-indicators-chart .highcharts-plot-bands-0 path.year:nth-child(2) {
+                fill: #dadada;
+                fill-opacity: .6;
+            }
+            
+            #informatization-indicators-chart .highcharts-plot-bands-0 path.year:nth-child(1) {
+                fill: #dadada;
+                fill-opacity: 1;
+            }
+        
+            #informatization-indicators-chart .highcharts-legend { display: none; }
+          
+            #informatization-indicators-chart .highcharts-plot-band-label  {
+                top: 13px !important;
+                font-family: "Arial", sans-serif;
+                border: 1px solid #000;
+                padding: .3rem;
+                border-radius: 3px;
+                font-size: 1rem;
+                font-weight: bold;
+                background-color: #f7f7f7;
+            }
+        
+        #informat-content > div {
+            padding: 0;
+        }
+        
+        #informat-content > div + div {
+            padding-right: 0;
+        }
+        
+            #informatization-news .article {
+                background-color: #fff;
+                margin-bottom: .925rem;
+                box-shadow: 0 2px 5px #cecece;
+                padding: .925rem;
+                border-left: 3px solid #1D5399;
+                transition: border-left-color cubic-bezier(0,0,0.58,1) .2s;
+            }
+            
+                #informatization-news .article:hover {
+                    border-left-color: #f00;
+                    transition: border-left-color cubic-bezier(0,0,0.58,1) .2s;
+                }
+            
+                #informatization-news .article header {
+                    padding: 0;
+                }
+                
+                    #informatization-news .article-header {
+                        font-size: 1rem;
+                    }
+                        
+                        #informatization-news .article a {
+                            transition: color cubic-bezier(0,0,0.58,1) .2s;
+                        }
+                        
+                            #informatization-news .article:hover a {
+                                color: #f00;
+                                transition: color cubic-bezier(0,0,0.58,1) .2s;
+                            }
+                
+                #informatization-news .article footer,
+                    #informatization-news .article footer div {
+                        padding: 0;
+                }
+                
+                #informatization-news time.created,
+                    #informatization-news time.changed {
+                        font-size: .8rem;
+                        color: #717171;
+                }
+                
+                #informatization-news .continue.has-tip {
+                    display: inline;
+                    border-bottom: 1px dotted;
+                    font-weight: normal;
+                    cursor: default;
+                }
+                    
+                    #informatization-news .continue.has-tip:hover {
+                        cursor: pointer;
+                    }
+                    
+                #informatization-news .pagination {
+                    margin-bottom: 0;
+                }
+                
+                    #informatization-news .pagination .show-for-sr {
+                        position: relative !important;
+                        -webkit-clip-path: none !important;
+                        clip-path: none !important;
+                    }
+        
+            #informatization-documents {
+                
+            }
+            
+                #informatization-documents .accordion {
+                    margin-bottom: 0;
+                }
+                    
+                    #informatization-documents .accordion-item {
+                        
+                    }
+                    
+                        #informatization-documents .accordion-item.is-active {
+                            border-top: 3px solid #1D5399;
+                            background-color: #d8e9ff;
+                        }
+                        
+                        #informatization-documents .accordion-title:hover,
+                        #informatization-documents .accordion-title:focus {
+                            background-color: #d8e9ff;
+                            border-top: 1px solid #1D5399;
+                        }
+                        
+                        #informatization-documents .accordion-item.is-active .accordion-title:hover {
+                            background-color: #d1e5ff;
+                        }
+                    
+                    #informatization-documents .accordion-title {
+                        color: #000;
+                        font-size: 1.3rem;
+                    }
+                    
+                        #informatization-documents .accordion-content li {
+                            line-height: 1.7;
+                        }
+                        
+                            #informatization-documents .accordion-content li:not(:last-child) {
+                                margin-bottom: .5rem;
+                            }
+        
+        #informatization-main-indicators > h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        #informatization-main-indicators tr {
+            border: 1px solid #1D5399;
+        }
+        
+            #informatization-main-indicators tbody tr {
+                background-color: transparent;
+            }
+                
+                #informatizationin-main-indicators table thead {
+                    color: #fff;
+                }
+                
+                    #informatization-main-indicators table:nth-child(2) thead {
+                        background-color: #1D5399;
+                        color: #fff;
+                    }
+                    
+                    #informatization-main-indicators table:nth-child(3) thead {
+                        background-color: #2C95E4;
+                        color: #fff;
+                    }
+        
+        #informatization-help-video {
+            margin-top: .925rem;
+        }
+        
+            #informatization-help-video > h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+        

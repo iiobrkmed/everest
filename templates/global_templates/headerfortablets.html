@@ -1,0 +1,19 @@
+{% load menu_tags %}
+
+<header class="top-bar row show-for-medium hide-for-large" id="headerfortablets">
+	<div class="medium-3 columns" id="head-title">
+		<a href="http://www.brkmed.ru/" title="Перейти на главную страницу">
+			<div class="meduim-1 columns" id="brk-logo-for-tablets">
+				<img src="/static/img/logo.svg" class="logo-image" alt="Правительство Брянской области">
+			</div>
+		</a>
+		<h1 class="medium-3 columns" id="brk-brand-for-tablets">
+			<div id="industry">Здравоохранение Брянской области</div>
+		</h1>
+	</div>
+	<nav class="navigation medium-9 columns" role="navigation">          
+    	<ul class="menu">          
+        	{% show_menu 'top_menu' %}          
+        </ul>        
+    </nav>  
+</header>

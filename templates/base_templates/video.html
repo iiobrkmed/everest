@@ -1,0 +1,72 @@
+<section class="row" id="video" data-magellan-target="video">
+  
+  <div class="youtube-logo"></div>
+  
+  <div class="large-9 medium-8 small-12 columns player-container">
+  
+    <div class="large-12 columns" id="player"></div>
+    
+    <div class="large-12 medium-12 small-12 columns" id="video-info">
+  
+      <div class="large-12 medium-12 small-12 columns text-left">
+        <div class="large-12 medium-12 small-12 columns" id="video-title"></div>
+      </div>
+    
+      <div class="large-12 medium-12 small-12 columns">
+        
+        <div class="large-9 medium-9 small-12 columns text-left" id="video-count_viewed">
+          Просмотров: <span id="video_count"></span>
+        </div>
+        
+      </div>
+      
+      <div class="large-8 medium-5 small-5 columns" id="subscribe-container">
+        <button type="button" id="subscribe-button" data-tooltip aria-haspopup="true" data-template-classes="video-button-tooltip" class="has-tip right" data-disable-hover="false" tabindex="1" data-click-open="false" title="Подписаться">Подписаться <span id="subscribe-count"></span></button>
+      </div>
+      
+      <div class="large-4 medium-7 small-7 columns rate text-center">
+          
+        <div class="large-3 medium-3 small-3 columns" id="like-container">
+          <button type="button" id="like-button" data-tooltip aria-haspopup="true" data-template-classes="video-button-tooltip" class="has-tip bottom" data-disable-hover="false" tabindex="1" data-click-open="false" title="Мне понравилось">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="like-button-icon">
+              <g>
+                <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z" class="style-scope yt-icon"></path>
+              </g>
+            </svg>
+            <div class="text-left" id="like-count"></div>
+          </button>
+        </div>
+        
+        <div class="large-3 medium-3 small-3 columns" id="dislike-container">
+          <button type="button" id="dislike-button" data-tooltip aria-haspopup="true" data-template-classes="video-button-tooltip" class="has-tip bottom" data-disable-hover="false" tabindex="1" data-click-open="false" title="Мне не понравилось">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="dislike-button-icon">
+              <g>
+                <path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v1.91l.01.01L1 14c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z" class="style-scope yt-icon"></path>
+              </g>
+            </svg>
+            <div class="text-left" id="dislike-count"></div>
+          </button>
+        </div>
+        
+        <div class="large-6 medium-6 small-6 columns" id="shared-container">
+          <button type="button" id="shared-button" data-tooltip aria-haspopup="true" data-template-classes="video-button-tooltip" class="has-tip bottom" data-disable-hover="false" tabindex="1" data-click-open="false" title="Поделиться">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false"  class="shared-button-icon">
+              <g>
+                <path d="M14 9V5l7 7-7 7v-4.1c-5 0-8.5 1.6-11 5.1 1-5 4-10 11-11z" class="style-scope yt-icon"></path>
+              </g>
+            </svg>
+            <div class="text-left" id="shared-button-text">Поделиться</div>
+          </button>
+        </div>
+          
+      </div>
+    
+    </div>
+    
+    <div class="large-12 medium-12 small-12 columns" id="video-description"></div>
+  
+  </div>
+  
+  <div class="large-3 medium-4 small-12 columns" id="playlists-container"></div>
+    
+</section>

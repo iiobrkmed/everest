@@ -11,9 +11,9 @@
       border-left: 3px solid #FC1A1A;
     }
         
-    .youtube-logo{
+    .youtube-logo {
       min-height: 4rem;
-      background: url('/static/img/logos/youtube-logo-light.svg')no-repeat;
+      background: url("/static/img/logos/youtube-logo-light.svg")no-repeat;
       border-top: 1px solid #cccccc;
       background-position: -.5rem;
     }
@@ -21,143 +21,432 @@
     #video > div:not(#items-container) { padding: 0; }
   
       #video iframe { padding: 0; }
-  
-    #items-container {
-      height: 460px;
-      overflow-y: scroll;
-    }
       
+      #video-info {
+        border-bottom: 1px solid #ececec;
+        padding: .5rem .925rem;
+      }
       
-      /*example*/
-   #playlists-container{overflow-y:scroll;height:485px;background-color:#383838;}   
-  .player-container {border-right:1px solid #000;}    
-  .playlists{margin-bottom:0;}
-  .playlists li.is-active .playlist_name{ border-bottom: 3px solid /*#D84315*/#FC1A1A; }
-  .playlist_name{background-color:#EEEEEE;}
-  .playlist_name:hover, .playlist_name:focus{color:#FF7043;border-bottom-color:#FF7043;}
-  .playlists .video-item:hover{ cursor: pointer; }
-  .playlist_name{background-color:#f0f0f0; color:/*#D84315*/#FC1A1A; font-size:1.3rem; border-left:none; border-top-color:#ccc; border-bottom-color:#ccc;}
-  .video-items{padding:0;border:none;}
-    .video-item{padding:.5rem 0;background-color:#F5F5F5;color:#000;}
-      .video-item:not(:last-child){border-bottom:1px solid rgba(206, 206, 206, 0.38);}
-  .video-item_preview{padding-right:0;position:relative}
-  .video-item_footer{padding:0 .925rem 0 0;}
-  .playing{background-color:rgba(0, 0, 0, 0.19)!important;}
-  #start_preview{background:#336699 url("../img/logo.svg")no-repeat 50% 20%;height:485px;max-width:960px;position:absolute;padding:0;background-size:15%;}
-  #start_preview p{color:#fff;font-size:2rem;margin-top:30%;}
-  .video-item_body{line-height:1.3;}
-    .video-item_name{font-size:.8rem;}
-  /* Small only */
-  @media screen and (max-width: 39.9375em) {
-    
-    .upload-date-container{margin-top: .5rem;}
-    .rating-container{text-align:right;}
-    
-  }
+      #video-info > div,
+        #video-info > div + div { padding: 0; }
+        
+      #video-info > div { font-size: .95rem; }  
+        
+        #subscribe-container { margin-top: .5rem; }
+        
+          #video-info #subscribe-button {
+            color: #fff;
+            background-color: #FC1A1A;
+            text-transform: uppercase;
+            padding: .5rem;
+            transition: all .35s;
+          }
+          
+            #subscribe-button.has-tip {
+                display: block;
+                font-weight: normal;
+                border-bottom: none;
+                cursor: default;
+            }
+          
+            #video-info #subscribe-button:hover {
+              background-color: #e01818;
+              cursor: pointer;
+              transition: all .35s;
+            }
+           
+            #video-info #subscribe-count { color: #fecccc; }
+        
+        .rate { margin-top: .5rem; }
+        
+      #video-title { padding: 0; }
+      
+      #video-count_viewed {
+        color: #847575;
+        font-size: .8rem;
+        padding: 0;
+      }
+      
+        #like-container,
+          #dislike-container,
+          #shared-container { padding: 0; }
+            
+            #like-button.has-tip {
+                display: block;
+                font-weight: normal;
+                border-bottom: none;
+                cursor: default;
+            }
+            
+                .like-button-icon {
+                  pointer-events: none;
+                  display: block;
+                  width: 40%;
+                  float: left;
+                  fill: #757575;
+                  transition: all .35s;
+                  padding: .3rem;
+                  border-radius: 15px;
+                }
+                
+                  #like-button:hover .like-button-icon {
+                    fill: #000;
+                    transition: all .35s;
+                  }
+            
+                #like-count {
+                  float: left;
+                  width: 60%;
+                  line-height: 2.5;
+                  color: #757575;
+                  font-size: .85rem;
+                  padding-left: .3rem;
+                }
+                
+                #like-button.selected .like-button-icon {
+                    background-color: #e0e0e0;
+                    fill: #3c3c3c;
+                }
+                
+            .dislike-button-icon {
+              pointer-events: none;
+              display: block;
+              width: 40%;
+              float: left;
+              fill: #757575;
+              transition: all .35s;
+              padding: .3rem;
+              border-radius: 15px;
+            }
+            
+                #dislike-button.has-tip {
+                    display: block;
+                    font-weight: normal;
+                    border-bottom: none;
+                    cursor: default;
+                }
+            
+                #dislike-button:hover .dislike-button-icon {
+                   fill: #000;
+                   transition: all .35s;
+                }
+            
+                #dislike-count {
+                  float: left;
+                  width: 60%;
+                  line-height: 2.5;
+                  color: #757575;
+                  font-size: .85rem;
+                  padding-left: .3rem;
+                }
+                
+                #dislike-button.selected .dislike-button-icon {
+                    background-color: #e0e0e0;
+                    fill: #3c3c3c;
+                }
+                
+            .shared-button-icon {
+              pointer-events: none;
+              display: block;
+              width: 20%;
+              float: left;
+              fill: #757575;
+              transition: all .35s;
+              padding: .3rem;
+            }
+            
+              #shared-button:hover .shared-button-icon {
+                fill: #000;
+                transition: all .35s;
+              }
+            
+            #shared-button.has-tip {
+                display: block;
+                font-weight: normal;
+                border-bottom: none;
+            }
+            
+            #shared-button-text {
+              text-transform: uppercase;
+              width: 80%;
+              float: left;
+              line-height: 2.5;
+              color: #757575;
+              font-size: .85rem;
+              padding-left: .3rem;
+            }
 
-  .bar-c {
-  overflow: hidden;
-  height: 85px;
-  width: 114px;
-  margin: 0 auto;
-  position: absolute;
-  cursor: pointer;
-  z-index: 100;
-  background-color: rgba(0, 0, 0, 0.5);
-  bottom: 0;
+            #like-button:hover,
+              #dislike-button:hover,
+              #shared-button:hover { cursor: pointer; }
+      
+      #video-description { padding: .5rem .925rem; }
+      
+        #video-description p {
+          color: #444444;
+          margin-bottom: 0;
+          font-size: .9rem;
+        }
+      
+      
+    #playlists-container {
+      overflow-y: scroll;
+      height: 670px;
+      background-color: #f0f0f0;
+    }
+   
+      .playlists { margin-bottom: 0; }
+      
+        .playlists li.is-active .playlist_name { border-bottom: 3px solid #FC1A1A; }
+        
+        .playlist_name {
+          background-color: #f0f0f0;
+          color: #FC1A1A;
+          font-size: 1.3rem;
+          border-left: none;
+          border-top-color: #ccc;
+          border-bottom-color: #ccc;
+        }
+        
+          .playlist_name:hover,
+            .playlist_name:focus {
+              color: #FF7043;
+              border-bottom-color: #FF7043;
+          }
+        
+        .video-items {
+          padding: 0;
+          border: none;
+        }
+        
+          .video-item {
+            padding: .5rem 0;
+            background-color: #F5F5F5;
+            color: #000;
+          }
+          
+            .video-item:not(:last-child) { border-bottom: 1px solid rgba(206, 206, 206, 0.38); }
+        
+            .playlists .video-item:hover { cursor: pointer; }
+            
+            .video-item_preview {
+              padding-right: 0;
+              position: relative;
+            }
+                
+                .video-duration {
+                    position: absolute;
+                    bottom: .1rem;
+                    right: 0;
+                    background-color: #000;
+                    padding: 0 .1rem;
+                    font-size: .6rem;
+                    color: #fff;
+                }
+    
+            .video-item_body { line-height: 1.3; }
+            
+              .video-item_name { font-size: .8rem; }
+      
+            .playing { background-color: rgba(0, 0, 0, 0.19) !important; }
+            
+              .bar-c {
+                overflow: hidden;
+                height: 45px;
+                width: 60px;
+                margin: 0 auto;
+                position: absolute;
+                cursor: pointer;
+                z-index: 100;
+                background-color: rgba(0, 0, 0, 0.5);
+                bottom: 0;
+              }
+              
+                .bar {
+                  height: 1px;
+                  width: 8px;
+                  display: inline-block;
+                  background-color: #e53935;
+                  bottom: 0;
+                  position: absolute;
+                  -webkit-animation-duration: 500ms;
+                  -webkit-animation-play-state: running;
+                  -webkit-animation-direction: alternate;
+                  -webkit-animation-timing-function: linear;
+                  -webkit-animation-iteration-count: infinite;
+                }
+
+                  .bar#bar-1 {
+                    left: 1px;
+                    -webkit-animation-name: danceHeight1;
+                    -webkit-animation-delay: 0ms;
+                  }
+                  
+                  .bar#bar-2 {
+                    left: 11px;
+                    -webkit-animation-name: danceHeight2;
+                    -webkit-animation-delay: 300ms;
+                  }
+
+                  .bar#bar-3 {
+                    left: 21px;
+                    -webkit-animation-name: danceHeight3;
+                    -webkit-animation-delay: 600ms;
+                  }
+
+                  .bar#bar-4 {
+                    left: 31px;
+                    -webkit-animation-name: danceHeight4;
+                    -webkit-animation-delay: 900ms;
+                  }
+
+                  .bar#bar-5 {
+                    left: 41px;
+                    -webkit-animation-name: danceHeight5;
+                    -webkit-animation-delay: 1200ms;
+                  }
+
+                  .bar#bar-6 {
+                    left: 51px;
+                    -webkit-animation-name: danceHeight6;
+                    -webkit-animation-delay: 1500ms;
+                  }
+
+                    @-webkit-keyframes danceHeight1 {
+                      from {
+                        height: 1px;
+                      }
+                      to {
+                        height: 62px;
+                      }
+                    }
+                    
+                    @-webkit-keyframes danceHeight2 {
+                      from {
+                        height: 1px;
+                      }
+                      to {
+                        height: 25px;
+                      }
+                    }
+                    
+                    @-webkit-keyframes danceHeight3 {
+                      from {
+                        height: 1px;
+                      }
+                      to {
+                        height: 40px;
+                      }
+                    }
+                    
+                    @-webkit-keyframes danceHeight4 {
+                      from {
+                        height: 1px;
+                      }
+                      to {
+                        height: 30px;
+                      }
+                    }
+                    
+                    @-webkit-keyframes danceHeight5 {
+                      from {
+                        height: 1px;
+                      }
+                      to {
+                        height: 25px;
+                      }
+                    }
+                    
+                    @-webkit-keyframes danceHeight6 {
+                      from {
+                        height: 1px;
+                      }
+                      to {
+                        height: 25px;
+                      }
+                    }
+.video-button-tooltip {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: .5rem;
 }
-.bar {
-  height: 1px;
-  width: 15px;
-  display: inline-block;
-  background-color: #e53935;
-  bottom: 0;
-  position: absolute;
-  -webkit-animation-duration: 500ms;
-  -webkit-animation-play-state: running;
-  -webkit-animation-direction: alternate;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-}
-.bar.noAnim {
-  -webkit-animation: none;
-  -webkit-animation-name: none;
-}
-.bar#bar-1 {
-  left: 2px;
-  -webkit-animation-name: danceHeight1;
-  -webkit-animation-delay: 0ms;
-}
-.bar#bar-2 {
-  left: 21px;
-  -webkit-animation-name: danceHeight2;
-  -webkit-animation-delay: 300ms;
-}
-.bar#bar-3 {
-  left: 40px;
-  -webkit-animation-name: danceHeight3;
-  -webkit-animation-delay: 600ms;
-}
-.bar#bar-4 {
-  left: 59px;
-  -webkit-animation-name: danceHeight4;
-  -webkit-animation-delay: 900ms;
-}
-.bar#bar-5 {
-  left: 78px;
-  -webkit-animation-name: danceHeight5;
-  -webkit-animation-delay: 1200ms;
-}
-.bar#bar-6 {
-  left: 97px;
-  -webkit-animation-name: danceHeight6;
-  -webkit-animation-delay: 1500ms;
-}
-@-webkit-keyframes danceHeight1 {
-  from {
-    height: 1px;
+    
+    .video-button-tooltip.bottom::before {
+        border-color: transparent transparent rgba(0, 0, 0, 0.7);
+        border-top-color: transparent;
+        border-top-style: inset;
+        border-top-width: 0;
+        border-right-color: transparent;
+        border-right-style: inset;
+        border-right-width: 0.45rem;
+        border-bottom-color: rgba(0, 0, 0, 0.7);
+        border-bottom-style: solid;
+        border-bottom-width: 0.45rem;
+        border-left-color: transparent;
+        border-left-style: inset;
+        border-left-width: 0.45rem;
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+    }
+    
+    .video-button-tooltip.right::before {
+        border-color: transparent rgba(0, 0, 0, 0.7) transparent transparent;
+        border: inset .45rem;
+        border-top-color: transparent;
+        border-top-style: inset;
+        border-top-width: 0.45rem;
+        border-right-color: rgba(0, 0, 0, 0.7);
+        border-right-style: solid;
+        border-right-width: 0.45rem;
+        border-bottom-color: transparent;
+        border-bottom-style: inset;
+        border-bottom-width: 0.45rem;
+        border-left-color: transparent;
+        border-left-style: inset;
+        border-left-width: 0;
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+    }
+    
+    .message {
+        background-color: rgba(0, 0, 0, .85);
+        width: auto;
+        position: fixed;
+        bottom: 0;
+        padding: .925rem;
+        margin: .75rem;
+    }
+    
+        .message p {
+            margin-bottom: 0;
+            color: #fff;
+        }
+
+/* Small only */
+@media screen
+and (max-width: 39.9375em) {
+  #video-info #subscribe-button,
+    #shared-button-text,
+    #like-count,
+    #dislike-count {
+      font-size: .8rem;
   }
-  to {
-    height: 62px;
-  }
 }
-@-webkit-keyframes danceHeight2 {
-  from {
-    height: 1px;
-  }
-  to {
-    height: 25px;
-  }
+
+/* Medium only */
+@media screen
+and (min-width: 40em)
+and (max-width: 63.9375em) {
+  .rate { margin-top: .6rem; }
 }
-@-webkit-keyframes danceHeight3 {
-  from {
-    height: 1px;
-  }
-  to {
-    height: 40px;
-  }
-}
-@-webkit-keyframes danceHeight4 {
-  from {
-    height: 1px;
-  }
-  to {
-    height: 30px;
-  }
-}
-@-webkit-keyframes danceHeight5 {
-  from {
-    height: 1px;
-  }
-  to {
-    height: 25px;
-  }
-}
-@-webkit-keyframes danceHeight6 {
-  from {
-    height: 1px;
-  }
-  to {
-    height: 25px;
-  }
+
+/* Medium and up */
+@media screen
+and (min-width: 40em) {
+   
 }

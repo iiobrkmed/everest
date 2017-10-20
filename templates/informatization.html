@@ -1,0 +1,241 @@
+{% extends 'index.html' %}
+
+{% load el_pagination_tags %}
+{% load edocs_tags %} 
+{% load static %}
+
+{% block title %}
+    <title>Информатизаця здравоохранения</title>
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Знакомьтесь с новостями медицины, ценами на лекарства, порядком оказания высокотехнологичной медицинской помощи, задавайте вопросы врачам и специалистам">
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="новости медицины, департамент здравоохранения Брянской области, документы, форум, вакансии, диспансеризация, высокотехнологичная медицинская помощь">
+{% endblock %}
+
+{% block extra_css %}   
+    <link rel="stylesheet" type="text/css" href="{% static 'css/informatization.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="row">
+        <div class="row">
+            <h1 id="informatization-title">Информатизация здравоохранения</h1>
+        </div>
+        <div class="row">
+            <div class="large-12 columns informatization-part" id="informatization-documents">
+                <ul class="accordion" data-accordion data-allow-all-closed="true">
+                    <li class="accordion-item" data-accordion-item>
+                        <a href="#" class="accordion-title">Проекты</a>
+                        <div class="accordion-content" data-tab-content>
+                            <ul id="informatization-project">
+                                <li>
+                                    Рекомендуемые части контракта на оказание услуг по защищенной передаче данных с актуализацией криптографического оборудования Заказчика с целью бесперебойного функционирования регионального сегмента ЕГИСЗ Брянской области. (<a href="/media/uploads/documents/informatization/project/recomend_part-2.pdf" title="Загрузить документ в формате *.pdf" download>*.pdf&nbsp;<i class="fi-download"></i></a>,&nbsp;<a href="/media/uploads/documents/informatization/project/recomend_part-2.doc" title="Загрузить документ в формате *.doc">*.doc&nbsp;<i class="fi-download"></i></a>)
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/project/el-medicin.pdf" title="Загрузить документ" download>Перечень проектов по развитию РИС «Электронная медицина» на 2 квартал 2017 года&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/project/TZ_miac.pdf" title="Загрузить документ" download>Техническое задание на оказание услуги по защищенной передаче данных с актуализацией криптографического оборудования ГАУЗ «Медицинский информационно-аналитический центр» Брянской области с целью бесперебойного функционирования регионального сегмента ЕГИСЗ Брянской области.&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>Техническое задание на оказание услуг по защищенной передаче данных с актуализацией криптографического оборудования Заказчика с целью бесперебойного функционирования регионального сегмента ЕГИСЗ Брянской области (<a href="/media/uploads/documents/informatization/project/TZ.pdf" title="Загрузить документ в формате *.pdf" download>*.pdf&nbsp;<i class="fi-download"></i></a>,&nbsp;<a href="/media/uploads/documents/informatization/project/TZ-2.doc" title="Загрузить документ в формате *.doc">*.doc&nbsp;<i class="fi-download"></i></a>)
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/project/TZ_internet.pdf" title="Загрузить документ" download>Техническое задание на оказание услуг по предоставлению высокоскоростного доступа к сети Интернет&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/project/soglashenie.pdf" title="Загрузить документ" download>Соглашение об информационном взаимодействии в рамках обеспечения функционирования регионального сегмента единой государственной информационной системы в сфере здравоохранения Брянской области&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/project/TTISSMP.pdf" title="Загрузить документ" download>Технические требования на региональное программное решение для обеспечения функции диспетчеризации санитарного автотранспорта&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="accordion-item" data-accordion-item>
+                        <a href="#" class="accordion-title">Показатели внедрения информационных технологий</a>
+                        <div class="accordion-content" data-tab-content>
+                            <ul>
+                                <li>
+                                    <a href="//www.brkmed.ru/rest_dt/ipra_table/" title="Перейти в раздел">Оперативная информация по исполнению ИПРА</a>
+                                </li>
+                                <li>
+                                    <a href="/article/ispolzovanie-elektronnyh-napravlenij-na-konsultativnyj-priem-v-oblastnye-uchrezhdeniya-all/" title="Перейти в раздел">Использование электронных направлений на консультативный прием в областные учреждения</a>
+                                </li>
+                                <li>
+                                    <a href="/article/ispolzovanie-elektronnyh-napravlenij-na-gospitalizaciyu-v-oblastnye-uchrezhdeniya-all/" title="Перейти в раздел">Использование электронных направлений на госпитализацию в стационарные учреждения/отделения</a>
+                                </li>
+                                <li>
+                                    <a href="/article/ispolzovanie-informacionnogo-resursa-zapis-na-priem-k-vrachu-all/" title="Перейти в раздел">Использование информационного ресурса &laquo;Запись на прием к врачу&raquo;</a>
+                                </li>
+                                <li>
+                                    <a href="/article/ispolzovanie-servisa-lichnyj-kabinet-all/" title="Перейти в раздел">Использование сервиса &laquo;Личный кабинет&raquo;</a>
+                                </li>
+                                <li>
+                                    <a href="/category/osnashennost-medicinskih-organizacij-kompyuternoj-tehnikoj/" title="Перейти в раздел">Оснащенность медицинских организаций компьютерной техникой</a>
+                                </li>
+                                <li>
+                                    <a href="/category/ispolzovanie-elektronnyh-kart-v-uchete-beremennyh/" title="Перейти в раздел">Использование электронных карт в учете беременных</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="accordion-item" data-accordion-item>
+                        <a href="#" class="accordion-title">Нормативные и методические материалы</a>
+                        <div class="accordion-content" data-tab-content>
+                            <ul>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/oprosniy-list-lpu.XLS" title="Загрузить документ">Опросный лист для ЛПУ&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/MR-grafik-proverok.zip" title="Загрузить документ">Методические рекомендации и график проверок по планированию и проведению проверок ИБ в ИСПДн медицинской организации&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/metodicheskie-rekomendacii-MO-organizacii-kriptograficheskoj-zashchity-kanalov-pri-vzaimodejstvii.pdf" title="Загрузить документ" download>Методические рекомендации медицинским организациям по организации криптографической защиты каналов при взаимодействии в рамках единой государственной информационной системы в сфере здравоохранения&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/trebovaniya-mis-mo.pdf" title="Загрузить документ" download>Методические рекомендации по обеспечению функциональных возможностей медицинских информационных систем медицинских организаций (МИС МО)&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/metodicheskie-rekomendatsii-rmis.pdf" title="Загрузить документ" download>Методические рекомендации по обеспечению функциональных возможностей региональных медицинских информационных систем (РМИС)&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/proekt-tipovyih-trebovanij-k-smp.pdf" title="Загрузить документ" download>Типовые требования к информационным системам диспетчеризации скорой, в том числе скорой специализированной медицинской помощи&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/o-deyatelnosti-i-strukture-miats.pdf" title="Загрузить документ" download>Методические рекомендации по деятельности и структуре медицинского информационно-аналитического центра&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/vnedrenie-proektnogo-upravlenie.pdf" title="Загрузить документ" download>Методические рекомендации по внедрению проектного управления мероприятиями по информатизации здравоохранения&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/o-roli-i-funktsiyah-uchastnikov-proektov.pdf" title="Загрузить документ" download>Методические рекомендации о роли и функциях участников проектов развития региональных информационных систем ЕГИСЗ в субъекте Российской Федерации&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/rukomendatsii-po-razrabotke-tipovogo-plana-meropriyatij-po-stimulirovaniyu.pdf" title="Загрузить документ" download>Рекомендации по разработке типового плана мероприятий по стимулированию использования медицинским персоналом информационных технологий в медицинских организациях субъекта Российской Федерации&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/media/uploads/documents/informatization/osnovnie-razdely-11-11-2013.pdf" title="Загрузить документ" download>Основные разделы электронной медицинской карты&nbsp;<i class="fi-download"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="accordion-item" data-accordion-item>
+                        <a href="#" class="accordion-title">Документы</a>
+                        <div class="accordion-content" data-tab-content>
+                            <div class="row" id="documents">
+                                {% show_folder_list '354' %}
+                                <ul class="pagination"></ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 medium-12 small-12 columns informatization-part" id="informatization-indicators-chart" data-equalizer-watch>
+                <div id="overflow-chart">
+                    <div id="informatization-chart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="informat-content" data-equalizer data-equalize-on="medium">
+            <div class="large-5 columns" data-equalizer-watch>
+                <div class="large-12 medium-4 small-12 columns informatization-part" id="informatization-main-indicators" data-equalizer-watch>
+                    <h2 class="text-center">Портал государственных медицинских услуг Брянской области</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td colspan="2"><b>Записалось на приём к врачу</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Всего</td>
+                                <td><span id="napriem-all">1058919</span> чел.</td>		
+                            </tr>
+                            <tr>
+                                <td>За сентябрь 2017 г.</td>
+                                <td><span id="napriem-month">45030</span> чел.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td colspan="2"><b>Зарегистрировалось в личном кабинете</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Всего</td>
+                                <td><span id="lk-all">351427</span> чел.</td>
+                            </tr>
+                            <tr>
+                                <td>За сентябрь 2017 г.</td>
+                                <td><span id="lk-month">3402</span> чел.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="https://napriem.info/" class="napriem-button button float-right">Записаться</a>
+                </div>
+            </div>
+            <div class="large-7 columns" id="informatization-news" data-equalizer-watch>
+                {% paginate 5 articles using "news" %}
+                {% for article in articles %}
+                    {% include 'content/article_template_3.html' %}
+                    {% if not forloop.last %}{% endif %}
+                {% endfor %}
+                <ul class="large-12 columns pagination text-center" role="navigation" aria-label="Pagination">
+                    {% show_pages %}
+                </ul>
+            </div>
+        </div>  
+        
+        <div class="row" style="margin-top: .925rem;margin-bottom:1rem;">
+            <div class="large-6 columns" style="padding: 0 .4625rem 0 0;">
+                <div class="card" style="margin-bottom:0;border-radius:0;box-shadow:0 2px 5px #cecece;">
+                    <div class="card-section" style="padding:.5rem;">
+                        <h2 class="text-center" style="font-size:1.3rem">Как зарегистрироваться на портале &laquo;napriem.info&raquo;</h2>
+                    </div>
+                    <!-- <div class="large-12 columns" style="padding:0;"> -->
+                        <iframe width="560" height="321" src="https://www.youtube.com/embed/-XtttDFBjkI?rel=0" frameborder="0" allowfullscreen style="width:99.85%;"></iframe>
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div class="large-6 columns" style="padding: 0 0 0 .4625rem;">
+                <div class="card" style="margin-bottom:0;border-radius:0;box-shadow:0 2px 5px #cecece;">
+                    <div class="card-section" style="padding:.5rem;">
+                        <h2 class="text-center" style="font-size:1.3rem;">Как записаться к врачу через портал &laquo;napriem.info&raquo;</h2>
+                    </div>
+                    <!-- <div class="large-12 columns" style="padding:0;"> -->
+                        <iframe width="560" height="321" src="https://www.youtube.com/embed/cHy6itQZAqQ?rel=0" frameborder="0" allowfullscreen style="width:99.9%;"></iframe>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+{% endblock content %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'Highcharts-5.0.14/js/highcharts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'Highcharts-5.0.14/js/modules/exporting.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/informatization-chart.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery_pagination/js/jquery.twbsPagination.min.js' %}"></script>
+    
+    <script type="text/javascript">
+        $('#documents .pagination').twbsPagination({
+            totalPages: 35,
+            visiblePages: 5,
+            onPageClick: function (event, page) {
+                $('#page-content').text('Page ' + page);
+            }
+        });
+    </script>
+    
+{% endblock %}
