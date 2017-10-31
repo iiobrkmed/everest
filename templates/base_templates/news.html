@@ -33,7 +33,7 @@
 								Читать
 							</div>
 						</div>
-						<div class="listen" onclick="">
+						<div class="listen" data-url="{{ article.get_absolute_url }}" data-pk="{{ article.pk }}">
 							<div class="news-logo"></div>
 							<div class="news-btn-label">
 								Слушать
@@ -67,7 +67,7 @@
 	{% endfor %}
 
 	<div class="large-12 medium-12 small-12 columns">
-		<ul class="pagination" role="navigation" aria-label="Pagination">
+		<ul class="pagination text-center" role="navigation" aria-label="Pagination">
 			<li>{% show_pages %}</li>
 		</ul>
 	</div>

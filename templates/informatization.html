@@ -26,7 +26,7 @@
             <h1 id="informatization-title">Информатизация здравоохранения</h1>
         </div>
         <div class="row">
-            <div class="large-12 columns informatization-part" id="informatization-documents">
+            <div class="large-12 medium-12 small-12 columns informatization-part" id="informatization-documents">
                 <ul class="accordion" data-accordion data-allow-all-closed="true">
                     <li class="accordion-item" data-accordion-item>
                         <a href="#" class="accordion-title">Проекты</a>
@@ -128,7 +128,6 @@
                         <div class="accordion-content" data-tab-content>
                             <div class="row" id="documents">
                                 {% show_folder_list '354' %}
-                                <ul class="pagination"></ul>
                             </div>
                         </div>
                     </li>
@@ -143,8 +142,8 @@
             </div>
         </div>
         <div class="row" id="informat-content" data-equalizer data-equalize-on="medium">
-            <div class="large-5 columns" data-equalizer-watch>
-                <div class="large-12 medium-4 small-12 columns informatization-part" id="informatization-main-indicators" data-equalizer-watch>
+            <div class="large-5 medium-5 small-12 columns">
+                <div class="large-12 medium-12 small-12 columns informatization-part" id="informatization-main-indicators" data-equalizer-watch>
                     <h2 class="text-center">Портал государственных медицинских услуг Брянской области</h2>
                     <table>
                         <thead>
@@ -154,12 +153,12 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Всего</td>
-                                <td><span id="napriem-all">1058919</span> чел.</td>		
+                                <td>За сентябрь 2017 г.</td>
+                                <td><span id="napriem-month"></span> чел.</td>
                             </tr>
                             <tr>
-                                <td>За сентябрь 2017 г.</td>
-                                <td><span id="napriem-month">45030</span> чел.</td>
+                                <td>Всего</td>
+                                <td><span id="napriem-all"></span> чел.</td>		
                             </tr>
                         </tbody>
                     </table>
@@ -171,49 +170,45 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Всего</td>
-                                <td><span id="lk-all">351427</span> чел.</td>
+                                <td>За сентябрь 2017 г.</td>
+                                <td><span id="lk-month"></span> чел.</td>
                             </tr>
                             <tr>
-                                <td>За сентябрь 2017 г.</td>
-                                <td><span id="lk-month">3402</span> чел.</td>
+                                <td>Всего</td>
+                                <td><span id="lk-all"></span> чел.</td>
                             </tr>
                         </tbody>
                     </table>
                     <a href="https://napriem.info/" class="napriem-button button float-right">Записаться</a>
                 </div>
             </div>
-            <div class="large-7 columns" id="informatization-news" data-equalizer-watch>
+            <div class="large-7 medium-7 small-12 columns" id="informatization-news" data-equalizer-watch>
                 {% paginate 5 articles using "news" %}
                 {% for article in articles %}
                     {% include 'content/article_template_3.html' %}
                     {% if not forloop.last %}{% endif %}
                 {% endfor %}
-                <ul class="large-12 columns pagination text-center" role="navigation" aria-label="Pagination">
+                <ul class="large-12 medium-12 small-12 columns pagination text-center" role="navigation" aria-label="Pagination">
                     {% show_pages %}
                 </ul>
             </div>
         </div>  
         
-        <div class="row" style="margin-top: .925rem;margin-bottom:1rem;">
-            <div class="large-6 columns" style="padding: 0 .4625rem 0 0;">
-                <div class="card" style="margin-bottom:0;border-radius:0;box-shadow:0 2px 5px #cecece;">
-                    <div class="card-section" style="padding:.5rem;">
-                        <h2 class="text-center" style="font-size:1.3rem">Как зарегистрироваться на портале &laquo;napriem.info&raquo;</h2>
+        <div class="row helpful-informatization-video">
+            <div class="large-6 medium-6 small-12 columns">
+                <div class="card">
+                    <div class="card-section">
+                        <h2 class="text-center">Как зарегистрироваться на портале &laquo;napriem.info&raquo;</h2>
                     </div>
-                    <!-- <div class="large-12 columns" style="padding:0;"> -->
-                        <iframe width="560" height="321" src="https://www.youtube.com/embed/-XtttDFBjkI?rel=0" frameborder="0" allowfullscreen style="width:99.85%;"></iframe>
-                    <!-- </div> -->
+                    <iframe width="560" height="321" src="https://www.youtube.com/embed/-XtttDFBjkI?rel=0" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="large-6 columns" style="padding: 0 0 0 .4625rem;">
-                <div class="card" style="margin-bottom:0;border-radius:0;box-shadow:0 2px 5px #cecece;">
-                    <div class="card-section" style="padding:.5rem;">
-                        <h2 class="text-center" style="font-size:1.3rem;">Как записаться к врачу через портал &laquo;napriem.info&raquo;</h2>
+            <div class="large-6 medium-6 small-12 columns">
+                <div class="card">
+                    <div class="card-section">
+                        <h2 class="text-center">Как записаться к врачу через портал &laquo;napriem.info&raquo;</h2>
                     </div>
-                    <!-- <div class="large-12 columns" style="padding:0;"> -->
-                        <iframe width="560" height="321" src="https://www.youtube.com/embed/cHy6itQZAqQ?rel=0" frameborder="0" allowfullscreen style="width:99.9%;"></iframe>
-                    <!-- </div> -->
+                    <iframe width="560" height="321" src="https://www.youtube.com/embed/cHy6itQZAqQ?rel=0" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -225,17 +220,8 @@
 {% block extra_js %}
     <script type="text/javascript" src="{% static 'Highcharts-5.0.14/js/highcharts.js' %}"></script>
     <script type="text/javascript" src="{% static 'Highcharts-5.0.14/js/modules/exporting.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery_pagination/js/jquery.paginate.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/countUp.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/informatization-chart.js' %}"></script>
-    <script type="text/javascript" src="{% static 'jquery_pagination/js/jquery.twbsPagination.min.js' %}"></script>
-    
-    <script type="text/javascript">
-        $('#documents .pagination').twbsPagination({
-            totalPages: 35,
-            visiblePages: 5,
-            onPageClick: function (event, page) {
-                $('#page-content').text('Page ' + page);
-            }
-        });
-    </script>
-    
+    <script type="text/javascript" src="{% static 'js/informatization.js' %}"></script>
 {% endblock %}

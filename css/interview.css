@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+#interview{
+    max-width: 100%;
+}
+
+
+/* снопки управления слайдами */
+#interview .orbit-previous,
+#interview .orbit-next{
+    background-color: rgba(235, 235, 235, 0.3);
+/*     border: 1px solid #000000; */
+    box-shadow: inset 0 0 10px rgb(0, 0, 0);
+    color: #000000;
+    padding: 1rem;
+    opacity: .4;
+}
+#interview:hover .orbit-previous,
+#interview:hover .orbit-next,
+#interview:focus .orbit-previous,
+#interview:focus .orbit-next{
+    opacity: 1;
+}
+
+
+/* кнопка перехода в раздел */
+#interview-btn{
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: right;
+    padding: .5rem 0;
+}
+    #interview-btn > a{
+        margin-bottom: 0;
+    }
+
+
+/* заголовок */
+.interview-header{
+    max-width: 1280px;
+    margin: 1.5rem auto 1rem;
+    border-left: 3px solid #009933;
+}
+
+
+/* строка интервью слайдер */
+#interview-row{
+    background-color: rgba(230, 230, 230, 1);
+    padding: 1rem 0 0;
+}
+    #interview-line{
+        max-width: 1280px;
+        margin: 0 auto;
+        height: 20rem;
+    }
+        .interview-cell{
+            padding: 0 .2rem;
+        }
+            .interview-preview{
+                height: 20rem;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 2px 2px #d2d2d2;
+            }
+                .interview-preview > .interview-picture{
+                    position: absolute;
+                    left: 0;
+                    height: 100%;
+                    max-width: 50%;
+                }
+                .interview-discription{
+                    position: absolute;
+                    max-width: 62%;
+                    height: 100%;
+                    right: 0;
+                    top: 0;
+                    background-color: #ffffff;
+                    padding: .5rem;
+                    text-align: center;
+                }
+                    .int-tezis{
+                        padding-bottom: .5rem;
+                    }
+                    .int-theme{
+                        padding-top: .5rem;
+                        font-size: .9rem;
+                    }
+
+
+/* монитор */
+@media (min-width: 1024px){
+    .interview-cell:first-child{
+        padding-left: 0;
+        padding-right: .4rem;
+    }
+    .interview-cell:last-child{
+        padding-right: 0;
+        padding-left: .4rem;
+    }
+}
+
+
+/* планшет */
+@media (max-width: 1023px) and (min-width: 639px){
+    .interview-header{
+       font-size: 2rem;
+       margin-left: .2rem;
+    }
+    #interview-row{
+       padding-top: .25rem;
+    }
+        #interview-line{
+            height: 18rem;
+        }
+            .interview-preview{
+                height: 18rem;
+            }
+            .interview-preview > .interview-picture{
+                max-width: 60%;
+            }
+            .interview-discription{
+                width: 50%;
+            }
+                .int-tezis{
+                    font-size: .8rem;
+                }
+                .int-theme{
+                    padding-top: 0;
+                    font-size: .7rem;
+                }
+}
+
+
+/* телефон */
+@media (max-width: 639px){
+    .interview-header{
+       font-size: 2rem;
+       margin-left: .5rem;
+    }
+    #interview-row{
+       padding-top: .1rem;
+    }
+        #interview-line{
+            height: 31rem;
+        }
+        .interview-cell{
+            padding: .5rem;
+            padding-bottom:0;
+        }
+            .interview-preview{
+                height: 15rem;
+            }
+                .interview-discription{
+                    width: 50%;
+                }
+                    .int-tezis{
+                        font-size: .7rem;
+                    }
+                    .int-theme{
+                        padding-top: 0;
+                        font-size: .6rem;
+                    }
+    
+    #interview-btn{
+        padding: 0 .4rem;
+    }
+        #interview-btn > a{
+            margin: .5rem 0;
+        }
+}

@@ -1,0 +1,32 @@
+{% load mptt_tags %}
+<div class="row breadcrumbs-container hide-for-small-only" data-sticky-container>
+  <nav aria-label="Вы здесь:" role="navigation" class="block-breadcrumbs" data-sticky data-margin-top="0" data-sticky-on="medium" data-top-anchor="navigation-breadcrumbs" id="navigation-breadcrumbs">
+    <div class="large-12 medium-12 columns">
+      <ul class="breadcrumbs">
+        <li>
+            <a href="/">Главная</a>
+        </li>
+        {% if article %}
+          {% with article.category as category  %}
+            {% for ancestor in category.get_ancestors %}
+            <li><a href="{{ ancestor.get_absolute_url }}">{{ ancestor.title }}</a></li>
+            {% endfor %}
+            <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+          {% endwith %}
+          <li class="disabled">{{ article.title }}</li>
+        {% endif %}
+        
+        {% if category %}
+        {% for ancestor in category.get_ancestors %}
+        <li><a href="{{ ancestor.get_absolute_url }}">{{ ancestor.title }}</a></li>
+        {% endfor %}
+        <li class="disabled">{{ category.title }}</li>
+        {% endif %}
+        
+        {% if app %}
+        <li class="disabled">{{ app }}</li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+</div>

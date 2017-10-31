@@ -44,6 +44,7 @@ a{
 
 #site{
 	margin: 0 auto;
+    min-height: 47.5vh;
 }
 #populations{
 	margin: 0 auto;
@@ -63,4 +64,13 @@ a:hover{
 }
 #chart-container{
 	overflow: hidden;
+}
+
+.pagination .current { text-align: center; }
+
+.pagination .show-for-sr,
+    .pagination .show-on-focus {
+        position: relative !important;
+        clip-path: none !important;
+        -webkit-clip-path: none !important;
 }

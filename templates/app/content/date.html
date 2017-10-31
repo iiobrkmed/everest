@@ -1,12 +1,12 @@
 {% if article.date_visible != 'NONE' %}
     {% if article.date_visible == 'MIXED' %}
-        <i class="fi-calendar large"></i>&nbsp;<time datetime="{{ article.date_created_ru }}" class="created">{{ article.date_created_ru }}</time>
-        <i class="fi-calendar large"></i>&nbsp;<time datetime="{{ article.date_changed_ru }}" class="changed">{{ article.date_changed_ru }}</time>
+        <time datetime="{{ article.date_created_ru }}" class="created"><i class="fi-calendar large"></i>&nbsp;{{ article.date_created_ru }}</time>
+        <time datetime="{{ article.date_changed_ru }}" class="changed"><i class="fi-calendar large"></i>&nbsp;{{ article.date_changed_ru }}</time>
     {% endif %}
     {% if article.date_visible == 'CREATED' %}
-        <i class="fi-calendar large"></i>&nbsp;<time datetime="{{ article.date_created_ru }}" class="created">{{ article.date_created_ru }}</time>
+        <time datetime="{{ article.date_created_ru }}" class="created"><i class="fi-calendar large"></i>&nbsp;{{ article.date_created_ru }}</time>
     {% endif %}
     {% if article.date_visible == 'UPDATED' %}
-        <i class="fi-calendar large"></i>&nbsp;<time datetime="{{ article.date_changed_ru }}" class="changed">{{ article.date_changed_ru }}</time>
+        <time datetime="{{ article.date_changed_ru }}" class="changed"><i class="fi-calendar large"></i>&nbsp;{{ article.date_changed_ru }}</time>
     {% endif %}
 {% endif %}

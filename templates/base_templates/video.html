@@ -4,6 +4,13 @@
   
   <div class="large-9 medium-8 small-12 columns player-container">
   
+    <div class="channel-preview">
+        <div class="large-12 medium-12 small-12 columns">
+            <div class="channel-preview-ico"></div>
+            <p class="text-center">Youtube канал<br/>&laquo;Здравоохранение Брянской области&raquo;</p>
+        </div>
+    </div>
+  
     <div class="large-12 columns" id="player"></div>
     
     <div class="large-12 medium-12 small-12 columns" id="video-info">
@@ -56,6 +63,15 @@
               </g>
             </svg>
             <div class="text-left" id="shared-button-text">Поделиться</div>
+            <div class="shared-block" style="display:none;">
+                <div class="large-12 medium-12 small-12 columns text-left">
+                    <span>Поделиться</span>
+                </div>
+                <input type="text" id="shared-link-input" />
+                <div class="large-12 medium-12 small-12 columns">
+                    <button type="button" class="float-right" id="copy-shared-link">Скопировать</button>
+                </div>
+            </div>
           </button>
         </div>
           
@@ -68,5 +84,4 @@
   </div>
   
   <div class="large-3 medium-4 small-12 columns" id="playlists-container"></div>
-    
 </section>

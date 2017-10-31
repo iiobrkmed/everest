@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+
+/***********
+* логотип  *
+***********/
 #header{
 	 max-width: 100%;
 	 width: 100%;
@@ -34,3 +38,119 @@
 					font-size: 1rem;
 					color: #cccccc;
 				}
+
+/***************
+* главное меню *
+***************/
+#main-menu{
+	background-color: #003366;
+	max-width: 100%;
+	width: 100%;
+}
+  #main_menu {
+    /*padding: 0;*/
+    background-color: #003366;
+  }
+	#main-menu nav{
+		margin: 0 auto;
+		max-width: 1280px;
+    	width: 100%;
+		/*padding: .3rem 0;*/
+    	background-color: transparent;
+	}
+    #main-menu ul {
+      background-color: transparent;
+    }
+		#main-menu li{
+			padding: .4rem .3rem .3rem;
+		}
+			#main-menu a{
+				color: #fff;
+				font-size: .95rem;
+			}
+
+
+/* версия планшетов */
+
+
+/* версия телефонов */
+
+
+/* поиск */
+/*#large-search{
+	padding: .4rem .5rem;
+}
+	.search-box{
+		position: relative;
+	}
+		#id_q{
+			margin-bottom: 0;
+			width: 0%;
+			max-width: 100%;
+			border: 2px solid #003366;
+			opacity: 0;
+			-webkit-transition: all .5s;
+	    	-moz-transition: all .5s;
+			transition: all .5s;
+		}
+		#btn-search{
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			margin: 0;
+			width: 15%;
+			background-image: url('/static/img/icons/search.svg'); 
+			background-repeat: no-repeat;
+			background-size: 100px;
+			background-position: -2px -5px;
+			background-color: #003366;
+			border: none;
+		}*/
+.disabled-search{
+	display: none;
+}
+
+/* эффекты */
+#main-menu li:hover{
+	padding: .4rem .3rem 0;
+	border-bottom: .3rem solid #90caf9;
+	-webkit-transition: border-bottom 0.25s ease-out, padding 0s;
+    -moz-transition: border-bottom 0.25s ease-out, padding 0s;
+    -o-transition: border-bottom 0.25s ease-out, padding 0s;
+    transition: border-bottom 0.25s ease-out, padding 0s;
+}
+	#main-menu li:hover a{
+		color: #90caf9;
+		-webkit-transition: all 0.25s ease-out;
+	    -moz-transition: all 0.25s ease-out;
+	    -o-transition: all 0.25s ease-out;
+	    transition: all 0.25s ease-out;
+	}
+
+/*
+.search-box:hover #id_q{
+	opacity: 1;
+	width: 100%;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	transition: all .3s;
+}
+.search-box:hover #btn-search{
+	box-shadow: 0 2px 1px 2px #012952;
+	-webkit-transition: box-shadow .2s .1s;
+	-moz-transition: box-shadow .2s .1s;
+	transition: box-shadow .2s .1s;		
+}
+#btn-search:hover{
+	cursor: pointer;
+	background-color: #fff;
+	background-image: url('/static/img/icons/search.svg');
+	background-position: -52px -5px;
+}
+#id_q:focus{
+	background-color: #fff;
+	opacity: 1;
+	box-shadow: none;
+	width: 100%;
+}*/

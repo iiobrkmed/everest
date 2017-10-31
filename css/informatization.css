@@ -1,14 +1,4 @@
 @charset "UTF-8";
-
-    .block-breadcrumbs {
-        background-color: #fff;
-        padding: .925rem;
-        box-shadow: 0 0px 2px #bfbfbf;
-    }
-        
-        .block-breadcrumbs ul {
-            margin-bottom: 0;
-        }
     
     #informatization-title {
         border-left: 3px solid #1D5399;
@@ -19,7 +9,7 @@
     .informatization-part {
         background-color: #fff;
         margin-bottom: .925rem;
-        box-shadow: 0 2px 5px #cecece;
+        box-shadow: 0 2px 2px #bbbbbb;
         padding: .925rem;
     }
     
@@ -79,13 +69,9 @@
                 background-color: #f7f7f7;
             }
         
-        #informat-content > div {
-            padding: 0;
-        }
+        #informat-content > div { padding: 0; }
         
-        #informat-content > div + div {
-            padding-right: 0;
-        }
+        #informat-content > div + div { padding-right: 0; }
         
             #informatization-news .article {
                 background-color: #fff;
@@ -101,32 +87,30 @@
                     transition: border-left-color cubic-bezier(0,0,0.58,1) .2s;
                 }
             
-                #informatization-news .article header {
-                    padding: 0;
-                }
+                #informatization-news .article header { padding: 0; }
                 
-                    #informatization-news .article-header {
-                        font-size: 1rem;
-                    }
+                    #informatization-news .article-header { font-size: 1rem; }
                         
-                        #informatization-news .article a {
-                            transition: color cubic-bezier(0,0,0.58,1) .2s;
-                        }
+                        #informatization-news .article a { transition: color cubic-bezier(0,0,0.58,1) .2s; }
                         
                             #informatization-news .article:hover a {
                                 color: #f00;
                                 transition: color cubic-bezier(0,0,0.58,1) .2s;
                             }
-                
+                            
+                            #informatization-news .article:hover time{
+                                color: #000;
+                                transition: color cubic-bezier(0,0,0.58,1) .2s;
+                            }
+                            
                 #informatization-news .article footer,
-                    #informatization-news .article footer div {
-                        padding: 0;
-                }
+                    #informatization-news .article footer div { padding: 0; }
                 
                 #informatization-news time.created,
                     #informatization-news time.changed {
                         font-size: .8rem;
                         color: #717171;
+                        transition: color cubic-bezier(0,0,0.58,1) .2s;
                 }
                 
                 #informatization-news .continue.has-tip {
@@ -136,31 +120,17 @@
                     cursor: default;
                 }
                     
-                    #informatization-news .continue.has-tip:hover {
-                        cursor: pointer;
-                    }
+                    #informatization-news .continue.has-tip:hover { cursor: pointer; }
                     
-                #informatization-news .pagination {
-                    margin-bottom: 0;
-                }
+                #informatization-news .pagination { margin-bottom: 0; }
                 
                     #informatization-news .pagination .show-for-sr {
                         position: relative !important;
                         -webkit-clip-path: none !important;
                         clip-path: none !important;
                     }
-        
-            #informatization-documents {
-                
-            }
             
-                #informatization-documents .accordion {
-                    margin-bottom: 0;
-                }
-                    
-                    #informatization-documents .accordion-item {
-                        
-                    }
+                #informatization-documents .accordion { margin-bottom: 0; }
                     
                         #informatization-documents .accordion-item.is-active {
                             border-top: 3px solid #1D5399;
@@ -173,39 +143,56 @@
                             border-top: 1px solid #1D5399;
                         }
                         
-                        #informatization-documents .accordion-item.is-active .accordion-title:hover {
-                            background-color: #d1e5ff;
-                        }
+                        #informatization-documents .accordion-item.is-active .accordion-title:hover { background-color: #d1e5ff; }
                     
                     #informatization-documents .accordion-title {
                         color: #000;
                         font-size: 1.3rem;
                     }
                     
-                        #informatization-documents .accordion-content li {
-                            line-height: 1.7;
-                        }
+                        #informatization-documents .accordion-content li { line-height: 1.7; }
                         
-                            #informatization-documents .accordion-content li:not(:last-child) {
-                                margin-bottom: .5rem;
-                            }
+                            #informatization-documents .accordion-content li:not(:last-child) { margin-bottom: .5rem; }
+                            
+                                #informatization-documents .paginate li {
+                                    display: block;
+                                    float: left;
+                                    width: 100%;
+                                }
+                                
+                                #informatization-documents .document { padding: 0; }
+                                
+                                    #informatization-documents .document > h5,
+                                        #informatization-documents .document p { margin-bottom: .3rem; }
+                                
+                                    #informatization-documents .document > div { padding: 0; }
+                                
+                                #informatization-documents #documents .pagination { margin-bottom: 0; }
+                                
+                                    #informatization-documents #documents .current {
+                                        padding: 0;
+                                        color: #fefefe;
+                                    }
+                                        
+                                        #informatization-documents #documents .current a { color: #fefefe; }
+                    
+                                            #informatization-documents #documents li.current:hover a {
+                                                background-color: transparent;
+                                                cursor: default;
+                                            }
+        
+        #informatization-main-indicators.informatization-part { margin-bottom: 0; }
         
         #informatization-main-indicators > h2 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
         
-        #informatization-main-indicators tr {
-            border: 1px solid #1D5399;
-        }
+        #informatization-main-indicators tr { border: 1px solid #1D5399; }
         
-            #informatization-main-indicators tbody tr {
-                background-color: transparent;
-            }
+            #informatization-main-indicators tbody tr { background-color: transparent; }
                 
-                #informatizationin-main-indicators table thead {
-                    color: #fff;
-                }
+                #informatizationin-main-indicators table thead { color: #fff; }
                 
                     #informatization-main-indicators table:nth-child(2) thead {
                         background-color: #1D5399;
@@ -217,12 +204,45 @@
                         color: #fff;
                     }
         
-        #informatization-help-video {
-            margin-top: .925rem;
-        }
+        #informatization-main-indicators .napriem-button { margin-bottom: 0; }
         
-            #informatization-help-video > h2 {
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
+    .helpful-informatization-video { margin: .925rem 0 1rem 0 !important; }
+    
+        .helpful-informatization-video > div { padding: 0 .4625rem 0 0; }
+        
+        .helpful-informatization-video > div + div { padding: 0 0 0 .4625rem; }
+        
+            .helpful-informatization-video .card {
+                margin-bottom: 0;
+                border-radius: 0;
+                box-shadow: 0 2px 2px #bbbbbb;
             }
+            
+                .helpful-informatization-video .card-section { padding: .5rem; }
+                
+                    .helpful-informatization-video h2 { font-size: 1.3rem; }
+                    
+                .helpful-informatization-video > div iframe { width: 99.85%; }
+                
+                .helpful-informatization-video > div + div iframe { width: 99.9%; }
+                
+    /* Small only */
+    @media screen
+    and (max-width: 39.9375em) {
         
+        #informatization-news .pagination li,
+            #documents .pagination li { display: inline-block; }
+        
+        .helpful-informatization-video { margin-bottom: 0 !important; }
+        
+            .helpful-informatization-video > div,
+                .helpful-informatization-video > div + div {
+                    padding: 0;    
+            }
+            
+            .helpful-informatization-video > div { margin-bottom: .925rem; }
+            
+        #informatization-documents .accordion-content li { line-height: 2; }
+            
+        #informatization-documents .accordion-content li:not(:last-child) { margin-bottom: 1.5rem; }
+    }

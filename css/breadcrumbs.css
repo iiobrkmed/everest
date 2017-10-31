@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+    .breadcrumbs-container { max-width: 100%;}
+    
+        .breadcrumbs-container #navigation-breadcrumbs {
+            padding: .625rem 1rem;
+            box-shadow:0 0px 2px #bfbfbf;
+            background-color: #fff;
+        }
+        
+            .breadcrumbs-container #navigation-breadcrumbs > div {
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+                float: none;
+            }
+            
+                .breadcrumbs-container #navigation-breadcrumbs ul.breadcrumbs { margin-bottom: 0; }
