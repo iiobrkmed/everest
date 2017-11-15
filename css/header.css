@@ -48,7 +48,7 @@
 	width: 100%;
 }
   #main_menu {
-    /*padding: 0;*/
+    padding: .001rem;
     background-color: #003366;
   }
 	#main-menu nav{
@@ -77,37 +77,78 @@
 
 
 /* поиск */
-/*#large-search{
+#main-menu nav{
+	position: relative;
+}
+#main-menu nav .menu{
+	z-index: 150;
+}
+.search-container{
+	width: 10%;
+	z-index: 200;
+	position: absolute;
+	top: 0;
+	right: 0;
 	padding: .4rem .5rem;
 }
-	.search-box{
-		position: relative;
+.prior-high{
+	z-index: 350;
+	width: 100%;
+}
+	.opn-btn_search{
+		float: right;
+		cursor: pointer;
 	}
-		#id_q{
-			margin-bottom: 0;
-			width: 0%;
-			max-width: 100%;
-			border: 2px solid #003366;
-			opacity: 0;
-			-webkit-transition: all .5s;
-	    	-moz-transition: all .5s;
-			transition: all .5s;
+	.opn-btn_search:hover{
+	}
+	.search-line{
+	/* 	position: absolute; */
+		background-color: #fff;
+		max-width: 1280px;
+		width: 100%;
+	}
+		.search-box{
+			position: relative;
 		}
-		#btn-search{
+			#id_q{
+				margin: 0 3rem;
+				margin-bottom: 0;
+				width: 100%;
+				max-width: 90%;
+				-webkit-transition: all .5s;
+				-moz-transition: all .5s;
+				transition: all .5s;
+				border: none;
+				box-shadow: none;
+			}
+			#btn-search{
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 100%;
+				margin: 0;
+				min-width: 3rem;
+				background-image: url('/static/img/icons/search.svg'); 
+				background-repeat: no-repeat;
+				background-size: 100px;
+				background-position: -52px -5px;
+				background-color: rgba(0, 0, 0, 0);
+				border: none;
+				cursor: pointer;
+			}
+		.cls-btn_search{
 			position: absolute;
-			right: 0;
 			top: 0;
+			right: 0;
 			height: 100%;
-			margin: 0;
-			width: 15%;
-			background-image: url('/static/img/icons/search.svg'); 
-			background-repeat: no-repeat;
-			background-size: 100px;
-			background-position: -2px -5px;
-			background-color: #003366;
-			border: none;
-		}*/
+			padding: .1rem 1rem;
+			font-size: 1.2rem;
+			font-weight: bold;
+			color: #003366;
+			cursor: pointer;
+		}
 .disabled-search{
+	width: 0%;
 	display: none;
 }
 

@@ -2,17 +2,14 @@
 
 <section class="row" id="interview" data-magellan-target="interview">
     <h2 class="chapter interview-header">Интервью с врачом</h2>
-    	<div id="interview-row" class="row">
-    		<div class="orbit" id="interview-line" data-orbit  data-timer-delay="10000">
-    			<div class="orbit-controls">
-	            	<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-	            	<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-	        	</div>
+    	<div class="orbit" id="interview-row" class="row" data-orbit  data-timer-delay="10000">
+    		<div id="interview-line">
 	           	{% for block in interview %}
                 <div class="orbit-slide">                      
                 {% for article in block %}
                   {% if article %}
                     <div class="large-6 medium-6 small-12 columns interview-cell">
+                      <a href="{{ article.get_absolute_url }}">
                       <div class="interview-preview">
                         <div class="interview-picture">
                           {% if article.get_main_image %}
@@ -27,39 +24,23 @@
                           <div class="int-theme">{{ article.title }}</div>
                         </div>
                       </div>
+                      </a>
                     </div>
                   {% endif %}
                 {% endfor %}                      
                 </div>
               {% endfor %}
-        	</div>
-        	<div class="" id="interview-btn"><a href="#" class="secondary button">Выбрать интервью</a></div>
+        </div>
+          <nav class="orbit-controls" id="interview_control-panel">
+              <div id="interview_controls">  
+                <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;<!--&#60;--><!-- &larr; --></button>
+                <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;<!--&#62;--><!-- &rarr; --></button>
+              </div>
+              <div class="" id="interview-btn">
+                  <a href="/category/bryanskaya-medicina/" class="secondary button">
+                    <span>Список&nbsp;интервью</span>
+                  </a>
+              </div>
+            </nav>
     	</div>  
 </section>
-
-
-<!-- 
-{% for block in interview %}
-                <div class="orbit-slide">                      
-                {% for article in block %}
-                  {% if article %}
-                    <div class="large-6 medium-6 small-12 columns interview-cell">
-                      <div class="interview-preview">
-                        <div class="interview-picture">
-                          {% if article.get_main_image %}
-                          {% thumbnail article.get_main_image.img 450x230 box=article.get_main_image.interview_cropping crop upscale detail as im %}
-                          <img src="{{ im.url }}" alt="{{ article.get_main_image.alt }}" title="{{ article.get_main_image.title }}" width="{{ im.width }}" height="{{ im.height }}"/>
-                          {% else %}
-                          <img src="/media/uploads/pictures/default-news.jpg" alt="{{ article.title }}" title="{{ article.title }}" width="450" height="230"/>
-                          {% endif %}
-                        </div>
-                        <div class="interview-discription">
-                          <div class="int-tezis">{{ article.short_text }}</div>
-                          <div class="int-theme">{{ article.title }}</div>
-                        </div>
-                      </div>
-                    </div>
-                  {% endif %}
-                {% endfor %}                      
-                </div>
-              {% endfor %} -->

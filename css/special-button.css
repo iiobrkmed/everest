@@ -1,0 +1,45 @@
+@charset "UTF-8";
+    
+    .posibility-mode-on:hover {
+        cursor: pointer;
+    }
+    
+        .posibility-mode-on:hover span:not(.posibility-mode_img) {
+            color: #f00;
+        }
+    
+	.posibility-mode_img {
+		background-image: url('/static/img/sidebar/glasses.svg');
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: 0 -30%;
+		width: 3.5rem;
+		height: 2rem;
+		float: left;
+	}
+	.posibility-mode-on .posibility-mode_img + span{
+		color: #003366;
+		float: left;
+        padding: 0 .925rem 0 1rem;
+        line-height: 2.7;
+	}
+
+@media screen and (max-width: 1100px){
+    .posibility-mode-on_container {
+        display: none;
+    }
+    
+    #navi-center > div {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .breadcrumbs-container .posibility-mode-on { bottom: 0.5rem; }
+}
+
+@media screen and (max-width: 1100px) {
+    .posibility-mode-on_container {
+        display: none;
+    }
+}

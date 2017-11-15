@@ -1,7 +1,12 @@
-<section class="row" id="video" data-magellan-target="video">
+<section class="row" id="video" data-magellan-target="video" data-magellan-target="video">
+    
+    <div class="row">
+        <h2 class="chapter video-header">Видео</h2>
+    </div>
+    
+    <div class="row youtube-logo"></div>
   
-  <div class="youtube-logo"></div>
-  
+  <div class="row">
   <div class="large-9 medium-8 small-12 columns player-container">
   
     <div class="channel-preview">
@@ -28,7 +33,7 @@
       </div>
       
       <div class="large-8 medium-5 small-5 columns" id="subscribe-container">
-        <button type="button" id="subscribe-button" data-tooltip aria-haspopup="true" data-template-classes="video-button-tooltip" class="has-tip right" data-disable-hover="false" tabindex="1" data-click-open="false" title="Подписаться">Подписаться <span id="subscribe-count"></span></button>
+        <button type="button" id="subscribe-button" data-tooltip aria-haspopup="true" data-template-classes="video-button-tooltip" class="has-tip right subscribe-none" data-disable-hover="false" tabindex="1" data-click-open="false" title="Подписаться">Подписаться <span id="subscribe-count"></span></button>
       </div>
       
       <div class="large-4 medium-7 small-7 columns rate text-center">
@@ -63,16 +68,17 @@
               </g>
             </svg>
             <div class="text-left" id="shared-button-text">Поделиться</div>
-            <div class="shared-block" style="display:none;">
-                <div class="large-12 medium-12 small-12 columns text-left">
-                    <span>Поделиться</span>
-                </div>
-                <input type="text" id="shared-link-input" />
-                <div class="large-12 medium-12 small-12 columns">
-                    <button type="button" class="float-right" id="copy-shared-link">Скопировать</button>
-                </div>
-            </div>
           </button>
+          <div class="shared-block" style="display:none">
+            <a href="#" class="close" id="close-shared-block">&times;</a>
+            <div class="large-12 medium-12 small-12 columns text-left">
+                <span>Поделиться</span>
+            </div>
+            <input type="text" id="shared-link-input" value=""></input>
+            <div class="large-12 medium-12 small-12 columns">
+                <button type="button" class="float-right" id="copy-shared-link-button">Скопировать</button>
+            </div>
+          </div>
         </div>
           
       </div>
@@ -84,4 +90,5 @@
   </div>
   
   <div class="large-3 medium-4 small-12 columns" id="playlists-container"></div>
+  </div>
 </section>

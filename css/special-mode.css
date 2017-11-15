@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+/*temp*/
+#special-mode-controls-container button.active { background-color: #f00; }
+    #special-mode-controls-container {
+        display: none;
+        padding: .925rem 0;
+    }
+    #special-mode-controls-container.is-show { display: block; }
+    .posibility-mode-on-container { background-color: transparent; }
+    .posibility-mode-on-container.is-active,
+        #special-mode-controls-container.is-show { background-color: #f9f9f9; }
+        
+    .posibility-mode-off:hover {
+        cursor: pointer;
+        color: #f00;
+    }
+    
+/*end_temp*/
+
+/*specials-controns*/
+    #normal-font { font-size: 100%; }
+    
+    #big-font { font-size: 150%; }
+    
+    #large-font { font-size: 200%; }
+    
+    #normal-spacing { letter-spacing: 0; }
+    
+    #big-spacing { letter-spacing: 2px; }
+    
+    #large-spacing { letter-spacing: 4px; }
+/*end_specials-controls*/
+
+
+/*global-special-style*/
+
+/*end_global-special-style*/
+
+
+/*header*/
+
+/*end_header*/
+
+
+/*main-menu*/
+
+/*end_main-menu*/
+
+
+/*sticky-navigation*/
+
+/*end_sticky-navigation*/
+
+
+/*breadcrumbs*/
+
+/*end_breadcrumbs*/
+
+
+/*main-news*/
+
+/*end_main-news*/
+
+
+/*vks-conference*/
+
+/*end_vks-conference*/
+
+
+/*news*/
+
+/*end_news*/
+
+
+/*populations*/
+
+/*end_populations*/
+
+
+/*main-informatization*/
+
+/*end_main-informatization*/
+
+
+/*interview*/
+
+/*end_interview*/
+
+
+/*video*/
+
+/*end_video*/
+
+
+/*docs*/
+
+/*end_docs*/
+
+
+/*footer*/
+
+/*end_footer*/
+
+
+/*secondary-menu*/
+
+/*end_secondary-menu*/

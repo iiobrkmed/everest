@@ -6,7 +6,7 @@
 
 #sidebar{
     /*box-shadow: 0 3px 10px 1px #d0d0d0;*/
-    padding: 1.5rem .5rem 0;
+    padding: 0 .5rem;
 /*     background-color: rgb(0, 51, 102); */
 }
 
@@ -30,6 +30,9 @@
 	.hotline{
 		background-image: url('/static/img/sidebar/hotline.svg');
 	}
+	.egisz-banner{
+		background-image: url('/static/img/sidebar/knkt-center.svg');
+	}
 
 
 /*****************
@@ -40,12 +43,15 @@
 	margin-bottom: .5rem;
 	box-shadow: 0 2px 2px #bbbbbb;
 	padding: .001rem;
+	/*overflow-x: hidden;*/
 }
 	#secondary-menu li{
 /* 		margin-bottom: .5rem; */
 /* 		box-shadow: 0px 2px 2px 1px #444444; */
 		padding: .7rem .7rem;
 		background-color: #003366;
+/* 		border-bottom: .2rem solid: */
+		/*box-shadow: 0 .5rem 2rem .6rem #001e3c;*/
 	}
 	#secondary-menu li:nth-child(even){
 		background-color: #00386f;
@@ -59,7 +65,7 @@
 				color: #ffffff;
 				padding-top: .5rem;
 				font-size: .9rem;
-				text-align: right;
+/* 				text-align: right; */
 				position: absolute;
 				padding-right: .5rem;
 				top: 10%;
@@ -132,3 +138,10 @@
     transition: border-bottom 0.25s ease-out, padding 0s;
     color: #90caf9;
 }
+.panel-links li:hover{
+	border-bottom: .1rem solid rgba(80, 20, 20, 1);
+	background-color: rgba(100, 30, 30, 1);
+}
+	.panel-links li:hover a{
+		color: white;
+	}

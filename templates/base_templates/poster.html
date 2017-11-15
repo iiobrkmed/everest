@@ -1,24 +1,94 @@
-{% if general_ad %}
-    <div class="columns small-12 medium-12 large-12 general_poster">
-        <h3 class="article-header">
-            <a href="{{ general_ad.slug }}">
-                <span>{{ general_ad.title }}</span>
-            </a>
-        </h3>
-        <div class="left">
-            {% include 'app/content/date.html' with article=general_ad %}
+<div class="row" id="events-container">
+    <ul class="tabs" data-tabs id="main_events-tabs">
+        <li class="tabs-title is-active">
+            <a href="#poster-tab" aria-selected="true" class=""><span>Объявления<span></a>
+        </li>
+        <li class="tabs-title">
+            <a data-tabs-target="conference-tab" href="#conference-tab" class=""><span class="conference-tab-label">Конференции</span><span class="label">Ближайшая: 13.11.2017 г.</span></a>
+        </li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="main_events-tabs" data-equalizer="container" data-equalize-on="medium">
+        <div class="tabs-panel is-active" id="poster-tab" data-equalizer-watch="container">
+            <div class="row" id="main-news">
+                <div class="row posters-block">    
+                    {% if general_ad %}
+                        <div class="columns small-12 medium-12 large-12 general_poster">
+                            <h3 class="article-header">
+                                <a href="{{ general_ad.get_absolute_url }}">
+                                    <span>{{ general_ad.title }}</span>
+                                </a>
+                            </h3>
+                            <div class="left">
+                                {% include 'app/content/date.html' with article=general_ad %}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% for ad in ads %}
+                        <div class="columns small-12 medium-12 large-4 {% if not general_ad %}{% if forloop.first %}large-12 general_{% endif %}{% endif %}poster{% if forloop.last %} end{% endif %}" data-equalizer-watch="posts">
+                            <h3 class="article-header">
+                                <a href="{{ ad.get_absolute_url }}">
+                                    <span>{{ ad.title }}</span>
+                                </a>
+                            </h3>
+                            <div class="left">
+                               {% include 'app/content/date.html' with article=ad %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="tabs-panel" id="conference-tab" data-equalizer-watch="container">
+            <div class="row conference-line">
+                <!-- <h3 class="conference-header">Конференции</h3> -->
+                <div class="row">
+                    <div class="large-4 medium-6 small-12 columns conference-cell">
+                        <div class="large-4 columns conference-date-container">
+                            <span class="conference-day">СР</span>
+                            <span class="conference-date">13 Окт</span>
+                            <span class="conference-time">13:00</span>
+                        </div>
+                        <div class="large-8 columns conference-name">
+                            <h4 class="conference-title">
+                                <a href="#">
+                                    <span>Областная конференция врачей психиатров-наркологов</span>
+                                </a>
+                            </h4>
+                            <span class="position-event"><i class="fi-marker large"></i></i>&nbsp;ГБУЗ БОНД</span>
+                        </div>
+                    </div>
+                    <div class="large-4 medium-6 small-12 columns conference-cell">
+                        <div class="large-4 columns conference-date-container">
+                            <span class="conference-day">СР</span>
+                            <span class="conference-date">13 Окт</span>
+                            <span class="conference-time">13:00</span>
+                        </div>
+                        <div class="large-8 columns conference-name">
+                            <h4 class="conference-title">
+                                <a href="#">
+                                    <span>Областная конференция врачей психиатров-наркологов</span>
+                                </a>
+                            </h4>
+                            <span class="position-event"><i class="fi-marker large"></i></i>&nbsp;ГБУЗ БОНД</span>
+                        </div>
+                    </div>
+                    <div class="large-4 medium-6 small-12 columns conference-cell">
+                        <div class="large-4 columns conference-date-container">
+                            <span class="conference-day">СР</span>
+                            <span class="conference-date">13 Окт</span>
+                            <span class="conference-time">13:00</span>
+                        </div>
+                        <div class="large-8 columns conference-name">
+                            <h4 class="conference-title">
+                                <a href="#">
+                                    <span>Областная конференция врачей психиатров-наркологов</span>
+                                </a>
+                            </h4>
+                            <span class="position-event"><i class="fi-marker large"></i></i>&nbsp;ГБУЗ БОНД</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-{% endif %}
-{% for ad in ads %}
-    <div class="columns small-12 medium-12 large-4 {% if not general_ad %}{% if forloop.first %}large-12 general_{% endif %}{% endif %}poster{% if forloop.last %} end{% endif %}" data-equalizer-watch="posts">
-        <h3 class="article-header">
-            <a href="{{ ad.slug }}">
-                <span>{{ ad.title }}</span>
-            </a>
-        </h3>
-        <div class="left">
-           {% include 'app/content/date.html' with article=ad %}
-        </div>
-    </div>
-{% endfor %}
+</div>

@@ -1,32 +1,42 @@
 {% load mptt_tags %}
-<div class="row breadcrumbs-container hide-for-small-only" data-sticky-container>
-  <nav aria-label="Вы здесь:" role="navigation" class="block-breadcrumbs" data-sticky data-margin-top="0" data-sticky-on="medium" data-top-anchor="navigation-breadcrumbs" id="navigation-breadcrumbs">
-    <div class="large-12 medium-12 columns">
-      <ul class="breadcrumbs">
-        <li>
-            <a href="/">Главная</a>
-        </li>
-        {% if article %}
-          {% with article.category as category  %}
-            {% for ancestor in category.get_ancestors %}
-            <li><a href="{{ ancestor.get_absolute_url }}">{{ ancestor.title }}</a></li>
-            {% endfor %}
-            <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
-          {% endwith %}
-          <li class="disabled">{{ article.title }}</li>
-        {% endif %}
-        
-        {% if category %}
-        {% for ancestor in category.get_ancestors %}
-        <li><a href="{{ ancestor.get_absolute_url }}">{{ ancestor.title }}</a></li>
-        {% endfor %}
-        <li class="disabled">{{ category.title }}</li>
-        {% endif %}
-        
-        {% if app %}
-        <li class="disabled">{{ app }}</li>
-        {% endif %}
-      </ul>
-    </div>
-  </nav>
+
+<div class="row breadcrumbs-container hide-for-small-only" data-sticky-container style="max-width:100%;">
+    <nav aria-label="Вы здесь:" role="navigation" class="top-bar block-breadcrumbs" data-sticky data-margin-top="0" data-sticky-on="medium" data-top-anchor="navigation-breadcrumbs" id="navigation-breadcrumbs">
+        <div class="row" id="navi-center">
+            <div class="large-9 medium-12 small-12 columns">
+                <ul class="breadcrumbs">
+                    <li>
+                        <a href="/">Главная</a>
+                    </li>
+                    {% if article %}
+                      {% with article.category as category  %}
+                        {% for ancestor in category.get_ancestors %}
+                        <li><a href="{{ ancestor.get_absolute_url }}">{{ ancestor.title }}</a></li>
+                        {% endfor %}
+                        <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+                      {% endwith %}
+                      <li class="disabled">{{ article.title }}</li>
+                    {% endif %}
+                    
+                    {% if category %}
+                    {% for ancestor in category.get_ancestors %}
+                    <li><a href="{{ ancestor.get_absolute_url }}">{{ ancestor.title }}</a></li>
+                    {% endfor %}
+                    <li class="disabled">{{ category.title }}</li>
+                    {% endif %}
+                    
+                    {% if app %}
+                    <li class="disabled">{{ app }}</li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="large-3 medium-3 small-3 columns text-right posibility-mode-on-container">
+                <button class="posibility-mode-on">
+                    <span class="posibility-mode_img"></span>
+                    <span class="posibility-mode_text">Версия для слабовидящих</span>
+                </button>
+            </div>
+        </div>
+        {% include 'global_templates/special-mode-controls.html' %}
+    </nav>
 </div>

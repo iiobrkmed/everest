@@ -183,6 +183,7 @@
                 </div>
             </div>
             <div class="large-7 medium-7 small-12 columns" id="informatization-news" data-equalizer-watch>
+                <h2 id="informatization-news-header">Новости</h2>
                 {% paginate 5 articles using "news" %}
                 {% for article in articles %}
                     {% include 'content/article_template_3.html' %}

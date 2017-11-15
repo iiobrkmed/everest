@@ -1,0 +1,52 @@
+<div class="row" id="special-mode-controls-container">
+    <div class="row">
+        <div class="large-6 columns text-left">
+            <div class="large-6 columns button-group">
+                <button type="button" class="" id="help-special-mode">Справка</button>
+            </div>
+        </div>
+        <div class="large-6 columns text-right">
+            <button type="button" class="posibility-mode-off">Обычная версия</button>
+        </div>
+    </div>
+    <div class="row" id="special-mode-controls" data-equalizer="foo">
+        <div class="large-3 columns" id="font-size" data-equalizer="bar" data-equalizer-watch="foo">
+            <p class="text-center">Размер шрифта</p>
+            <div class="expanded button-group" data-equalizer="baz" data-equalizer-watch="bar">
+                <button type="button" class="button" id="normal-font" title="Стандартный шрифт" data-equalizer-watch="baz">AAA</button>
+                <button type="button" class="button" id="big-font" title="Увеличенный шрифт" data-equalizer-watch="baz">AAA</button>
+                <button type="button" class="button" id="large-font" title="Большой шрифт" data-equalizer-watch="baz">AAA</button>
+            </div>
+            <div class="large-12 medium-12 columns text-center selected-title" id="font-selected-title"></div>
+        </div>
+        <div class="large-3 columns" id="contrast">
+            <p class="text-center">Контраст</p>
+            <div class="expanded button-group" data-equalizer="baz" data-equalizer-watch="bar">
+                <button type="button" class="button" id="normal-contrast" title="Стандартный контраст" data-equalizer-watch="baz">AAA</button>
+                <button type="button" class="button" id="high-contrast" title="Усиленный контраст" data-equalizer-watch="baz">AAA</button>
+                <button type="button" class="button" id="invert-contrast" title="Инвертированный контраст" data-equalizer-watch="baz">AAA</button>
+            </div>
+            <div class="large-12 medium-12 columns text-center selected-title" id="contrast-selected-title"></div>
+        </div>
+        <div class="large-3 columns" id="spacing" data-equalizer="baz" data-equalizer-watch="bar">
+            <p class="text-center">Межбуквенный интервал</p>
+            <div class="expanded button-group">
+                <button type="button" class="button" id="normal-spacing" title="Стандартный межбуквенный интервал" data-equalizer-watch="baz">AAA</button>
+                <button type="button" class="button" id="big-spacing" title="Увеличенный межбуквенный интервал" data-equalizer-watch="baz">AAA</button>
+                <button type="button" class="button" id="large-spacing" title="Большой межбуквенный интервал" data-equalizer-watch="baz">AAA</button>
+            </div>
+            <div class="large-12 medium-12 columns text-center selected-title" id="spacing-selected-title"></div>
+        </div>
+        <div class="large-3 columns text-center" id="visible-img">
+            <p>Изображения</p>
+            <div class="switch large">
+              <input class="switch-input" id="on-off" type="checkbox" name="toggle-visible-img" title="Показать/Скрыть изображения">
+              <label class="switch-paddle" for="on-off">
+                <span class="switch-active" aria-hidden="true">Вкл</span>
+                <span class="switch-inactive" aria-hidden="true">Выкл</span>
+              </label>
+            </div>
+            <div class="large-12 medium-12 columns text-center selected-title" id="visible-img-selected-title">Изображения <span id="img-visible-status"></span></div>
+        </div>
+    </div>
+</div>

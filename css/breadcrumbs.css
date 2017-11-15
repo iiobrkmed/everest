@@ -1,18 +1,24 @@
 @charset "UTF-8";
 
-    .breadcrumbs-container { max-width: 100%;}
+    .breadcrumbs-container #navigation-breadcrumbs.top-bar {
+        flex-wrap: wrap;
+        padding: 0;
+        background-color: #fff;
+        box-shadow: 0 1px 2px rgba(200, 200, 200, .7);
+    }
     
-        .breadcrumbs-container #navigation-breadcrumbs {
-            padding: .625rem 1rem;
-            box-shadow:0 0px 2px #bfbfbf;
+        .breadcrumbs-container ul.breadcrumbs {
+            margin-bottom: 0;
+            padding: .925rem 0;
             background-color: #fff;
         }
         
-            .breadcrumbs-container #navigation-breadcrumbs > div {
-                max-width: 1280px;
+            .breadcrumbs-container #navi-center {
+                width: 1280px;
                 margin-left: auto;
                 margin-right: auto;
-                float: none;
             }
             
-                .breadcrumbs-container #navigation-breadcrumbs ul.breadcrumbs { margin-bottom: 0; }
+            .breadcrumbs-container .posibility-mode-on-container {
+                padding: 0;
+            } 

@@ -20,7 +20,7 @@
         
             #informatization-indicators-chart #informatization-chart {
                 width: 3400px;
-                height: 400px;
+                height: 430px;
                 margin: 0 auto;
             }
           
@@ -56,7 +56,7 @@
                 fill-opacity: 1;
             }
         
-            #informatization-indicators-chart .highcharts-legend { display: none; }
+            #informatization-indicators-chart .highcharts-legend { display: block; }
           
             #informatization-indicators-chart .highcharts-plot-band-label  {
                 top: 13px !important;
@@ -72,20 +72,19 @@
         #informat-content > div { padding: 0; }
         
         #informat-content > div + div { padding-right: 0; }
-        
+            
+            #informatization-news h2#informatization-news-header {
+                padding-left: 1.5rem;
+                font-size: 2rem;
+            }
+            
             #informatization-news .article {
                 background-color: #fff;
                 margin-bottom: .925rem;
-                box-shadow: 0 2px 5px #cecece;
+                box-shadow: 0 0px 2px #bfbfbf;
                 padding: .925rem;
-                border-left: 3px solid #1D5399;
                 transition: border-left-color cubic-bezier(0,0,0.58,1) .2s;
             }
-            
-                #informatization-news .article:hover {
-                    border-left-color: #f00;
-                    transition: border-left-color cubic-bezier(0,0,0.58,1) .2s;
-                }
             
                 #informatization-news .article header { padding: 0; }
                 
@@ -98,9 +97,10 @@
                                 transition: color cubic-bezier(0,0,0.58,1) .2s;
                             }
                             
-                            #informatization-news .article:hover time{
-                                color: #000;
-                                transition: color cubic-bezier(0,0,0.58,1) .2s;
+                            #informatization-news .article:hover time.created,
+                                #informatization-news .article:hover time.changed {
+                                    color: #000;
+                                    transition: color cubic-bezier(0,0,0.58,1) .2s;
                             }
                             
                 #informatization-news .article footer,

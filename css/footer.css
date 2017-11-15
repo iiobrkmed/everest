@@ -12,7 +12,8 @@
 		#footer-brkmed .footer-container{
 			max-width: 1280px;
 			margin: 0 auto;
-			color: #fff;	
+			color: #fff;
+			padding: 2rem 0;	
 		}
 			#footer-brkmed ul.about-org{
 

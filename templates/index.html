@@ -24,22 +24,27 @@
   <link rel="stylesheet" type="text/css" href="{% static 'foundation-icons/foundation-icons/foundation-icons.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/vks_conference.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/news.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/sidebar.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/poster.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/populations.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'Highcharts-5.0.14/css/highcharts.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/main-informatization.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/video.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/useresources.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/interview.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/special-button.css' %}">
   <link rel="alternate" type="application/rss+xml" title="Последние новости здравоохранения Брянской области" href="http://www.brkmed.ru/latest/feed/"> 
     {% if not homepage %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/breadcrumbs.css' %}">
+        {% else %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/sticky_navigation.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main-informatization.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/gosuslugi/css/common.css' %}">
     {% endif %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/special-mode.css' %}">
     {% block extra_css %}
     
     {% endblock %}
@@ -55,23 +60,9 @@
       {# include 'global_templates/headerfordevices.html' with homepage=homepage #}
     {% endblock %}
     
-    {% block navigation %}    
+    {% block navigation %}
         {% if homepage %}
-            <div class="row hide-for-small-only" data-sticky-container style="max-width:100%;">
-              <div class="top-bar" data-sticky data-margin-top="0" data-sticky-on="medium" data-top-anchor="navigation-menu" id="navigation-menu">        
-                <div id="navi-center">          
-                  <ul class="menu" data-magellan data-animation-easing="linear" data-animation-duration="300">
-                   {#  <li><input type="search" placeholder="Поиск по сайту" name="search"></li>  #}
-                    <li><a href="#news">#Новости</a></li>
-                    <li><a href="#populations">#Населению</a></li>
-                    <li><a href="#main_informatization">#Информатизация</a></li>
-                    <li><a href="#interview">#Интервью</a></li>
-                    <li><a href="#broadcast">#Видео</a></li>
-                    <li><a href="#docs">#Полезные ресурсы</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            {% include 'base_templates/sticky_navigation.html' %}
         {% else %}
           {% include 'global_templates/breadcrumbs.html' %}
         {% endif %}
@@ -82,10 +73,11 @@
 {#  MAIN_CONTENT  #}
       <div class="large-9 medium-8 small-12 columns" id="news" data-magellan-target="news">
         {% block ads %}
-          <div class="row" id="main-news" data-equalizer="posts">
             {% include 'base_templates/poster.html' with ads=ads general_ad=general_ad %}
-          </div>
         {% endblock ads %}
+        
+        {% include 'base_templates/vks_conference.html' %}
+        
 {#  POSTCARDS  #}
         {% block postcards %}
           
@@ -93,9 +85,9 @@
 {#  /POSTCARDS  #}
 {#  NEWS  #}
         <h2 class="chapter news-header">Новости</h2>
-         {% block news %}
-            {% include 'base_templates/news.html' with news=news %}
-         {% endblock news %}
+        <div class="row endless_page_template" id="main-content">
+          {% include 'base_templates/news_list.html' with news=news %}
+        </div>
       </div>
 {#  /NEWS  #}
 {#  ASIDE  #}
@@ -118,25 +110,11 @@
            {% include 'base_templates/panellinks.html' %}
           </nav>
 
-          <div class="banner-nsok">
+          <div class="nsok">
             <a href="http://nsok.brkmed.ru/visible/">
-              <img src="./Департамент здравоохранения Брянской области. Официальный сайт_files/banner-nsok.png" alt="Независимая оценка качества оказания услуг медицинскими организациями">
+              <img src="{% static 'img/sidebar/nsok.svg' %}">
             </a>
           </div>
-
-{#  VKS  #}
-          <div class="large-12 columns event-container vks">
-            <h3 class="text-center header-event">Совещания по ВКС</h3>
-                  <div class="large-12 columns event">
-                    <p>В ближайшее время запланированных видеоконференций нет.</p>
-                  </div>
-              </div>
-{#  /VKS  #}
-{#  EVENTS  #}
-              {% block developments %}
-
-              {% endblock %}
-{# /EVENTS #}
         </aside>
       {% endblock %}
     </div>
@@ -162,7 +140,7 @@
     {% endblock %}
 {# /INTERVIEW #}
 
-    <div class="row"><h2 class="chapter video-header">Видео</h2></div>
+    
     {% block video %}
       {% include 'base_templates/video.html' %}
     {% endblock video %}
@@ -184,7 +162,8 @@
   <script type="text/javascript" src="{% static 'js/foundation.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/newsbuttons.js' %}"></script>
-
+  <script type="text/javascript" src="{% static 'js/search.js' %}"></script>
+    
   
 
 <!-- {#  <script type="text/javascript" src="{% static 'js/cd252cfd38d9.js' %}"></script>  #} -->
@@ -197,13 +176,19 @@
     <script type="text/javascript" src="{% static 'js/video.js' %}"></script>
     <script type="text/javascript" src="{% static 'Highcharts-5.0.14/js/highcharts.js' %}"></script>
     <script type="text/javascript" src="{% static 'Highcharts-5.0.14/js/modules/exporting.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery_pagination/js/jquery.paginate.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/countUp.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/informatization-chart.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/informatization.js' %}"></script>
+    <script type="text/javascript" src="{% static 'gosuslugi/js/common.min.js' %}"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
   {% endif %}
-  
-   <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+    <script type="text/javascript" src="{% static 'js/js.cookie.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/special-mode.js' %}"></script>
   
 {% block extra_js %}  
-  
+  <script src="{% static 'el-pagination/js/el-pagination.js' %}"></script>
+  <script>$.endlessPaginate();</script>
 {% endblock %}
 
 
