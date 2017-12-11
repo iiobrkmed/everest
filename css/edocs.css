@@ -1,0 +1,162 @@
+.search-list {
+    padding-left: 0;
+}
+    #search_docs {
+        position: relative;
+    }
+    .search-list .buttonHolder {
+        position: absolute;
+        right: 0;
+        top: 24px;
+    }
+ul.switch_docs.tabs {
+    border-bottom: 1px solid #e6e6e6;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    height: 3rem;
+}
+    .switch_docs li.tabs-title {
+        background-color: rgba(230, 230, 230, .35);
+        width: 50%;
+        text-align: center;
+    }
+    .switch_docs li.tabs-title.is-active {
+        background-color: #fff;
+        border-top: 1px solid #e6e6e6;
+        border-left: 1px solid #e6e6e6;
+        border-right: 1px solid #e6e6e6;
+    }
+    .switch_docs li.tabs-title:hover {
+        background-color: none;
+    }
+        .switch_docs li.tabs-title > a {
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+        }
+        .switch_docs li.tabs-title > a:hover {
+            background: initial;
+            text-decoration: underline; 
+        }
+        .switch_docs li.tabs-title.is-active a {
+            color: #0a0a0a;
+        }
+        .switch_docs li.tabs-title.is-active a:hover {
+            color: #0a0a0a;
+            cursor: default;
+            text-decoration: none;
+        }
+.add_docs {
+    margin: 2rem 0;
+}
+.list_docs {
+    padding-top: 1.5rem;
+}
+    .list_docs .pagination {
+        margin-top: 1rem;
+    }
+    .documents.columns {
+        padding-left: 0;
+        padding-right: 0;
+    }
+        .documents section {
+            padding: 1rem;
+        }
+        .documents section:nth-child(2n) {
+            background-color: rgba(230, 230, 230, .35);
+        }
+    table.folders_list {
+        margin-top: 1rem;
+    }
+        table.folders_list thead {
+            background: transparent;
+            color: #0a0a0a;
+        }
+        table.folders_list thead, table.folders_list tbody, table.folders_list tfoot {
+            border-bottom: 1px solid #f1f1f1;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            background-color: transparent;
+        }
+         table.folders_list thead th, table.folders_list tbody th, table.folders_list tbody td {
+            padding: 1rem 0.625rem 1rem 0;
+        }
+        table.folders_list tbody td:first-of-type {
+            padding-right: 1.3rem;
+        }
+        table.folders_list tbody tr, table.folders_list tbody tr:nth-child(even) {
+            border-bottom: 1px solid #f1f1f1;
+            background-color: transparent;
+        }
+        table.folders_list tbody tr:last-child {
+            border-bottom: none;
+        }
+            table.folders_list h4 {
+                font-size: 1.2rem;
+                margin-bottom: 0;
+            }
+            table.folders_list a.button {
+                margin: 1rem 0 0 0;
+            }
+
+/*Forms*/
+#createDocumentModal form .row {
+    padding-bottom: .5rem;
+    margin-top: .5rem;
+}
+#createDocumentModal #div_id_folder .chosen-container, #createDocumentModal #div_id_accepted_by .chosen-container, #createDocumentModal #div_id_doc_type .chosen-container {
+    width: 100% !important;
+}
+#createDocumentModal #div_id_accepted_by, #createDocumentModal #div_id_doc_type, #createDocumentModal #div_id_number, #createDocumentModal #div_id_date_published {
+    width: 50%;
+    float: left;
+}
+.row .control-group {
+    padding-right: 1rem;
+}
+.row .control-group:last-child {
+    padding-right: 0;
+}
+.edit_doc h3 span, .edit_folder h3 span {
+    color: #0a0a0a;
+}
+.edit_doc label[for='id_folder'], .edit_doc label[for='id_accepted_by'], .edit_doc label[for='id_published'], .edit_doc label[for='id_number'], .edit_doc label[for='id_title'], .edit_doc label[for='id_description'], .edit_doc label[for='id_doc_file'], .edit_doc label[for='id_doc_type'], .edit_doc label[for='id_date_published'], .edit_doc label[for='id_in_line'], .edit_doc label[for='id_delete_doc'], .edit_doc button, .edit_folder label[for='id_parent'], .edit_folder label[for='id_title'], .edit_folder label[for='id_description'], .edit_folder label[for='id_published'], .edit_folder label[for='id_visible'], .edit_folder label[for='id_position'], .edit_folder label[for='id_delete_folder'], .edit_folder button {
+    font-size: 1rem;
+    font-weight: bold;
+}
+ .edit_doc label[for='id_published'], .edit_doc label[for='id_in_line'], .edit_folder label[for='id_published'], .edit_folder label[for='id_delete_folder'] {
+    display: inline-block;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+.edit_doc #id_in_line, .edit_doc #id_delete_doc, .edit_doc #doc_file-clear_id, input#id_published, .edit_folder #id_visible, .edit_folder #id_delete_folder {
+    margin: 0.5rem 0;
+}
+.edit_doc label[for='id_number'] {
+    display: block;
+    margin-left: 0;
+    cursor: default;
+}
+.edit_doc label[for='id_doc_file'] + a {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.edit_doc label[for='doc_file-clear_id'] {
+    font-size: 100%;
+    margin-bottom: 0.5rem;
+}
+.edit_doc label[for='id_in_line'], .edit_doc label[for='id_delete_doc'], .edit_folder label[for='id_visible'], .edit_folder label[for='id_position'], .edit_folder label[for='id_delete_folder'], .edit_folder #id_published {
+    display: inline-block;
+}
+.edit_doc label[for='id_delete_doc'], .edit_folder label[for='id_visible'], .edit_folder label[for='id_position'], .edit_folder label[for='id_delete_folder'] {
+    margin-left: 2rem;
+}
+.edit_doc button, .edit_folder button {
+    float: right;
+    margin-top: 3rem;
+}
+.edit_folder #id_position {
+    width: 5rem;
+    display: inline-block;
+}

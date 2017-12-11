@@ -1,24 +1,54 @@
 @charset "UTF-8";
 
 /*temp*/
-#special-mode-controls-container button.active { background-color: #f00; }
-    #special-mode-controls-container {
-        display: none;
-        padding: .925rem 0;
-    }
-    #special-mode-controls-container.is-show { display: block; }
-    .posibility-mode-on-container { background-color: transparent; }
-    .posibility-mode-on-container.is-active,
-        #special-mode-controls-container.is-show { background-color: #f9f9f9; }
+    #special-mode-controls-container button.active { background-color: #f00; }
         
-    .posibility-mode-off:hover {
-        cursor: pointer;
-        color: #f00;
-    }
+        #special-mode-controls-container {
+            display: none;
+            padding: .925rem 0;
+        }
+        
+        #special-mode-controls-container.is-show { display: block; }
+        
+        .posibility-mode-on-container { background-color: transparent; }
+        
+        .posibility-mode-on-container.is-active,
+            #special-mode-controls-container.is-show { background-color: #f9f9f9; }
+            
+        .posibility-mode-off:hover,
+            .posibility-mode-off:focus,
+            .posibility-mode-off:active {
+                cursor: pointer;
+                color: #f00;
+        }
     
 /*end_temp*/
 
 /*specials-controns*/
+    #special-mode-controls .button-group button { padding: 1rem; }
+    
+    /*#special-mode-controls .button-group button {
+        background: none;
+        background-color: #fff;
+        border: 1px solid #000;
+        border-radius: 0;
+        color: #000;
+    }*/
+    
+    #special-mode-controls #contrast button,
+        #special-mode-controls #spacing button {
+            font-size: 100%;
+            padding: 1.5rem !important;
+    }
+    
+    #special-mode-controls-container #help-special-mode,
+    #special-mode-controls-container .posibility-mode-off { background-color: #fff; }
+    
+    #special-mode-controls p {
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+    
     #normal-font { font-size: 100%; }
     
     #big-font { font-size: 150%; }
@@ -30,79 +60,1183 @@
     #big-spacing { letter-spacing: 2px; }
     
     #large-spacing { letter-spacing: 4px; }
+    
+    #visible-img .switch { height: 4.3rem; }
+    
+        #visible-img .switch .switch-paddle {
+            height: 4.3rem;
+            width: 10rem;
+        }
+        
+            #visible-img .switch.large .switch-paddle::after {
+                height: 3.8rem;
+                width: 4.8rem;
+            }
+            
+                #visible-img .switch.large input:checked ~ .switch-paddle::after { left: 5rem; }
+                
+            #visible-img .switch-active { left: 13%; }
+            
+            #visible-img .switch-inactive { right: 10%; }
+            
+    #special-mode-controls .selected-title { font-size: 1.1rem; }
+    
+    #special-mode-controls input:checked ~ .switch-paddle { background-color: #235b80; }
+                
 /*end_specials-controls*/
 
 
 /*global-special-style*/
+    
+    body.special-mode-active {
+        background-color: transparent;
+        background: none !important;
+    }
+    
+    .special-mode-active * { box-shadow: none !important; }
+    
+    .special-mode-active #head-title > a { padding: 0 .5rem; }
+    
+    .special-mode-active #site ,
+        .special-mode-active #head-title,
+        .special-mode-active #main_menu .navigation ,
+        .special-mode-active #navi-center,
+        .special-mode-active #interview-line,
+        .special-mode-active #video,
+        .special-mode-active .footer-container,
+        .special-mode-active .interview-header {
+            max-width: 100% !important;
+            padding-left: .925rem !important;
+            padding-right: .925rem !important;
+        }
+        
+            .special-mode-active a { color: #00327C; }
+            
+    .special-mode-active #logo,
+        .special-mode-active #head-title { padding-left: 0; }
+        
+    .special-mode-active #department { color: #fff; }
+        
+        .special-mode-active .logo-image { margin-left: 1rem; }
+        
+    .special-mode-active #navi-center { width: 100%; }
+    
+        .special-mode-active a.accordion-title,
+            .special-mode-active a[role="tab"],
+            .special-mode-active #main-content .article > a,
+            .special-mode-active #header-min_line > a,
+            .special-mode-active .tags_item > a,
+            .special-mode-active .orbit-slide .interview-cell > a, 
+            .special-mode-active a.accordion-title,
+            .special-mode-active a[role="tab"],
+            .special-mode-active #main-content .article > a,
+            .special-mode-active .vacancy-search_ctrl-btn-group .btn-result-clean { display: block !important; }
+            
+                .special-mode-active a span { border-bottom: 1px solid; }
+                    
+                    .special-mode-active #main-menu .menu-title { border-bottom: 1px solid #00327C;}
+                
+                        .special-mode-active #main-menu li:hover,
+                            .special-mode-active #main-menu li:focus,
+                            .special-mode-active #main-menu li:active,
+                            .special-mode-active #main-menu li:hover a,
+                            .special-mode-active #main-menu li:focus a,
+                            .special-mode-active #main-menu li:active a {
+                                border-bottom: none;
+                                -webkit-transition: none;
+                                -moz-transition: none;
+                                -o-transition: none;
+                                transition: none;
+                        }
+    
+    .special-mode-active #navi-center,
+        .special-mode-active #main-content .news-item img,
+        .special-mode-active .recomended-article_item img,
+        .special-mode-active #banner-menu li a,
+        .special-mode-active .nsok > a,
+        .special-mode-active .nsok > a > img,
+        .special-mode-active .gallery-container_slidesbox .gallery-item img,
+        .special-mode-active #brand { width: 100%; }
+        
+        
+        .special-mode-active #navi-center a span {
+            color: #00327C;
+            border-bottom: 1px dotted #00327C;
+        }
+        
+        .special-mode-active a { display: inline-block; }
+        
+        .special-mode-active table a,
+            .special-mode-active .article a,
+            .special-mode-active .article-list .article-header > a{ display: inline; }
+        
+        .special-mode-active #docs a {
+            display: inline-block;
+            width: 100%;
+        }
+        
+    .special-mode-active .rec-vks { display: none; }
+    
+    .special-mode-active .endless_page_template a:hover .article-header,
+        .special-mode-active .endless_page_template a:active .article-header,
+        .special-mode-active .endless_page_template a:focus .article-header { background-color: #ffff9a !important; }
+        
+    .special-mode-active .endless_page_template time.created,
+        .special-mode-active .endless_page_template time.changed {
+            color: #fff;
+            background-color: #000;
+    }
+    
+        .special-mode-active .endless_page_template time.changed i,
+            .special-mode-active .endless_page_template time.created i { display: none; }
+        
+        .special-mode-active a:hover span,
+            .special-mode-active a:active span,
+            .special-mode-active a:focus span { border-bottom: none !important; }
+    
+        .special-mode-active .endless_page_template .read-listen-alerts,
+            .special-mode-active .endless_page_template .read,
+            .special-mode-active .read-listen-alerts .news-logo,
+            .special-mode-active .read-listen-alerts,
+            .special-mode-active .read-active,
+            .special-mode-active #main-content article a:hover .read-listen-alerts,
+            .special-mode-active #main-content article a:focus .read-listen-alerts,
+            .special-mode-active #main-content article a:active .read-listen-alerts { display: none; }
+        
+        .special-mode-active .endless_page_template a:hover .article-header,
+            .special-mode-active .endless_page_template a:focus .article-header,
+            .special-mode-active .endless_page_template a:active .article-header,
+            .special-mode-active #head-title > a:hover #brand div,
+            .special-mode-active #head-title > a:active #brand div,
+            .special-mode-active #head-title > a:focus #brand div {
+                color: #710600 !important;
+        }
+        
+        .special-mode-active #main-menu .menu-title { border-bottom: 1px solid #00327C;}
+                
+            .special-mode-active #main-menu li:hover,
+            .special-mode-active #main-menu li:focus,
+            .special-mode-active #main-menu li:active,
+                .special-mode-active #main-menu li:hover a,
+                .special-mode-active #main-menu li:focus a,
+                .special-mode-active #main-menu li:active a,
+                .special-mode-active #upperside-menu li:hover,
+                .special-mode-active #upperside-menu li:focus,
+                .special-mode-active #upperside-menu li:active,
+                .special-mode-active #upperside-menu li:focus a,
+                .special-mode-active #upperside-menu li:active a,
+                .special-mode-active #upperside-menu li:hover a {
+                    border-bottom: none;
+                    -webkit-transition: none;
+                    -moz-transition: none;
+                    -o-transition: none;
+                    transition: none;
+            }
+            
+        .special-mode-active #navi-center a span {
+            color: #00327C;
+            border-bottom: 1px solid #00327C;
+        }
+        
+        .special-mode-active #banner-menu li {
+            background-size: 100%;
+            height: 110px;
+        }
+    
+            .special-mode-active #secondary-menu li:hover .menu-title,
+            .special-mode-active #secondary-menu li:focus .menu-title,
+            .special-mode-active #secondary-menu li:active .menu-title { border-bottom: none; }
+            
+            .special-mode-active #secondary-menu li:hover .menu-title ,
+                .special-mode-active #secondary-menu li:focus .menu-title ,
+                .special-mode-active #secondary-menu li:active .menu-title ,
+                .special-mode-active .panel-links li:hover,
+                .special-mode-active .panel-links li:focus,
+                .special-mode-active .panel-links li:active {
+                    -webkit-transition: none;
+                    -moz-transition: none;
+                    -o-transition: none;
+                    transition: none;
+            }
+                
+                    .special-mode-active .panel-links li:hover a,
+                        .special-mode-active .panel-links li:focus a,
+                        .special-mode-active .panel-links li:active a { color: #0b3b83; }
+                    
+            .special-mode-active .panel-links a { padding-top: 6%; }
+            
+        .special-mode-active #secondary-menu li { padding: 0; }
+        
+            .special-mode-active #secondary-menu a { padding: .625rem; }
+            
+            .special-mode-active #banner-menu .menu li:hover a,
+                .special-mode-active #banner-menu .menu li:focus a,
+                .special-mode-active #banner-menu .menu li:active a,
+                .special-mode-active .nsok:hover a,
+                .special-mode-active .nsok:active a,
+                .special-mode-active .nsok:focus a {
+                    outline: 3px dotted #F57F17 !important;
+                    background-color: transparent !important;
+            }
+        
+    .special-mode-active #main_informatization #informatization-documents .accordion-item.is-active { background-color: #1D5399; }
+    
+    .special-mode-active #main_informatization #informatization-documents .accordion-item.is-active .accordion-title { color: #fff; }
+    
+    .special-mode-active #populations {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+    
+    .special-mode-active #main_informatization {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .special-mode-active #logo { display: none; }
+    
+    .special-mode-active #main_events-tabs .tabs-title {
+        position: relative;
+        padding: 3px;
+    }
+    
+    .special-mode-active #interview {
+        padding-left: .925rem;
+        padding-right: .925rem;
+    }
+    
+    .special-mode-active #interview .orbit {
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .special-mode-active #conference-tab-label .label { padding: .15rem; }
+    
+    .special-mode-active .interview-cell,
+        .special-mode-active li.accordion-item {
+            margin-top: .2rem;
+            margin-bottom: .2rem;
+    }
+    
+    .special-mode-active #navi-center { padding-right: 0 !important; }
+    
+    .special-mode-active .go-to-informatization { background-color: transparent; }
+    
+    .special-mode-active .upperside_caption { margin-bottom: 1rem; }
+    
+    .special-mode-active .recomended-article_item figcaption,
+        .special-mode-active .article_content-text { padding: .925rem; }
+    
+    .special-mode-active .downside-gallery_container .card a,
+            .special-mode-active .downside-gallery_container .card a { padding: .2rem 0; }
+    
+    .special-mode-active table.folders_list tbody td,
+        .special-mode-active table thead th:first-child { padding-left: 1rem; }
+    
+    .special-mode-active #sidebar-hidden-menu .posibility-mode-on .posibility-mode_text { line-height: 1.2 !important; }
+    
+    .special-mode-active .article table thead,
+        .special-mode-active table tbody,
+        .special-mode-active table tfoot { border: none; }
+    
+/*end_global-style*/
 
-/*end_global-special-style*/
+
+/*normal-font*/
+    
+    .special-mode-active.normal-font * { line-height: 1.3 !important; }
+    
+    .special-mode-active.normal-font h1 #industry { font-size: 80%; }
+    
+    .special-mode-active.normal-font h1 #department { font-size: 40%; }
+    
+    .special-mode-active.normal-font .menu .menu-title,
+        .special-mode-active.normal-font #navi-center li a > span,
+        .special-mode-active.normal-font a > span,
+        .special-mode-active.normal-font #main-content h3,
+        .special-mode-active.normal-font .panel-links li > a { font-size: 100% !important; }
+    
+/*end_normal-font*/
 
 
-/*header*/
+/*big-font*/
+    
+    .special-mode-active.big-font * { line-height: 1.5 !important; }
+    
+    .special-mode-active.big-font #industry,
+        .special-mode-active.big-font .menu .menu-title,
+        .special-mode-active.big-font #navi-center a > span,
+        .special-mode-active.big-font .posibility-mode_text,
+        .special-mode-active.big-font #secondary-menu .menu-title,
+        .special-mode-active.big-font .tabs .tabs-title a > span,
+        .special-mode-active.big-font .tabs-content a > span,
+        .special-mode-active.big-font .panel-links li > a,
+        .special-mode-active.big-font .article-header > h3,
+        .special-mode-active.big-font .pagination li > span,
+        .special-mode-active.big-font .pagination li > a,
+        .special-mode-active.big-font #populations h3,
+        .special-mode-active.big-font .population-block li > a,
+        .special-mode-active.big-font #implementation-indicators-informatization span,
+        .special-mode-active.big-font #informatization_news .article h3 > a,
+        .special-mode-active.big-font #informatization-main-indicators table,
+        .special-mode-active.big-font .go-to-informatization > span,
+        .special-mode-active.big-font .accordion-title,
+        .special-mode-active.big-font .accordion-content,
+        .special-mode-active.big-font .int-tezis,
+        .special-mode-active.big-font .int-theme ,
+        .special-mode-active.big-font #docs .card-section a,
+        .special-mode-active.big-font #footer-brkmed .about-org,
+        .special-mode-active.big-font #footer-brkmed .copyright p > small,
+        .special-mode-active.big-font #footer-brkmed .rate { font-size: 150% !important; }
+        
+    .special-mode-active.big-font .population-block li:not(:last-child) { margin-bottom: .5rem; }
+    
+    .special-mode-active.big-font time.created,
+        .special-mode-active.big-font time.change { font-size: 130% !important; } 
+    
+    .special-mode-active.big-font #main-content .article:not(.smallnews) time.change,
+        .special-mode-active.big-font #main-content .article:not(.smallnews)  time.created { top: 57%; }
+    
+    .special-mode-active.big-font #main-content .smallnews time.created,
+        .special-mode-active.big-font #main-content .smallnews time.change { top: 44%; }
+    
+    .special-mode-active.big-font #playlists-container .video-item,
+        .special-mode-active.big-font #playlists-container .video-item_name { font-size: 110%; }
+    
+    .special-mode-active.big-font .chapter { font-size: 290%; }
+    
+    .special-mode-active.big-font #secondary-menu li a { height: 130px; }
+    
+    .special-mode-active.big-font .panel-links li {
+        height: 120px;
+        margin-bottom: 3px;
+    }
+    
+        .special-mode-active.big-font .panel-links li a { padding: .925rem; }
+    
+    .special-mode-active.big-font #department { font-size: 60%; }
+    
+    .special-mode-active.big-font #populations .population-block { width: 33.33333%; }
+    
+    .special-mode-active.big-font #events-container .label { font-size: 100% !important; }
+    
+/*end_big-font*/
 
-/*end_header*/
+
+/*large-font*/
+
+    .special-mode-active.big-font * { line-height: 2 !important; }
+    
+    .special-mode-active.large-font #industry,
+        .special-mode-active.large-font .menu .menu-title,
+        .special-mode-active.large-font #navi-center a > span,
+        .special-mode-active.large-font .posibility-mode_text,
+        .special-mode-active.large-font #secondary-menu .menu-title,
+        .special-mode-active.large-font .tabs .tabs-title a > span,
+        .special-mode-active.large-font .tabs-content a > span,
+        .special-mode-active.large-font .panel-links li > a,
+        .special-mode-active.large-font .article-header > h3,
+        .special-mode-active.large-font .pagination li > span,
+        .special-mode-active.large-font .pagination li > a,
+        .special-mode-active.large-font #populations h3,
+        .special-mode-active.large-font .population-block li > a,
+        .special-mode-active.large-font #implementation-indicators-informatization span,
+        .special-mode-active.large-font #informatization_news .article h3 > a,
+        .special-mode-active.large-font #informatization-main-indicators table,
+        .special-mode-active.large-font .go-to-informatization > span,
+        .special-mode-active.large-font .accordion-title,
+        .special-mode-active.large-font .accordion-content,
+        .special-mode-active.large-font .int-tezis,
+        .special-mode-active.large-font .int-theme ,
+        .special-mode-active.large-font #docs .card-section a,
+        .special-mode-active.large-font #footer-brkmed .about-org,
+        .special-mode-active.large-font #footer-brkmed .copyright p > small,
+        .special-mode-active.large-font #footer-brkmed .rate { font-size: 200% !important; }
+        
+    .special-mode-active.large-font .population-block li:not(:last-child) { margin-bottom: .5rem; }
+    
+    .special-mode-active.large-font time.change,
+        .special-mode-active.large-font time.created { font-size: 200% !important; top: 64%; }
+    
+    .special-mode-active.large-font #playlists-container .video-item,
+        .special-mode-active.large-font #playlists-container .video-item_name { font-size: 130%; }
+    
+    .special-mode-active.large-font .chapter { font-size: 290%; }
+    
+    .special-mode-active.large-font #secondary-menu li a { height: 150px; }
+    
+    .special-mode-active.large-font .panel-links li {
+        height: 150px;
+        margin-bottom: 3px;
+    }
+    
+        .special-mode-active.large-font .panel-links li a { padding: .925rem; }
+    
+    .special-mode-active.large-font #department { font-size: 80%; }
+    
+    .special-mode-active.large-font #populations .population-block { width: 33.33333%; }
+
+/*end_large-font*/
 
 
-/*main-menu*/
+/*normal-contrast*/
 
-/*end_main-menu*/
+    .special-mode-active.normal-contrast #navi-center,
+        .special-mode-active.normal-contrast #navigation-menu .menu,
+        .special-mode-active.normal-contrast .posibility-mode-on-container,
+        .special-mode-active.normal-contrast #navi-center > div,
+        .special-mode-active.normal-contrast #navi-center .breadcrumbs,
+        .special-mode-active.normal-contrast .block-breadcrumbs,
+        .special-mode-active.normal-contrast #navigation-breadcrumbs { background-color: #f5f5f5 !important; }
+        
+        .special-mode-active.normal-contrast .posibility-mode-on-container.is-active,
+            .special-mode-active.normal-contrast #special-mode-controls-container,
+            .special-mode-active.normal-contrast .upperside_caption { background-color: #e0e0e0; }
 
-
-/*sticky-navigation*/
-
-/*end_sticky-navigation*/
-
-
-/*breadcrumbs*/
-
-/*end_breadcrumbs*/
-
-
-/*main-news*/
-
-/*end_main-news*/
-
-
-/*vks-conference*/
-
-/*end_vks-conference*/
+    .special-mode-active .posibility-mode_text { line-height: 2.7 !important; }
+    
+    .special-mode-active.normal-contrast .vacancy_table-search-nav { background-color: transparent; }
+    
+/*end_normal-contrast*/
 
 
-/*news*/
+/*high-contrast*/
+        
+        .special-mode-active.high-contrast #header { background-color: #00386f; }
+        
+        .special-mode-active.high-contrast #site,
+            .special-mode-active.high-contrast #main_informatization,
+            .special-mode-active.high-contrast #video { background-color: #9E9E9E; }
+            
+            .special-mode-active.high-contrast #footer-brkmed,
+            .special-mode-active.high-contrast #footer-brkmed .sub-footer { background-color: #15376E; }
+            
+            .special-mode-active.high-contrast #footer-brkmed .about-organization { background-color: #0C213E; }
+            
+        .special-mode-active.high-contrast #populations,
+            .special-mode-active.high-contrast #interview,
+            .special-mode-active.high-contrast #docs,
+            .special-mode-active.high-contrast #footer-brkmed .about-organization-container,
+            .special-mode-active.high-contrast .content-recommended_container { background-color: #757575; }
+            
+        .special-mode-active.high-contrast #populations .callout { background-color: #fff; }
+        
+        .special-mode-active.high-contrast .panel-links li:nth-child(even),
+            .special-mode-active.high-contrast #docs .first-line .card:nth-child(even),
+            .special-mode-active.high-contrast #docs .second-line .card:nth-child(odd) { background-color: #ecebeb; }
+        
+        .special-mode-active.high-contrast .panel-links li:nth-child(odd),
+            .special-mode-active.high-contrast #docs .first-line .card:nth-child(odd),
+            .special-mode-active.high-contrast .pagination li:not(.ellipsis),
+            .special-mode-active.high-contrast #playlists-container,
+            .special-mode-active.high-contrast #docs .second-line .card:nth-child(even),
+            .special-mode-active.high-contrast .upperside-main-block_left-container,
+            .special-mode-active.high-contrast .downside-gallery,
+            .special-mode-active.high-contrast .documentation,
+            .special-mode-active.high-contrast .tags_menu,
+            .special-mode-active.high-contrast .article_footer,
+            .special-mode-active.high-contrast .documents section:nth-child(odd),
+            .special-mode-active.high-contrast .folders_list tr:nth-child(odd) { background-color: #fff; }
+            
+            .special-mode-active.high-contrast .documents section:nth-child(even),
+                .special-mode-active.high-contrast .folders_list tr:nth-child(even) { background-color: #e8e8e8; }
+            
+            .special-mode-active.high-contrast .tags_item a { background-color: #9FCDFF; }
+            
+            .special-mode-active.high-contrast .upperside-main-block_left-container { margin-top: 1rem; color: #000D57; }
+            
+            .special-mode-active.high-contrast .tags_item { border-left: 3px solid #003366; }
+            
+            .special-mode-active.high-contrast .accordion-item,
+                .special-mode-active.high-contrast .article_content .accordion-item > a,
+                .special-mode-active.high-contrast .playlist_name,
+                .special-mode-active.high-contrast .pagination li.current,
+                .special-mode-active.high-contrast #interview-btn > .button,
+                .special-mode-active.high-contrast #interview .orbit-previous,
+                .special-mode-active.high-contrast #interview .orbit-next,
+                .special-mode-active.high-contrast .tabs-title,
+                .special-mode-active.high-contrast .go-to-informatization { background-color: #9FCDFF; }
+                
+                .special-mode-active.high-contrast .article .article_content-text blockquote,
+                    .special-mode-active.high-contrast .upperside_caption {
+                        background-color: #1f5b96;
+                        border-left-color: #001e3c;
+                }
+                
+                .special-mode-active.high-contrast .playlist_name {
+                    border-top-color: #fff;
+                    border-bottom-color: #fff;
+                }
+                
+                .special-mode-active.high-contrast .pagination li.current > span,
+                    .special-mode-active.high-contrast .accordion-item:not(.is-active) .accordion-title,
+                    .special-mode-active.high-contrast #interview .orbit-previous,
+                    .special-mode-active.high-contrast #interview .orbit-next,
+                    .special-mode-active.high-contrast #interview-btn > .button,
+                    .special-mode-active.high-contrast .tabs-title:not(.is-active) > a,
+                    .special-mode-active.high-contrast .tabs-title:not(.is-active) > a > span,
+                    .special-mode-active.high-contrast .go-to-informatization,
+                    .special-mode-active.high-contrast #footer-brkmed a,
+                    .special-mode-active.high-contrast .recomended-article_item figcaption > span { color: #000D57 !important; }
+                
+                .special-mode-active.high-contrast .accordion-title { border-color: #fff; }
+                
+        .special-mode-active.high-contrast a { color: #0b3b83; }
+        
+        .special-mode-active.high-contrast .article a:not(.accordion-title) { border-bottom: 1px solid; }
+        
+        .special-mode-active.high-contrast #populations h3,
+            .special-mode-active.high-contrast .article small,
+            .special-mode-active.high-contrast h2.subheader,
+            .special-mode-active.high-contrast h2.subheader *,
+            .special-mode-active.high-contrast h3.subheader { color: #000; }
+        
+        .special-mode-active.high-contrast .chapter,
+            .special-mode-active.high-contrast #main_informatization .subheader,
+            .special-mode-active.high-contrast .tabs-title.is-active > a,
+            .special-mode-active.high-contrast .tabs-title.is-active > a > span,
+            .special-mode-active.high-contrast #footer-brkmed p,
+            .special-mode-active.high-contrast .article .article_content-text blockquote p,
+            .special-mode-active.high-contrast .article .article_content-text blockquote cite,
+            .special-mode-active.high-contrast .article .article_content-text blockquote li,
+            .special-mode-active.high-contrast .upperside_caption *,
+            .special-mode-active.high-contrast #footer-brkmed a,
+            .special-mode-active.high-contrast .article > a:hover time,
+            .special-mode-active.high-contrast .article > a:focus time,
+            .special-mode-active.high-contrast .article > a:active time { color: #fff !important; }
+            
+            .special-mode-active.high-contrast .recomended-article_item figcaption { background-color: #cccccc; }
 
-/*end_news*/
+        .special-mode-active.high-contrast #main_menu li a > span { border-bottom-color: #fff; }
+        
+        .special-mode-active.high-contrast .tabs-title.is-active { background-color: #1D5399 !important; }
+    
+    .special-mode-active.high-contrast #secondary-menu li:nth-child(even),
+        .special-mode-active.high-contrast .channel-preview,
+        .special-mode-active.high-contrast #sidebar-hidden-menu li:nth-child(even) .menu-item-hint { background-color: #004990; }
+    
+    .special-mode-active.high-contrast #secondary-menu li:nth-child(odd),
+        .special-mode-active.high-contrast #main_menu,
+        .special-mode-active.high-contrast #sidebar-hidden-menu li:nth-child(odd) .menu-item-hint { background-color: #001e3c; }
+    
+    .special-mode-active.high-contrast .posibility-mode_text { line-height: 2.7 !important; }
+    
+    .special-mode-active.high-contrast #sidebar-hidden-panel:hover li:nth-child(odd) > a,
+    .special-mode-active.high-contrast #sidebar-hidden-panel:focus li:nth-child(odd) > a,
+    .special-mode-active.high-contrast #sidebar-hidden-panel:active li:nth-child(odd) > a { background-color: #001e3c !important; }
+    
+    .special-mode-active.high-contrast #sidebar-hidden-panel:hover li:nth-child(even) > a,
+    .special-mode-active.high-contrast #sidebar-hidden-panel:focus li:nth-child(even) > a,
+    .special-mode-active.high-contrast #sidebar-hidden-panel:active li:nth-child(even) > a { background-color: #004990 !important; }
+    
+    .special-mode-active.high-contrast #sidebar-hidden-menu .menu-item:hover .menu-item-hint, 
+    .special-mode-active.high-contrast #sidebar-hidden-menu .menu-item:focus .menu-item-hint, 
+    .special-mode-active.high-contrast #sidebar-hidden-menu .menu-item:active .menu-item-hint, 
+    .special-mode-active.high-contrast #sidebar-hidden-menu .menu-item:hover li, 
+    .special-mode-active.high-contrast #sidebar-hidden-menu .menu-item:focus li, 
+    .special-mode-active.high-contrast #sidebar-hidden-menu .menu-item:active li { 
+        /* outline: 3px dotted #F57F17 !important; */
+        background-color: #ffff9a !important;
+    }
+        
+        .special-mode-active.high-contrast #sidebar-hidden-menu li:hover .menu-item-hint,
+        .special-mode-active.high-contrast #sidebar-hidden-menu li:focus .menu-item-hint,
+        .special-mode-active.high-contrast #sidebar-hidden-menu li:active .menu-item-hint,
+        .special-mode-active.high-contrast .tabs-title:hover a > span,
+        .special-mode-active.high-contrast .tabs-title:focus a > span,
+        .special-mode-active.high-contrast .tabs-title:active a > span { color: #710600 !important; }
+        
+        .special-mode-active.high-contrast #sidebar-hidden-panel:hover li:hover a,
+        .special-mode-active.high-contrast #sidebar-hidden-panel:hover li:focus a,
+        .special-mode-active.high-contrast #sidebar-hidden-panel:hover li:active a { background-color: #ffff9a !important; }
+        
+/*end_high-contrast*/
 
 
-/*populations*/
+/*invert-contrast*/
 
-/*end_populations*/
+    .special-mode-active.invert-contrast #site,
+        .special-mode-active.invert-contrast #header,
+        .special-mode-active.invert-contrast #content,
+        .special-mode-active.invert-contrast .informatization-header + div,
+        .special-mode-active.invert-contrast #main_informatization,
+        .special-mode-active.invert-contrast #video,
+        .special-mode-active.invert-contrast .playlist_name,
+        .special-mode-active.invert-contrast #footer-brkmed,
+        .special-mode-active.invert-contrast .about-organization-container,
+        .special-mode-active.invert-contrast #main_informatization #informatization-main-indicators thead,
+        .special-mode-active.invert-contrast #main_informatization #informatization-documents .accordion-item.is-active,
+        .special-mode-active.invert-contrast #main_informatization #informatization-documents .accordion-content,
+        .special-mode-active.invert-contrast .interview-discription,
+        .special-mode-active.invert-contrast .first-line .card:nth-child(even),
+        .special-mode-active.invert-contrast .second-line .card:nth-child(odd),
+        .special-mode-active.invert-contrast #header-min-row,
+        .special-mode-active.invert-contrast #upperside-menu li,
+        .special-mode-active.invert-contrast #informatization-documents .accordion-item,
+        .special-mode-active.invert-contrast #informatization-main-indicators thead,
+        .special-mode-active.invert-contrast .napriem-button,
+        .special-mode-active.invert-contrast .tabs li:not(.is-active),
+        .special-mode-active.invert-contrast .upperside-main-block_left-container .accordion-item,
+        .special-mode-active.invert-contrast .article table tr:nth-child(even) { background-color: #212121 !important; }
+
+    .special-mode-active.invert-contrast #populations,
+        .special-mode-active.invert-contrast #interview,
+        .special-mode-active.invert-contrast #docs,
+        .special-mode-active.invert-contrast .sub-footer,
+        .special-mode-active.invert-contrast .youtube-logo,
+        .special-mode-active.invert-contrast #playlists-container,
+        .special-mode-active.invert-contrast .video-item,
+        .special-mode-active.invert-contrast h3.subheader + .callout,
+        .special-mode-active.invert-contrast #main_informatization #informatization_news .article,
+        .special-mode-active.invert-contrast #main_informatization #informatization-documents .accordion-item,
+        .special-mode-active.invert-contrast #vks-conference > div,
+        .special-mode-active.invert-contrast #main-news .general_poster,
+        .special-mode-active.invert-contrast .first-line .card:nth-child(odd),
+        .special-mode-active.invert-contrast .second-line .card:nth-child(even),
+        .special-mode-active.invert-contrast .tabs-title.is-active,
+        .special-mode-active.invert-contrast #conference-tab,
+        .special-mode-active.invert-contrast #footer-brkmed .sub-footer,
+        .special-mode-active.invert-contrast .current,
+        .special-mode-active.invert-contrast .go-to-informatization,
+        .special-mode-active.invert-contrast .article blockquote,
+        .special-mode-active.invert-contrast .upperside_caption,
+        .special-mode-active.invert-contrast .downside-gallery,
+        .special-mode-active.invert-contrast .tags,
+        .special-mode-active.invert-contrast .article_footer,
+        .special-mode-active.invert-contrast .tags_menu,
+        .special-mode-active.invert-contrast .content-recommended_container,
+        .special-mode-active.invert-contrast .informatization-chapter #informatization-documents,
+        .special-mode-active.invert-contrast .informatization-chapter #informatization-indicators-chart,
+        .special-mode-active.invert-contrast .informatization-chapter #informatization-main-indicators,
+        .special-mode-active.invert-contrast .informatization-chapter #informatization-news .article,
+        .special-mode-active.invert-contrast .informatization-chapter .helpful-informatization-video .card,
+        .special-mode-active.invert-contrast .informatization-chapter #informatization-documents .accordion-content,
+        .special-mode-active.invert-contrast .article-list,
+        .special-mode-active.invert-contrast .article_content,
+        .special-mode-active.invert-contrast .article_content-text,
+        .special-mode-active.invert-contrast .article  .accordion-content { background-color: #424242 !important; }
+        
+        .special-mode-active.invert-contrast .article table tr:nth-child(odd) { background-color: #000; }
+        
+        .special-mode-active.invert-contrast #main-content .article-header { background-color: #424242; }
+    
+    
+    .special-mode-active.invert-contrast .posters-block,
+        .special-mode-active.invert-contrast #main-news .poster { background-color: #525252; }
+     
+    .special-mode-active.invert-contrast #main-news .general_poster,
+        .special-mode-active.invert-contrast .tabs-content,
+        .special-mode-active.invert-contrast .switch_docs li.tabs-title.is-active { border: none; }
+     
+    .special-mode-active.invert-contrast .playlist_name { border-top-color: #424242; }
+        .special-mode-active.invert-contrast .playlist_name { border-bottom-color: #424242; }
+        
+        .video-item:not(:last-child) { border-bottom-color: #212121; }
+     
+    .special-mode-active.invert-contrast #informatization-main-indicators tr,
+        .special-mode-active.invert-contrast #informatization-documents .accordion-item:not(.is-active) .accordion-title  { border-color: #212121 !important; }
+        
+        .special-mode-active.invert-contrast #main_informatization #informatization-documents .accordion-item.is-active { border-top-color: #000; }
+    
+    .special-mode-active.invert-contrast #informatization-documents .accordion-item.is-active .accordion-title,
+        .special-mode-active.invert-contrast #informatization-documents .accordion-content { border-color: #424242; }
+    
+    .special-mode-active.invert-contrast #navi-center,
+        .special-mode-active.invert-contrast #navigation-menu .menu,
+        .special-mode-active.invert-contrast .posibility-mode-on-container,
+        .special-mode-active.invert-contrast #navigation-breadcrumbs,
+        .special-mode-active.invert-contrast .breadcrumbs,
+        .special-mode-active.invert-contrast .tags_item > a { background-color: #37474F !important; }
+    
+    .special-mode-active.invert-contrast #secondary-menu li:nth-child(even),
+        .special-mode-active.invert-contrast .channel-preview,
+        .special-mode-active.invert-contrast #sidebar-hidden-menu li:nth-child(even) .menu-item-hint { background-color: #37474F; }
+    
+    .special-mode-active.invert-contrast #secondary-menu li:nth-child(odd),
+        .special-mode-active.invert-contrast #main_menu,
+        .special-mode-active.invert-contrast #sidebar-hidden-menu li:nth-child(odd) .menu-item-hint { background-color: #263238; }
+    
+    .special-mode-active.invert-contrast #populations .callout,
+        .special-mode-active.invert-contrast .recomended-article_item figcaption,
+        .special-mode-active.invert-contrast li.current > a,
+        .special-mode-active.invert-contrast .article .accordion-title { background-color: #212121; } 
+        
+    .special-mode-active.invert-contrast #sidebar-hidden-menu:hover .menu-item-link { background-color: #212121 !important; }
+    
+    .special-mode-active.invert-contrast .panel-links li:nth-child(even) { background-color: #4E342E; }
+    
+    .special-mode-active.invert-contrast .panel-links li:nth-child(odd) { background-color: #3E2723; }
+    
+    .special-mode-active.invert-contrast #interview .orbit-previous,
+        .special-mode-active.invert-contrast #interview .orbit-next,
+        .special-mode-active.invert-contrast #interview-btn > .button{
+            background-color: rgba(33, 33, 33, 0.7);
+            color: #fff;
+    }
+        
+    .special-mode-active.invert-contrast .highcharts-background {
+        fill: #424242;
+        fill-opacity: 0;
+    }
+    
+    .special-mode-active.invert-contrast .highcharts-axis-labels,
+        .special-mode-active.invert-contrast .highcharts-data-label text { fill: #ffffff; }
+    
+    .special-mode-active.invert-contrast .highcharts-grid-line { stroke: #424242; }
+        
+    .special-mode-active.invert-contrast .chapter,
+        .special-mode-active.invert-contrast .highcharts-legend-item,
+        .special-mode-active.invert-contrast .article p,
+        .special-mode-active.invert-contrast .article h1,
+        .special-mode-active.invert-contrast .article h2,
+        .special-mode-active.invert-contrast .article h3,
+        .special-mode-active.invert-contrast .article h4,
+        .special-mode-active.invert-contrast .article h5,
+        .special-mode-active.invert-contrast .article h6,
+        .special-mode-active.invert-contrast .caption_author *,
+        .special-mode-active.invert-contrast .article .article_content-text cite,
+        .special-mode-active.invert-contrast .article .article_content-text blockquote > cite,
+        .special-mode-active.invert-contrast .tags_item > a,
+        .special-mode-active.invert-contrast .article_footer a,
+        .special-mode-active.invert-contrast .recomended-article_item figcaption > span,
+        .special-mode-active.invert-contrast .helpful-informatization-video h2,
+        .special-mode-active.invert-contrast .napriem-button,
+        .special-mode-active.invert-contrast th,
+        .special-mode-active.invert-contrast td,
+        .special-mode-active.invert-contrast table a,
+        .special-mode-active.invert-contrast table caption,
+        .special-mode-active.invert-contrast .article-list a { color: #fff; }
+    
+    .special-mode-active.invert-contrast #main_informatization  .highcharts-point.highcharts-color-1,
+        .special-mode-active.invert-contrast .highcharts-color-1,
+        .special-mode-active.invert-contrast #informatization-indicators-chart .highcharts-point.highcharts-color-1 {
+            fill: #3E2723;
+            stroke: #3E2723;
+    }
+    
+    .special-mode-active.invert-contrast #main_informatization  .highcharts-point.highcharts-color-0,
+        .special-mode-active.invert-contrast .highcharts-color-0,
+        .special-mode-active.invert-contrast #informatization-indicators-chart .highcharts-point.highcharts-color-0 {
+            fill: #8D6E63;
+            stroke: #8D6E63
+    }
+    
+    .special-mode-active.invert-contrast #main_informatization .highcharts-plot-bands-0 path.year:nth-child(1) {
+        fill: #CFD8DC;
+        fill-opacity: .1;
+    }
+    
+        .special-mode-active.invert-contrast #informatization-indicators-chart .highcharts-plot-bands-0 path.year:nth-child(1) {
+            fill: #CFD8DC;
+            fill-opacity: .25;
+        }
+    
+    .special-mode-active.invert-contrast #main_informatization .highcharts-plot-bands-0 path.year:nth-child(2) {
+        fill: #CFD8DC;
+        fill-opacity: .05;
+    }
+    
+        .special-mode-active.invert-contrast #informatization-indicators-chart .highcharts-plot-bands-0 path.year:nth-child(2) {
+            fill: #CFD8DC;
+            fill-opacity: .05;
+        }
+
+    .special-mode-active.invert-contrast #main_informatization .highcharts-plot-bands-0 path.year:nth-child(3) {
+        fill: #CFD8DC;
+        fill-opacity: 0;
+    }
+    
+        .special-mode-active.invert-contrast #informatization-indicators-chart .highcharts-plot-bands-0 path.year:nth-child(3) {
+            fill: #CFD8DC;
+            fill-opacity: 0;
+        }
+    
+    .special-mode-active.invert-contrast #video-info,
+        .special-mode-active.invert-contrast #video-description,
+        .special-mode-active.invert-contrast .content-recommended_title {
+            background-color: #000;
+            color: #fff;
+    }
+    
+    .special-mode-active.invert-contrast .content-recommended_title,
+        .special-mode-active.invert-contrast .recomended-article_box { border-bottom-color: #000; }
+    
+        .special-mode-active.invert-contrast #video-description p,
+            .special-mode-active.invert-contrast .posibility-mode_text,
+            .special-mode-active.invert-contrast,
+            .special-mode-active.invert-contrast .accordion-content *,
+            .special-mode-active.invert-contrast #informatization-news .article-header > a,
+            .special-mode-active.invert-contrast #navi-center .breadcrumbs a { color: #fff; }
+        
+    .special-mode-active.invert-contrast #navi-center a > span,
+        .special-mode-active.invert-contrast a  > span,
+        .special-mode-active.invert-contrast time.change,
+        .special-mode-active.invert-contrast time.created,
+        .special-mode-active.invert-contrast .article-header h3,
+        .special-mode-active.invert-contrast .panel-links a,
+        .special-mode-active.invert-contrast #populations .population-block a,
+        .special-mode-active.invert-contrast #informatization_news .article-header a,
+        .special-mode-active.invert-contrast p,
+        .special-mode-active.invert-contrast ul,
+        .special-mode-active.invert-contrast li,
+        .special-mode-active.invert-contrast .document a,
+        .special-mode-active.invert-contrast .pagination li > span,
+        .special-mode-active.invert-contrast .pagination li > a,
+        .special-mode-active.invert-contrast .ellipsis::after,
+        .special-mode-active.invert-contrast .accordion-title,
+        .special-mode-active.invert-contrast .int-tezis,
+        .special-mode-active.invert-contrast .int-theme,
+        .special-mode-active.invert-contrast .video-item_name,
+        .special-mode-active.invert-contrast .card-section > a,
+        .special-mode-active.invert-contrast #populations h3,
+        .special-mode-active.invert-contrast h2.subheader,
+        .special-mode-active.invert-contrast h2.subheader > a,
+        .special-mode-active.invert-contrast h3.subheader,
+        .special-mode-active.invert-contrast .article_content a,
+        .special-mode-active.invert-contrast .article_content-text {
+            color: #fff !important;
+    }
+    
+    .special-mode-active.invert-contrast a > span,
+        .special-mode-active.invert-contrast .documnet a { border-color: #fff !important; }
+        
+        .special-mode-active.invert-contrast .int-theme {
+            display: inline;
+            border-bottom: 1px solid #fff;
+        }
+        
+        .special-mode-active.invert-contrast #navi-center a.is-active > span { border-bottom: none; }
+        
+        .special-mode-active.invert-contrast #interview a:hover .int-theme { border-bottom-color: #710600 !important; }
+        
+        .special-mode-active.invert-contrast .posibility-mode_text { line-height: 2.7 !important; }
+        
+        .special-mode-active.invert-contrast #docs a > span,
+            .special-mode-active.invert-contrast .accordion-content a > span,
+            .special-mode-active.invert-contrast table a,
+            .special-mode-active.invert-contrast h2.subheader > a,
+            .special-mode-active.invert-contrast .article-list a,
+            .special-mode-active.invert-contrast .article_content a { border-bottom: 1px solid #fff !important; }
+        
+        .special-mode-active.invert-contrast #conference-tab-label .label,
+            .special-mode-active.invert-contrast #informatization-main-indicators tbody td,
+            .special-mode-active.invert-contrast .highcharts-plot-band-label { color: #000 !important; }
+    
+    .special-mode-active.invert-contrast #populations a:hover,
+    .special-mode-active.invert-contrast #populations a:focus,
+    .special-mode-active.invert-contrast #populations a:active,
+        .special-mode-active.invert-contrast .article a:hover,
+        .special-mode-active.invert-contrast .article a:focus,
+        .special-mode-active.invert-contrast .article a:active {
+            outline: 3px dotted #F57F17 !important;
+            background-color: #ffff9a !important;
+            color: #710600 !important;
+    }
+    
+    .special-mode-active.invert-contrast .accordion-item:not(.is-active) .accordion-title::before { border-left-color: #fff; }
+    
+    .special-mode-active.invert-contrast .accordion-item.is-active .accordion-title::before { border-top-color: #fff; }
+    
+    .special-mode-active.hide-img.invert-contrast #main-content .alt-text-img { background-color: #424242; color: #fff; }
+    
+    .special-mode-active.hide-img.invert-contrast #main-content .article-header,
+        .special-mode-active.hide-img.invert-contrast .alt-text-img {
+            background-color: #525252;
+            color: #fff;
+    }
+        
+        .special-mode-active.hide-img.invert-contrast #docs .alt-text-img { background-color: #212121; }
+    
+    .special-mode-active.invert-contrast #sidebar-hidden-panel { background-color: rgba(0, 8, 16, 0.7); }
+    
+    .special-mode-active.invert-contrast #sidebar-hidden-menu .menu-item-link:hover .menu-item-hint,
+    .special-mode-active.invert-contrast #sidebar-hidden-menu .menu-item-link:focus .menu-item-hint,
+    .special-mode-active.invert-contrast #sidebar-hidden-menu .menu-item-link:active .menu-item-hint,
+        .special-mode-active.invert-contrast #sidebar-hidden-menu .menu-item-link:hover,
+        .special-mode-active.invert-contrast #sidebar-hidden-menu .menu-item-link:focus,
+        .special-mode-active.invert-contrast #sidebar-hidden-menu .menu-item-link:active { background-color: #ffff9a !important; }
+    
+    .special-mode-active.invert-contrast #sidebar-hidden-menu .menu-item-link:hover .menu-item-hint,
+    .special-mode-active.invert-contrast #sidebar-hidden-menu .menu-item-link:focus .menu-item-hint,
+    .special-mode-active.invert-contrast #sidebar-hidden-menu .menu-item-link:active .menu-item-hint,
+    .special-mode-active.high-contrast .tabs-title.is-active:hover a > span,
+    .special-mode-active.high-contrast .tabs-title.is-active:focus a > span,
+    .special-mode-active.high-contrast .tabs-title.is-active:active a > span { color: #710600 !important; }
+
+/*end_invert-contrast*/
 
 
-/*main-informatization*/
+/*normal-spacing*/
 
-/*end_main-informatization*/
+    .special-mode-active.normal-spacing { letter-spacing: 0; }
 
-
-/*interview*/
-
-/*end_interview*/
+/*end_normal-spacing*/
 
 
-/*video*/
+/*big-spacing*/
 
-/*end_video*/
+    .special-mode-active.big-spacing { letter-spacing: 2px; }
 
-
-/*docs*/
-
-/*end_docs*/
+/*end_big-spacing*/
 
 
-/*footer*/
+/*large-spacing*/
 
-/*end_footer*/
+    .special-mode-active.large-spacing { letter-spacing: 4px; }
+
+/*end_large-spacing*/
 
 
-/*secondary-menu*/
+/*show-img*/
 
-/*end_secondary-menu*/
+    .special-mode-active.show-img { display: block; }
+
+/*end_show-img*/
+
+
+/*hide-img*/
+    
+    .special-mode-active.hide-img img,
+        .special-mode-active.hide-img .b-bnr__after,
+        .special-mode-active.hide-img .b-bnr__item { display: none !important; }
+            
+    .special-mode-active.hide-img .alt-text-img {
+        position: relative;
+        padding: .925rem;
+    }
+    
+        .special-mode-active.hide-img #main-content .alt-text-img { max-width: 100%; width: 100% !important; }
+    
+    .special-mode-active.hide-img .alt-text-img { background-color: #f7f7f7; }
+    
+    .special-mode-active.hide-img #interview .alt-text-img { width: 75% !important; }
+    
+            .special-mode-active.hide-img .alt-text-img > span { word-wrap: break-word; }
+        
+        .special-mode-active.hide-img #main-content .article-header { background-color: #e8e8e8; }    
+    
+    .special-mode-active.hide-img #video img { display: block !important; }
+    
+    .special-mode-active.hide-img #video .alt-text-img { display: none !important; }
+    
+    .special-mode-active.hide-img #banner-menu li { background: none; }
+    
+        .special-mode-active.hide-img #banner-menu .menu-title { visibility: visible; }
+    
+/*end_hide-img*/
+
+
+/*global-effects*/
+    
+    .special-mode-active #interview .orbit-previous:hover,
+    .special-mode-active #interview .orbit-previous:active,
+        .special-mode-active #interview .orbit-next:hover,
+        .special-mode-active #interview .orbit-next:active,
+        .special-mode-active #interview .orbit-previous:focus,
+        .special-mode-active #interview .orbit-next:focus,
+        .special-mode-active #navi-center a:hover,
+        .special-mode-active #navi-center a:focus,
+        .special-mode-active #navi-center a:active,
+        .special-mode-active #head-title a:hover,
+        .special-mode-active #head-title a:focus,
+        .special-mode-active #head-title a:active,
+        .special-mode-active a:hover,
+        .special-mode-active a:focus,
+        .special-mode-active a:active,
+        .special-mode-active .pagination li:hover,
+        .special-mode-active .pagination li:focus,
+        .special-mode-active .pagination li:active,
+        .special-mode-active #populations a:hover,
+        .special-mode-active #populations a:focus,
+        .special-mode-active #populations a:active,
+        .special-mode-active #navi-center a.is-active,
+        .special-mode-active #main_informatization a:hover,
+        .special-mode-active #main_informatization a:active,
+        .special-mode-active #interview a:hover,
+        .special-mode-active #interview a:active,
+        .special-mode-active #video a:hover,
+        .special-mode-active #video a:active,
+        .special-mode-active #docs a:hover,
+        .special-mode-active #docs a:active,
+        .special-mode-active #footer-brkmed a:hover,
+        .special-mode-active #footer-brkmed a:active,
+        .special-mode-active #main_informatization a:focus,
+        .special-mode-active #interview a:focus,
+        .special-mode-active #video a:focus,
+        .special-mode-active #docs a:focus,
+        .special-mode-active #footer-brkmed a:focus,
+        .special-mode-active #video .video-item:hover,
+        .special-mode-active #video .video-item:active,
+        .special-mode-active #video .video-item:focus,
+        .special-mode-active .posibility-mode-on:hover,
+        .special-mode-active .posibility-mode-on:active,
+        .special-mode-active .posibility-mode-on:focus,
+        .special-mode-active #events-container a:hover,
+        .special-mode-active #events-container a:focus,
+        .special-mode-active #events-container a:active,
+        .special-mode-active #vks-conference a:hover,
+        .special-mode-active #vks-conference a:focus,
+        .special-mode-active #vks-conference a:active,
+        .special-mode-active .endless_page_template a:hover,
+        .special-mode-active .endless_page_template a:focus,
+        .special-mode-active .endless_page_template a:active,
+        .special-mode-active .block-breadcrumbs a:hover,
+        .special-mode-active .block-breadcrumbs a:focus,
+        .special-mode-active .block-breadcrumbs a:active,
+        .special-mode-active #informatization_news .article:hover,
+        .special-mode-active #informatization_news .article:focus,
+        .special-mode-active #informatization_news .article:active,
+        .special-mode-active.hide-img.invert-contrast .alt-text-img:hover,
+        .special-mode-active.hide-img.invert-contrast .alt-text-img:focus,
+        .special-mode-active.hide-img.invert-contrast .alt-text-img:active,
+        .special-mode-active.hide-img #banner-menu li:hover a,
+        .special-mode-active.hide-img #banner-menu li:focus a,
+        .special-mode-active.hide-img #banner-menu li:active a,
+        #special-mode-controls .button-group button:hover,
+        #special-mode-controls .button-group button:focus,
+        #special-mode-controls .button-group button:active,
+        .special-mode-active #header-min_line > a:hover #header-min_brand,
+        .special-mode-active #header-min_line > a:focus #header-min_brand,
+        .special-mode-active #header-min_line > a:active #header-min_brand,
+        .special-mode-active input[type='submit']:hover,
+        .special-mode-active input[type='button']:hover,
+        .special-mode-active input[type='button']:active,
+        .special-mode-active input[type='submit']:focus,
+        .special-mode-active input[type='submit']:active,
+        .special-mode-active input[type='button']:focus,
+        .special-mode-active h2.subheader:hover > a,
+        .special-mode-active h2.subheader:active > a,
+        .special-mode-active h2.subheader:focus > a {
+            outline: 3px dotted #F57F17 !important;
+            background-color: #ffff9a !important;
+            color: #710600 !important;
+    }
+         
+        .special-mode-active #interview a:hover .interview-discription,
+            .special-mode-active #interview a:focus .interview-discription,
+            .special-mode-active #interview a:active .interview-discription,
+            .special-mode-active #navi-center a.is-active,
+            .special-mode-active .video-item:hover,
+            .special-mode-active .video-item:focus,
+            .special-mode-active .video-item:active,
+            .special-mode-active .menu li:hover a,
+            .special-mode-active .menu li:focus a,
+            .special-mode-active .menu li:active a,
+            .special-mode-active #populations a:hover,
+            .special-mode-active #populations a:focus,
+            .special-mode-active #populations a:active,
+            .special-mode-active.hide-img .endless_page_template .article > a:hover .alt-text-img,
+            .special-mode-active.hide-img .endless_page_template .article > a:focus .alt-text-img,
+            .special-mode-active.hide-img .endless_page_template .article > a:active .alt-text-img,
+            .special-mode-active.hide-img .interview-cell > a:focus .alt-text-img,
+            .special-mode-active.hide-img .interview-cell > a:hover .alt-text-img,
+            .special-mode-active.hide-img .interview-cell > a:active .alt-text-img,
+            .special-mode-active.hide-img #docs a:hover .alt-text-img,
+            .special-mode-active.hide-img #docs a:focus .alt-text-img,
+            .special-mode-active.hide-img #docs a:active .alt-text-img,
+            .special-mode-active .recomended-article_box a:hover figcaption,
+            .special-mode-active .recomended-article_box a:active figcaption,
+            .special-mode-active .recomended-article_box a:focus figcaption,
+            .special-mode-active .accordion-item > a:hover {
+                outline: 3px dotted #F57F17 !important;
+                background-color: #ffff9a !important;
+        }
+         
+        .special-mode-active .endless_page_template a:hover time,
+        .special-mode-active .endless_page_template a:active time,
+        .special-mode-active .endless_page_template a:focus time{
+            color: #000;
+            opacity: 1 !important;
+        }
+         
+        .special-mode-active.tabs-title:hover > a > span,
+            .special-mode-active .tabs-title:focus > a > span,
+            .special-mode-active .tabs-title:active > a > span,
+            .special-mode-active #interview a:hover *,
+            .special-mode-active #interview a:focus *,
+            .special-mode-active #interview a:active *,
+            .special-mode-active #navi-center a:hover > span,
+            .special-mode-active #navi-center a:focus > span,
+            .special-mode-active #navi-center a:active > span,
+            .special-mode-active #head-title a:hover div,
+            .special-mode-active #head-title a:focus div,
+            .special-mode-active #head-title a:active div,
+            .special-mode-active a:hover > span,
+            .special-mode-active a:focus > span,
+            .special-mode-active a:active > span,
+            .special-mode-active #main-content .article a:hover .article-header > h3,
+            .special-mode-active #main-content .article a:focus .article-header > h3,
+            .special-mode-active #main-content .article a:active .article-header > h3,
+            .special-mode-active .pagination li:hover > a,
+            .special-mode-active .pagination li:focus > a,
+            .special-mode-active .pagination li:active > a,
+            .special-mode-active #populations a:hover,
+            .special-mode-active #populations a:focus,
+            .special-mode-active #populations a:active,
+            .special-mode-active #informatization_news .article:hover .article-header > a,
+            .special-mode-active #informatization_news .article:focus .article-header > a,
+            .special-mode-active #informatization_news .article:active .article-header > a,
+            .special-mode-active #informatization_news .article:hover time,
+            .special-mode-active #informatization_news .article:focus time,
+            .special-mode-active #informatization_news .article:active time,
+            .special-mode-active #interview a:hover *,
+            .special-mode-active #interview a:focus *,
+            .special-mode-active #interview a:active *,
+            .special-mode-active #navi-center a.is-active > span,
+            .special-mode-active .video-item:hover .video-item_name,
+            .special-mode-active .video-item:focus .video-item_name,
+            .special-mode-active .video-item:active .video-item_name,
+            .special-mode-active .menu li:hover a,
+            .special-mode-active .menu li:active a,
+            .special-mode-active .menu li:focus a,
+            .special-mode-active .menu li:hover .menu-title,
+            .special-mode-active .menu li:focus .menu-title,
+            .special-mode-active .menu li:active .menu-title,
+            .special-mode-active #header-min_line > a:hover #header-min_industry,
+            .special-mode-active #header-min_line > a:focus #header-min_industry,
+            .special-mode-active #header-min_line > a:active #header-min_industry,
+            .special-mode-active .recomended-article_box a:hover figcaption > span,
+            .special-mode-active .recomended-article_box a:focus figcaption > span,
+            .special-mode-active .recomended-article_box a:active figcaption > span,
+            .special-mode-active .accordion-item > a:hover,
+            .special-mode-active .accordion-item > a:focus,
+            .special-mode-active .accordion-item > a:active,
+            .special-mode-active a:hover i,
+            .special-mode-active a:focus i,
+            .special-mode-active a:active i,
+            .special-mode-active.invert-contrast .current:hover span,
+            .special-mode-active.invert-contrast .current:active span,
+            .special-mode-active.invart-contrast .current:focus span { color: #710600 !important; }
+    
+    .special-mode-active .accordion-item:not(.is-active) .accordion-title:hover::before,
+        .special-mode-active .accordion-item:not(.is-active) .accordion-title:active::before,
+        .special-mode-active .accordion-item:not(.is-active) .accordion-title:focus::before { border-left-color: #710600; }
+    
+    .special-mode-active .accordion-item.is-active .accordion-title:hover::before,
+        .special-mode-active .accordion-item.is-active .accordion-title:active::before,
+        .special-mode-active .accordion-item.is-active .accordion-title:focus::before { border-top-color: #710600; }
+    
+    
+    .special-mode-active #sidebar-hidden-menu .menu li:hover a,
+        .special-mode-active #sidebar-hidden-menu .menu li:focus a,
+        .special-mode-active #sidebar-hidden-menu .menu li:active a,
+        .special-mode-active #sidebar-hidden-menu a:hover,
+        .special-mode-active #sidebar-hidden-menu a:focus,
+        .special-mode-active #sidebar-hidden-menu a:active { outline: none !important; }
+        
+        .special-mode-active .downside-gallery_container .card a:hover > img,
+            .special-mode-active .downside-gallery_container .card a:active > img,
+            .special-mode-active .downside-gallery_container .card a:focus > img {
+                outline: 3px dotted #F57F17 !important;
+        }
+        
+        .special-mode-active .downside-gallery_container .card a:hover,
+            .special-mode-active .downside-gallery_container .card a:active,
+            .special-mode-active .downside-gallery_container .card a:focus {
+                background: none !important;
+                background-color: transparent !important;
+                outline: none !important;
+        }
+    
+/*end_global-effect*/

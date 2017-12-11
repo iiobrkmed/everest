@@ -1,0 +1,340 @@
+@charset "UTF-8";
+
+
+/************************************************
+*
+* vacancy
+*
+************************************************/
+
+/* шрифты */
+.vacancy-section h1{font-size: 2.6rem;}
+.vacancy-section h2{font-size: 2.16rem;}
+.vacancy-section h3{font-size: 1.8rem;}
+.vacancy-section h4{font-size: 1.5rem;}
+.vacancy-section h5{font-size: 1.25rem;}
+.vacancy-section h6{font-size: 1.04rem;}
+
+/* section */
+.vacancy-section{
+	background-color: rgba(255, 255, 255, .5);
+	padding-top: 2rem;
+}
+
+	.vacancy-header-row{
+		padding-bottom: 2rem;
+		text-align: center;
+	}
+		.vacancy-header-row .vacancy_grandheader{
+			margin-bottom: 0;
+		}
+		
+	/* view hospital vacancy */
+	.vacancy_hosp-grandheader{
+		padding: 2rem 0 1rem;
+		text-align: center;
+		background-color: rgba(255, 255, 255, .5);
+	}
+				
+/*********************************
+*
+* ctrl panel
+*
+*********************************/
+			/* поиск */
+			.vacancy_table-search-nav{
+				padding-top: 1rem;
+				border-top: .2rem solid #FFCC99;
+				background-color: rgba(255, 204, 153, .2);
+			}
+				form.vacancy_search-form{
+					padding: 0;
+				}
+
+					.fieldWrapper{
+						width: 100%;
+					}
+						.fieldWrapper #id_search{
+							width: 90%;
+							margin: 0 auto;
+							box-shadow: none;
+							border: .05rem solid rgba(153, 51, 51, .2);
+						}
+						
+						.vacancy-search_ctrl-btn-group{
+							margin: 1rem auto;
+							width: 50%;
+						}
+							.fieldWrapper input.button{
+								margin: 0 auto;
+								width: 70%;
+								margin-bottom: 0;
+								display: block;
+								background-color: #993333;
+								font-size: 1.1rem;
+								-webkit-transition: all .1s;
+								-moz-transition: all .1s;
+								-o-transition: all .1s;
+								transition: all .1s;
+							}
+							.fieldWrapper input.button:hover{
+								background-color: #663333;
+								-webkit-transition: all .1s;
+								-moz-transition: all .1s;
+								-o-transition: all .1s;
+								transition: all .1s;
+							}
+							.btn-result-clean{
+								display: block;
+								margin: 1rem auto 0;
+								width: 60%;
+								font-size: 1.1rem;
+								font-weight: normal;
+								background-color: #33CC66;
+								color: #ffffff;
+								-webkit-transition: all .1s;
+								-moz-transition: all .1s;
+								-o-transition: all .1s;
+								transition: all .1s;
+							}
+								.btn-result-clean:hover{
+									background-color: #339966;
+									-webkit-transition: all .1s;
+									-moz-transition: all .1s;
+									-o-transition: all .1s;
+									transition: all .1s;
+								}
+
+					.vacancy_result-container{
+						padding: 1rem 0;
+						text-align: center;
+					}
+						.vacancy_result-container span{
+							color: #003366;
+						}
+	.btn-red-color{
+		background-color: #993333;
+	}
+	.area-alert{
+		background-color: #FFCCCC;
+	}
+	.dis-able-btn{
+		background-color: rgb(200, 200, 200)!important;
+		color: rgb(100, 100, 100);
+	}
+
+		/* кнопки режимов отображения */
+			/* десктоп */
+			.vacancy_switcher-row{
+				padding: 0 .2rem;
+				background-color: rgba(255, 204, 153, .1);
+				text-align: center;
+			}
+				.vacancy_switcher a{
+					width: 50%;
+					display: block;
+					padding: 1.5rem;
+					background-color: rgba(255, 204, 153, .1);
+				}
+				.vacancy_switcher .btn-all-vac{
+					float: left;
+					box-shadow: inset .5rem 0 .5rem rgba(240, 231, 219, 1);
+				}
+				.vacancy_switcher .btn-hosp-vac{
+					float: right;
+					box-shadow: inset .5rem 0 .5rem rgba(247, 237, 227, 1); 
+				}
+				.vacancy_switcher a:hover{
+					box-shadow: inset 0 0 3rem rgba(100, 100, 100, .1);
+				}
+				
+				.btn-all-vac .arrow-fallback{
+					/*float: left;
+					width: 25%;*/
+				}
+					.arrow-fallback-svg{
+						height: 1.2rem;
+					}
+				.btn-all-vac span:nth-child(2){
+					/*float: left;
+					padding-left: 1rem;
+					width: 75%;*/
+				}
+				.vacancy_switcher a:hover .arrow-fallback-svg g{
+					fill: red;
+				}
+					/* add class | switch effect */
+					.switcher-active-btn{
+						background-color: #ffffff!important;
+						box-shadow: none!important;
+					}
+					.switcher-active-btn:hover{
+						color: #1468a0;
+					}
+
+
+
+/*********************************
+*
+* table
+*
+*********************************/
+
+	.vacancy_workspace-container{
+	}
+		table#vacancy{
+			border: .2rem solid #faf0e6;
+			border-top: none;
+/* 			border-bottom: 1rem solid rgba(255, 204, 153, .7); */
+			margin-bottom: 0;
+		}		
+			#vacancy thead{
+				border-top: none;
+			}					
+
+			/* заголовки колонок */
+			.vacancy_columns-names{}
+				.vacancy_columns-names > th{
+					padding-top: 1rem;
+					padding-bottom: 1rem;
+					border-bottom: .15rem solid #FFCC99;
+					background-color: #ffffff;
+					font-size: 1.1rem;
+					color: rgb(30, 30, 30);
+				}
+
+			/* выделение столбцов */
+			tbody > tr > td:first-child,
+			tbody > tr > td:nth-child(2){
+				font-weight: bold;
+			}
+			tbody > tr > td:first-child p{
+				color: #993333;
+			}
+			tbody > tr > td:nth-child(3) > p:first-child{
+				font-weight: bold;
+				font-size: .95rem;
+			}
+			tbody > tr > td:nth-child(3) > p:nth-child(2){
+				font-size: .95rem;
+			}
+
+			/* pagination */
+
+			.vacancy_pagi-row{}
+				.vacancy_pagi-row > td{
+					text-align: center;
+				}
+					
+/**************************************************
+*
+* footer
+*
+**************************************************/
+/* строка с загрузкой */
+	.vacancy_footer{
+/* 		padding: 1rem 0; */
+		background-color: rgba(255, 204, 153, .3);
+	}
+		.vacancy_download-form{
+			text-align: center;
+			padding: 0;
+/* 			background-color: rgba(153, 204, 255, .1); */
+		}
+			.download-form_title{
+					font-size: 1rem;
+					padding-top: 2.2rem;
+					margin-bottom: 0;
+					color: rgb(30, 30, 30); 
+					font-weight: bold;
+				}
+			.vacancy_dwnl-btn{
+				text-align: right;
+				background-color: inherit;
+				margin-bottom: 0;
+				padding: 0;
+			}
+				.download-icon{
+					height: 6rem;
+					padding: .8rem .8rem 1rem 1.9rem;
+				}
+					.dwnld-svg{
+					}
+			
+			.vacancy_dwnl-btn:hover{
+				background-color: rgba(153, 204, 255, .7);
+			}
+			.vacancy_dwnl-btn:focus{
+				background-color: rgba(153, 204, 255, .7);
+			}
+
+
+/*****************************************************
+*
+* hospital view
+*
+*****************************************************/
+.vacancy_hosp-workspace{}
+	.vacancy_hosp-list{
+		background-color: inherit;
+	}
+	.vacancy_hosp-list .accordion-item{
+		padding: 1rem 0; 
+		background-color: #FFCC99;
+		border: .1rem solid;
+	}
+		.vac-high-lvl{
+			background-color: #6699CC;
+		}
+		.vac-midl-lvl{
+			background-color: #99CCFF;
+		}
+		.vac-low-lvl{
+			background-color: #CCFFFF;
+		}
+		.vac-others{
+			background-color: #99FFFF;
+		}
+		.vac-unknown{
+			background-color: #CCCC33;
+		}
+			
+		a.accordion-title{
+			background-color: #fff;
+		}
+			.accordion-title h3{}
+			.accordion-content{}
+				
+
+/*****************************************************************************
+*
+* stack mode / for devices
+*
+*****************************************************************************/
+
+/* tablet */
+@media (max-width: 1023px) and (min-width: 641px){
+
+}
+
+/* phone */
+@media (max-width: 640px){
+	.vacancy_download-form{
+			text-align: center;
+			background-color: rgba(153, 204, 255, .1);
+			margin-bottom: 1.5rem!important; 
+		}
+		.download-form_header{
+			font-size: 1rem;
+			padding-top: 1.2rem;
+		}
+			
+		.vacancy_download-form a.button{
+			margin-bottom: 0;
+			padding: 0;
+			-webkit-transition: all .4s;
+			-moz-transition: all .4s;
+			-o-transition: all .4s;
+			transition: all .4s;
+			}
+}

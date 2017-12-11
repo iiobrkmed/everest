@@ -1,9 +1,9 @@
 {% load mptt_tags %}
 
-<div class="row breadcrumbs-container hide-for-small-only" data-sticky-container style="max-width:100%;">
-    <nav aria-label="Вы здесь:" role="navigation" class="top-bar block-breadcrumbs" data-sticky data-margin-top="0" data-sticky-on="medium" data-top-anchor="navigation-breadcrumbs" id="navigation-breadcrumbs">
+<div class="row breadcrumbs-container hide-for-small-only" style="max-width:100%;">
+    <nav aria-label="Вы здесь:" role="navigation" class="top-bar block-breadcrumbs" data-top-anchor="navigation-breadcrumbs" id="navigation-breadcrumbs">
         <div class="row" id="navi-center">
-            <div class="large-9 medium-12 small-12 columns">
+            <div class="large-12 medium-12 small-12 columns">
                 <ul class="breadcrumbs">
                     <li>
                         <a href="/">Главная</a>
@@ -29,12 +29,6 @@
                     <li class="disabled">{{ app }}</li>
                     {% endif %}
                 </ul>
-            </div>
-            <div class="large-3 medium-3 small-3 columns text-right posibility-mode-on-container">
-                <button class="posibility-mode-on">
-                    <span class="posibility-mode_img"></span>
-                    <span class="posibility-mode_text">Версия для слабовидящих</span>
-                </button>
             </div>
         </div>
         {% include 'global_templates/special-mode-controls.html' %}

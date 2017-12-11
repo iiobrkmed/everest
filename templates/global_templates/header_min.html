@@ -1,0 +1,41 @@
+{% load menu_tags %}
+<section class="row" id="header-min-row">
+	<header class="top-bar" id="header-min">
+		<section class="row" id="header-min_line">
+			<a href="https://www2.brkmed.ru" title="Перейти на главную страницу">
+			<div class="sliding-small" id="header-min_brand">
+				<div id="header-min_logo">
+					<img src="/static/img/logo.svg" alt="Правительство Брянской области">
+				</div>
+				<div id="header-min_industry">Здравоохранение<br>Брянской области</div>
+			</div>
+			</a>
+
+			<nav class="sliding-big" id="upperside-menu">
+				<ul class="menu horizontal">
+					{% show_menu 'top_menu' %}
+				</ul>
+			</nav>
+
+			<button class="button" id="toggle-menu-btn">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 24 24">
+					<g>
+						<path d="M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z"/>
+					    <path d="M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z"/>
+					    <path d="M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z"/>
+					</g>
+				</svg>
+			</button>
+
+			{% include 'search/searchform.html' %}
+			{% include 'search/button_open-searchform.html' %}
+		</section>
+		
+		<nav id="toggle-main-menu">
+			<ul class="menu vertical">
+				{% show_menu 'top_menu' %}
+			</ul>
+		</nav>
+
+	</header>
+</section>

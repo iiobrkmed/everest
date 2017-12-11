@@ -2,8 +2,34 @@
 
 <section class="row" id="interview" data-magellan-target="interview">
     <h2 class="chapter interview-header">Интервью с врачом</h2>
-    	<div class="orbit" id="interview-row" class="row" data-orbit  data-timer-delay="10000">
+    	<div class="orbit" id="interview-row" class="row" data-orbit  data-timer-delay="5000">
     		<div id="interview-line">
+    			<nav class="orbit-controls" id="interview_control">
+	                <button class="orbit-previous">
+	                	<svg xmlns="http://www.w3.org/2000/svg" width="15" height="25" viewBox="0 0 22.75417 37.83542">
+	                		<g fill="#fff">
+	                			<path d="M-164.68365 106.09714l18.70886-18.70886 3.74178 3.74178-18.70886 18.70886z"/>
+	                			<path d="M-160.94188 72.4212l18.70886 18.70886-3.74177 3.74178-18.70887-18.70887z"/>
+	                			<g>
+	                				<path d="M.15176 18.91771L18.86063.20885l3.74177 3.74177L3.89354 22.6595z"/>
+	                				<path d="M3.89354 15.17593L22.6024 33.8848l-3.74177 3.74177L.15176 18.91771z"/>
+	                			</g>
+	                		</g>
+	                	</svg>
+					</button>
+	                <button class="orbit-next">
+	                	<svg xmlns="http://www.w3.org/2000/svg" width="15" height="25" viewBox="0 0 22.75417 37.83542">
+	                		<g fill="#fff">
+	                			<path d="M.15176 33.8848l18.70887-18.70887 3.74177 3.74177L3.89354 37.62657z"/>
+	                			<path d="M3.89353.20885L22.6024 18.9177l-3.74178 3.74178L.15176 3.95062z"/>
+	                			<g>
+	                				<path d="M-93.77532-10.37544l18.70886-18.70887 3.74178 3.74178-18.70886 18.70886z"/>
+	                				<path d="M-90.03354-14.11722l18.70886 18.70886-3.74178 3.74178-18.70886-18.70886z"/>
+	                			</g>
+	                		</g>
+	                	</svg>
+					</button>
+            	</nav>
 	           	{% for block in interview %}
                 <div class="orbit-slide">                      
                 {% for article in block %}
@@ -30,17 +56,12 @@
                 {% endfor %}                      
                 </div>
               {% endfor %}
-        </div>
-          <nav class="orbit-controls" id="interview_control-panel">
-              <div id="interview_controls">  
-                <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;<!--&#60;--><!-- &larr; --></button>
-                <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;<!--&#62;--><!-- &rarr; --></button>
-              </div>
-              <div class="" id="interview-btn">
-                  <a href="/category/bryanskaya-medicina/" class="secondary button">
-                    <span>Список&nbsp;интервью</span>
-                  </a>
-              </div>
-            </nav>
-    	</div>  
+        	</div>
+    	</div>
+
+    <div class="" id="interview-btn">
+        <a href="/category/bryanskaya-medicina/" class="secondary button">
+           	<span>Список&nbsp;интервью</span>
+       	</a>
+    </div>  
 </section>

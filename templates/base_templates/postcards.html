@@ -1,0 +1,36 @@
+{% load thumbnail %}
+
+<section class="row" id="postcards">
+	<div class="postcard-tabs">
+		<div class="tabs-content large-12 medium-12 small-12 columns" data-tabs-content="posts-choice">
+			{% for image in congrats.images.all %}
+  				<div class="tabs-panel {% if image.main %}is-active{% endif %}" id="pst-img-{{ image.pk }}">
+  					<figure>
+						{% thumbnail image.img 1200x613 box=im.cropping crop upscale detail as im %} 
+  						<img class="post-img" src="{{ im.url }}" alt="{{ im.alt }}" title="{{ im.title }}" width="{{ im.width }}" height="{{ im.height }}" />
+					</figure>
+  				</div>
+  			{% endfor %}  
+		</div>
+
+		<ul class="tabs large-12 medium-12 small-12 columns" data-tabs id="posts-choice">
+			{% for image in congrats.images.all %}
+				<li class="tabs-title {% if image.main %}is-active{% endif %} large-4 medium-6 small-12 columns">
+					<a href="#pst-img-{{ image.pk }}">
+						{% thumbnail image.img 1200x613 box=im.cropping crop upscale detail as im %} 
+  						<img class="mini-post-choicer" src="{{ im.url }}" alt="{{ im.alt }}" title="{{ im.title }}" width="{{ im.width }}" height="{{ im.height }}" />
+						<div class="cover-screen">
+							<div class="cover-screen-substrate"></div>
+							<div class="cover-screen-performance"><span>{{ image.title }}</span></div>
+						</div>
+					</a>
+				</li>
+			{%  endfor%}
+		</ul>
+	</div>
+</section>
+
+
+{# congrats.category.title #}
+{# congrats.title #}
+{# congrats.description #}

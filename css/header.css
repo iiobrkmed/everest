@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 
-/***********
-* логотип  *
-***********/
+/****************
+* for homepage  *
+* and large     *
+****************/
 #header{
 	 max-width: 100%;
 	 width: 100%;
@@ -32,16 +33,14 @@
 			}
 				#industry{
 					font-size: 2.2rem;
-					color: #fff;
+					color: #FFCC33;
 				}
 				#department{
 					font-size: 1rem;
 					color: #cccccc;
 				}
 
-/***************
-* главное меню *
-***************/
+/* главное меню */
 #main-menu{
 	background-color: #003366;
 	max-width: 100%;
@@ -57,9 +56,11 @@
     	width: 100%;
 		/*padding: .3rem 0;*/
     	background-color: transparent;
+    	position: relative;
 	}
     #main-menu ul {
       background-color: transparent;
+      z-index: 150;
     }
 		#main-menu li{
 			padding: .4rem .3rem .3rem;
@@ -68,74 +69,79 @@
 				color: #fff;
 				font-size: .95rem;
 			}
+		
+		/* эффекты */
+		#main-menu li:hover{
+			padding: .4rem .3rem 0;
+			border-bottom: .3rem solid #99CCFF;
+			-webkit-transition: border-bottom 0.25s ease-out, padding 0s;
+			-moz-transition: border-bottom 0.25s ease-out, padding 0s;
+			-o-transition: border-bottom 0.25s ease-out, padding 0s;
+			transition: border-bottom 0.25s ease-out, padding 0s;
+		}
+			#main-menu li:hover a{
+				color: #99CCFF;
+				-webkit-transition: all 0.25s ease-out;
+				-moz-transition: all 0.25s ease-out;
+				-o-transition: all 0.25s ease-out;
+				transition: all 0.25s ease-out;
+			}
 
 
-/* версия планшетов */
+/*******************************************************
+*
+* search 
+*
+*******************************************************/
+
+/* open button */
+.opn-btn_search{
+		position: absolute;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+		padding: .4rem 1.5rem;
+		z-index: 250;
+	}
+	/* for min version */
+	#header-min .opn-btn_search{
+		padding: .6rem .5rem;
+	}
+/*  */
 
 
-/* версия телефонов */
-
-
-/* поиск */
-#main-menu nav{
-	position: relative;
-}
-#main-menu nav .menu{
-	z-index: 150;
-}
 .search-container{
-	width: 10%;
-	z-index: 200;
+	width: 100%;
+	z-index: 350;
 	position: absolute;
 	top: 0;
 	right: 0;
-	padding: .4rem .5rem;
+	padding: .3rem 0;
+	display: none;
 }
-.prior-high{
-	z-index: 350;
-	width: 100%;
-}
-	.opn-btn_search{
-		float: right;
-		cursor: pointer;
-	}
-	.opn-btn_search:hover{
-	}
-	.search-line{
-	/* 	position: absolute; */
-		background-color: #fff;
-		max-width: 1280px;
-		width: 100%;
-	}
-		.search-box{
-			position: relative;
+		#id_q{
+			padding-left: 3.5rem;
+			margin-bottom: 0;
+			width: 100%;
+			max-width: 100%;
+			border: none;
+			box-shadow: none;
 		}
-			#id_q{
-				margin: 0 3rem;
-				margin-bottom: 0;
-				width: 100%;
-				max-width: 90%;
-				-webkit-transition: all .5s;
-				-moz-transition: all .5s;
-				transition: all .5s;
-				border: none;
-				box-shadow: none;
-			}
-			#btn-search{
-				position: absolute;
-				left: 0;
-				top: 0;
-				height: 100%;
-				margin: 0;
-				min-width: 3rem;
-				background-image: url('/static/img/icons/search.svg'); 
-				background-repeat: no-repeat;
-				background-size: 100px;
-				background-position: -52px -5px;
-				background-color: rgba(0, 0, 0, 0);
-				border: none;
-				cursor: pointer;
-			}
+		#btn-search{
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			margin: 0;
+			min-width: 3rem;
+			background-image: url('/static/img/icons/search.svg'); 
+			background-repeat: no-repeat;
+			background-size: 100px;
+			background-position: -52px 0;
+			background-color: rgba(0, 0, 0, 0);
+			border: none;
+			cursor: pointer;
+		}
 		.cls-btn_search{
 			position: absolute;
 			top: 0;
@@ -147,51 +153,174 @@
 			color: #003366;
 			cursor: pointer;
 		}
-.disabled-search{
-	width: 0%;
-	display: none;
-}
+				
+			/* min version */
+			#header-min-row .search-container{
+				padding-top: .5rem;
+			}
+				#header-min-row #btn-search{
+					background-position: -52px 2px;
+				}
 
-/* эффекты */
-#main-menu li:hover{
-	padding: .4rem .3rem 0;
-	border-bottom: .3rem solid #90caf9;
-	-webkit-transition: border-bottom 0.25s ease-out, padding 0s;
-    -moz-transition: border-bottom 0.25s ease-out, padding 0s;
-    -o-transition: border-bottom 0.25s ease-out, padding 0s;
-    transition: border-bottom 0.25s ease-out, padding 0s;
+
+/*************************************************************
+*
+* version for all categories
+* and devices version
+*
+*************************************************************/
+
+#header-min-row{
+	max-width: 100%;
+	background-color: #003366;
 }
-	#main-menu li:hover a{
-		color: #90caf9;
-		-webkit-transition: all 0.25s ease-out;
-	    -moz-transition: all 0.25s ease-out;
-	    -o-transition: all 0.25s ease-out;
-	    transition: all 0.25s ease-out;
+	#header-min{
+		position: relative;
+		padding: 0;
+		height: 3.5rem;
+		background-color: inherit;
+		max-width: 1280px;
+		margin: 0 auto;
 	}
+		#header-min_line{
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			max-width: 100%;
+		}
+			#header-min_brand{
+				float: left;
+				padding-right: .9375rem;
+				padding-left: .9375rem;
+				padding-top: .1rem;
+			}
+				#header-min_logo{
+					float: left;
+				}
+					#header-min_logo img{
+						height: 3rem; 
+					}
+				#header-min_industry{
+					float: left;
+					color: #FFCC00;
+					font-size: .9rem;
+					line-height: 1.2;
+					padding: .5rem .3rem;
+				}
+			nav#upperside-menu{
+				float: left;
+				padding-top: .6rem;
+			}
+				nav#upperside-menu ul{
+					background-color: #003366;
+				}
+					#upperside-menu li{
+						background-color: #003366;
+/* 						border-right: .05rem solid rgba(30, 80, 130, 1); */
+					}
+					#upperside-menu li:first-child{
+/* 						border-left: .05rem solid rgba(30, 80, 130, 1); */
+					}
+					#upperside-menu li:last-child{
+/* 						border-right: none; */
+					}
+						#upperside-menu a{
+							color: #fff;
+							font-size: .9rem;
+						}
+						#upperside-menu li:hover{
+/* 							padding: .4rem .3rem 0; */
+							border-bottom: .3rem solid #99CCFF;
+							-webkit-transition: border-bottom 0.25s ease-out;
+							-moz-transition: border-bottom 0.25s ease-out;
+							-o-transition: border-bottom 0.25s ease-out;
+							transition: border-bottom 0.25s ease-out;
+						}
+							#upperside-menu li:hover a{
+								color: #99CCFF;
+								-webkit-transition: all 0.25s ease-out;
+								-moz-transition: all 0.25s ease-out;
+								-o-transition: all 0.25s ease-out;
+								transition: all 0.25s ease-out;
+							}
 
-/*
-.search-box:hover #id_q{
-	opacity: 1;
-	width: 100%;
-	-webkit-transition: all .3s;
-	-moz-transition: all .3s;
-	transition: all .3s;
+
+/****************************************
+*
+* toggle menu for devices
+*
+****************************************/
+#toggle-menu-btn{
+	/* activate toggle menu */
 }
-.search-box:hover #btn-search{
-	box-shadow: 0 2px 1px 2px #012952;
-	-webkit-transition: box-shadow .2s .1s;
-	-moz-transition: box-shadow .2s .1s;
-	transition: box-shadow .2s .1s;		
+
+#toggle-main-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    z-index: 2500;
+    width: 100%;
+    text-align: center;
 }
-#btn-search:hover{
-	cursor: pointer;
-	background-color: #fff;
-	background-image: url('/static/img/icons/search.svg');
-	background-position: -52px -5px;
+	#toggle-main-menu .menu{
+		background-color: rgba(0, 51, 102, .95);
+	}
+		#toggle-main-menu a{
+			color: #fff;
+		}
+
+
+
+/****************************************************************************
+*
+* media query
+*
+****************************************************************************/
+
+/* x-large */
+@media (min-width: 1200px){
+	#header-min_brand{
+	}
 }
-#id_q:focus{
-	background-color: #fff;
-	opacity: 1;
-	box-shadow: none;
-	width: 100%;
-}*/
+
+
+/* medium-large */
+@media (min-width: 1001px){
+	#toggle-menu-btn{
+		display: none;
+	}
+}
+
+
+@media (max-width: 1000px){
+	#upperside-menu {
+		display: none;
+	}
+	#toggle-menu-btn{
+		position: absolute;
+		top: 0;
+		right: 20%;
+		width: 15%;
+		height:  100%;
+		background-color: #036;
+		padding: .7rem;
+	}
+		#toggle-menu-btn svg{
+			fill: #fff;
+			width: 100%;
+			height: 100%;
+		}
+}
+
+/* tablet */
+@media (max-width: 1000px) and (min-width: 640px){
+	#toggle-menu-btn{
+		right: 30%;
+	}
+}
+
+
+/* phone */
+@media (max-width: 639px){
+	
+}

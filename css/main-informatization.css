@@ -221,7 +221,12 @@
                     transition: border-left-color cubic-bezier(0,0,0.58,1) .2s;
             }
   
-  .go-to-informatization { margin-bottom: 0; }
+    .go-to-informatization {
+        margin-bottom: 0;
+        padding: .5rem;
+        background-color: rgba(29, 83, 153, .8);
+        color: #fff;
+    }
   
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {

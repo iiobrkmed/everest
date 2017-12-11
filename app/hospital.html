@@ -1,0 +1,152 @@
+{% extends 'index.html' %}
+{% load vacancy_tags %}
+<!-- {% load static %} -->
+
+{% block title %}Вакансии — {{ block.super }}{% endblock %}
+
+
+{% block content %}
+
+<style>
+	body{
+		/*background-image: url("{% static 'img/backgrounds/vacancy-background.svg' %}");*/
+		background-repeat: repeat-y;
+		background-position: 0 3%;
+		background-color: rgb(231, 232, 225);
+		background-size: 100%;
+	}
+	@media (max-width: 640px){
+		body{
+			background-image: none;
+			background-color: #fff;
+		}
+	}
+	h1, h2, h3, h4, h5, h6{
+		color: rgb(20, 20, 20);
+	}
+	p{color: rgb(60, 60, 60);}
+    
+    .hide-org-item{display:none;}
+    .show-org-item{display:list-item;}
+    input.error{border-color:#f00;background-color:#ff000024;}
+</style>
+
+<section class="row vacancy_hosp-grandheader">
+	<h2>Вакансии в медицинских организациях</h2>
+</section>
+
+<section class="row vacancy_switcher-row">
+	<nav class="vacancy_switcher">
+		<a href="/vakansii/" class="btn-all-vac">
+			<!-- <span class="arrow-fallback"> -->
+				<svg class="arrow-fallback-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384.989 384.989">
+					<g fill="#1468a0">
+						<path d="M383.37 344.044c.602-4.042 13.342-101.175-43.778-168.015-35.092-41.071-89.241-63.556-159.161-65.782l-.373-67.526c0-4.644-2.683-8.866-6.869-10.863-4.199-1.961-9.167-1.396-12.764 1.54L4.427 161.424A12.089 12.089 0 0 0 0 170.735a11.977 11.977 0 0 0 4.391 9.311L160.4 309.289c3.585 2.971 8.602 3.585 12.764 1.588a12.01 12.01 0 0 0 6.893-10.875l.373-69.042c168.533-.12 180.515 107.864 180.924 112.327.517 6.063 4.355 10.791 10.442 10.984.144.012.277.012.409.012 5.956-.001 10.274-4.344 11.165-10.239zM159.546 210.219a12.036 12.036 0 0 0-3.537 8.517v55.797L31.026 170.808 156.009 68.045v54.052a12.02 12.02 0 0 0 12.03 12.03c68.452 0 120.748 19.826 153.206 57.457 24.409 28.319 35.634 62.979 39.471 91.743-26.274-35.898-72.278-76.549-192.665-76.621h-.024a12.005 12.005 0 0 0-8.481 3.513z"/>
+					</g>
+				</svg>
+			<!-- </span> -->
+			<!-- <span> -->Список всех вакансий<!-- </span> -->
+		</a>
+		<a href="/vakansii/hospital/" class="btn-hosp-vac switcher-active-btn">Вакансии по медицинским организациям</a>
+	</nav>
+</section>
+
+<section class="row search-org-for-vacancy-block" style="padding:.925rem; background-color:#fff;">
+    <div class="large-9 medium-7 small-12 columns" style="padding-left:0;">
+        <input type="text" placeholder="Поиск по организации" id="search_org_input" style="margin-bottom:0;"/>
+    </div>
+    <div class="large-3 medium-5 small-12 columns" style="padding:0;">
+        <div class="expanded button-group" style="margin-bottom:0;">
+            <button class="button success" type="button" id="search-org-for-vacancy_button" style="color:#fff;">Найти</button>
+            <button class="button alert" type="button" id="reset-org-for-vacancy-button">Сброс</button>
+        </div>
+    </div>
+</section>
+
+<section class="row vacancy_hosp-workspace">
+	<ul class="accordion vacancy_hosp-list" data-accordion data-allow-all-closed="true">
+		{% for hospital in hospital_list %}
+		<li class="accordion-item" data-accordion-item>
+			{% if request.user.is_superuser %}
+				<span class="label vac-high-lvl">Врачи:&nbsp;{{ hospital|vacancy_count:'high' }}</span>
+				<span class="label vac-midl-lvl">Средний персонал:&nbsp;{{ hospital|vacancy_count:'middle' }}</span>
+				<span class="label vac-low-lvl">Младший персонал:&nbsp;{{ hospital|vacancy_count:'low' }}</span>
+				<span class="label vac-others">Другие:&nbsp;{{ hospital|vacancy_count:'other' }}</span>
+				<span class="label vac-unknown">Неизвестно:&nbsp;{{ hospital|vacancy_count:'unknown' }}</span>
+			{% endif %}
+			<a href="#" class="accordion-title"><h3>{{ hospital.title }}</h3></a>
+			
+			<div class="accordion-content" data-tab-content>
+				<table id="vacancy" class="stack">
+				<thead>
+					<tr class="vacancy_columns-names">
+						<th width="23%">Должность</th>
+						<th width="14%">Заработная плата</th>
+						<th width="27%">Учреждение</th>
+						<th width="36%">Социально-бытовые условия, льготы и компенсации</th>
+					</tr> 
+				</thead>
+										
+				<tfoot>
+					<tr>
+						<td colspan="4">
+							Обновлено: {% date_updated hospital %}
+						</td>
+					</tr>
+				</tfoot>
+
+				<tbody>
+					{% with hospital.vacancy.all as vacancy_list %}
+					{% for vacancy in vacancy_list %}
+					{% ifchanged vacancy.speciality vacancy.pay_starts vacancy.pay_ends vacancy.unit vacancy.get_work_display %}
+					<tr>
+						<td class="level {{ vacancy.level }}"><p>{{ vacancy.speciality }}</p><p>Количество вакансий: {{ vacancy.quantity }}</p></td>
+						<td><p>{% if vacancy.pay_ends %}{{ vacancy.pay_starts }}-{{ vacancy.pay_ends }}{% else %}{{ vacancy.pay_starts }}{% endif %} руб.</p><p>{{ vacancy.get_workday_display }}</p></td>
+						<td><p>{{ vacancy.unit }}<p></td>
+						<td>
+							<!--dl>
+								{% if vacancy.incentives %}
+									<dt><b>Материальное стимулирование:</b></dt>
+									<dd>{{ vacancy.incentives }}</dd>
+								{% endif %}
+								{% if vacancy.housing %}
+									<dt><b>Предоставление жилья:</b></a></dt>
+									<dd>{{ vacancy.housing }}</dd>
+								{% endif %}
+								{% if vacancy.note %}
+									<dt><b>Примечания:</b></dt>
+									<dd>{{ vacancy.note }}</dd>
+								{% endif %}
+								{% if vacancy.pay_comment %}
+									<dt><b>Комментарии к оплате труда:</b></dt>
+									<dd>{{ vacancy.pay_comment }}</dd>
+								{% endif %}
+							</dl-->
+						</td>
+					</tr>
+					{% endifchanged %}
+					{% endfor %}
+					{% endwith %}
+				</tbody>
+				</table>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'js/search-on-vacancy.js' %}"></script>
+{% endblock %}
+
+{% block extra_css %}
+{% if request.user.is_superuser %}
+<style>
+.level {border-left:5px solid #ccc !important}
+.high {border-color:blue !important}
+.unknown {border-color:red !important}
+.middle {border-color:green !important}
+</style>
+{% endif %}
+{% endblock %}

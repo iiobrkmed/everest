@@ -16,8 +16,8 @@ $(document).ready(function () {
     var targetPos = target.offset().top;
     var winHeight = $(window).height();
     var scrollToElem = targetPos - winHeight;
-
-    $(document).scroll(function () {
+    
+     $(document).scroll(function () {
         var winScrollTop = $(this).scrollTop();
         if (winScrollTop > scrollToElem) {
             var easingFn = function (t, b, c, d) {
@@ -49,7 +49,7 @@ $(document).ready(function () {
 
             $(document).off("scroll");
         }
-    });
+    }); 
     
     var point;
     

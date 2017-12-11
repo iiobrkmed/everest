@@ -1,0 +1,19 @@
+{% load thumbnail %}
+
+{% for a in article.get_similar %}
+<li class="recomended-article_box">
+  <a href="{{ a.get_absolute_url }}">
+    <figure class="recomended-article_item">
+      {% if a.get_main_image %}
+      	{% thumbnail a.get_main_image.img 300x150 box=a.get_main_image.cropping crop upscale detail as im %} 
+    	<img src="{{ im.url }}" alt="{{ a.get_main_image.alt }}" title="{{ a.get_main_image.title }}" width="{{ im.width }}" height="{{ im.height }}"/>
+      {% else %}
+    	<img src="/media/uploads/pictures/default-news.jpg" alt="{{ a.title }}" title="{{ a.title }}" width="450" height="230"/>
+      {% endif %}
+      <figcaption>
+        <span>{{ a.title }}</span>
+      </figcaption>
+    </figure>
+  </a>
+</li>
+{% endfor %}

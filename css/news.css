@@ -30,8 +30,7 @@
 				}
 				.news-item time{
 					position: absolute;
-					top: -1.378;
-					margin-top: -1.65rem;
+					bottom: 0;
 					left: 0;
 					padding: .2rem .5rem;
 					color: #ffffff;
@@ -41,13 +40,11 @@
 					font-size: .86rem;
 					line-height: 1.3rem;
 				}
-				#main-content .article-header{
-					position: relative;
-					z-index: 300;
-					padding: 1rem .5rem;
-					background-color: #fff;
-					/*border-left: 3px solid #FFCC99;*/
-				}
+			#main-content .article-header{
+				padding: 1rem .5rem;
+				background-color: #fff;
+				/*border-left: 3px solid #FFCC99;*/
+			}
 			#main-content .article-header h3{
 				margin-top: 0;
 /* 				padding: .3rem 0; */
@@ -151,9 +148,9 @@
 	.read:hover .news-btn-label, .listen:hover .news-btn-label{
 		color: red;
 	}
-	#main-content .article:hover .article-header{
+/* 	#main-content .article:hover .article-header{
 		background-color: #fff;
-	}
+	} */
 
 }
 

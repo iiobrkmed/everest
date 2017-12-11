@@ -1,0 +1,45 @@
+{% load menu_tags %}
+{% load mptt_tags %}
+
+<aside id="sidebar-hidden-panel">
+    <nav id="sidebar-hidden-menu">
+        <ul class="vertical menu">
+            <li class="menu-item" role="menuitem">
+                <a tabindex="4" title="Версия для слабовидящих" class="menu-item-link posibility-mode-on">
+                    <div class="menu-item-hint posibility-mode_text">
+                        Версия для слабовидящих
+                    </div>
+                    <div class="menu-item-logo">
+                        <div class="posibility-mode_img"></div>
+                    </div>
+                </a>   
+            </li>
+			{% recursetree nodes %}
+			  {% if node.top_divider %}<li class="divider"><hr></li>{% endif %}
+				<li class="{% if not node|menu_slug %}disabled {% endif %}{% if not node.is_leaf_node %}parent {% endif %}menu-item {{ node.css_class }}" role="menuitem">
+					<a tabindex="4" href={% if node|menu_slug %}"{{ node|menu_slug }}" title="{{ node.title }}" {% else %}"#" title="Пункт меню не имеет привязки!"{% endif %} class="menu-item-link">
+						<div class="menu-item-hint">
+							{{ node.title }}
+						</div>
+						<div class="menu-item-logo">
+							<div class="menu-item-logo-image"></div>
+						</div>
+					</a>   
+				</li>
+			  {% if node.bottom_divider %}<li class="divider"><hr></li>{% endif %}
+			{% endrecursetree %}
+		</ul>
+	</nav>
+</aside>
+
+<aside id="toggler-for-sidebarmenu" class="hide-for-large">
+	<button id="toggle-btn-sidebar">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 24 24">
+		  <g>
+		    <path d="M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z"/>
+		    <path d="M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z"/>
+		    <path d="M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z"/>
+		  </g>
+		</svg>
+	</button>
+</aside>

@@ -63,14 +63,23 @@
 		}
 			#secondary-menu .menu-title{
 				color: #ffffff;
-				padding-top: .5rem;
+				padding: .5rem;
 				font-size: .9rem;
 /* 				text-align: right; */
 				position: absolute;
-				padding-right: .5rem;
 				top: 10%;
-				padding-bottom: .5rem;
 			}
+			#secondary-menu li:first-child .menu-title{padding-top: 1rem;}
+			#secondary-menu li:nth-child(2) .menu-title{padding-top: 1rem;}
+			#secondary-menu li:nth-child(3) .menu-title{padding-top: 1rem;}
+			#secondary-menu li:nth-child(4) .menu-title{}
+			#secondary-menu li:nth-child(5) .menu-title{padding-top: 1rem;}
+			#secondary-menu li:nth-child(6) .menu-title{}
+			#secondary-menu li:nth-child(7) .menu-title{}
+			#secondary-menu li:nth-child(8) .menu-title{}
+			#secondary-menu li:nth-child(9) .menu-title{}
+			#secondary-menu li:nth-child(10) .menu-title{padding-top: 1rem;}
+			
 			#secondary-menu .menu-logo{
 				min-height: 60px;
 				width: 60px;

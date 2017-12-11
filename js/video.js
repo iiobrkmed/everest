@@ -28,35 +28,47 @@
       GoogleAuth = gapi.auth2.getAuthInstance();
 
       // Listen for sign-in state changes.
-      //GoogleAuth.isSignedIn.listen(updateSigninStatus);
+      GoogleAuth.isSignedIn.listen(updateSigninStatus);
 
       // Handle initial sign-in state. (Determine if user is already signed in.)
-      //setSigninStatus();
-
-      // Call handleAuthClick function when user clicks on "Authorize" button.
-      /*$('#execute-request-button').click(function() {
-        handleAuthClick(event);
-      });*/ 
+      setSigninStatus();
+      
     });
   }
-
-  /*function handleAuthClick(event) {
-    // Sign user in after click on auth button.
-    GoogleAuth.signIn();
-  }*/
 
   function setSigninStatus() {
     var user = GoogleAuth.currentUser.get();
     isAuthorized = user.hasGrantedScopes('https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtubepartner');
     // Toggle button text and displayed statement based on current auth status.
-    
+    console.log("Проверка статуса авторизации пользователя");
+    if(isAuthorized){
+        //запрос на проверку подписан ли пользователь или нет. если подписан добавляем класс к кнопке
+        /*buildApiRequest('GET',
+            '/youtube/v3/subscriptions',
+            {'forChannelId': 'UCOeG8V5kWy9hwA3m1jmw5PQ',
+             'mine': 'true',
+             'part': 'snippet,contentDetails'});*/
+            /*var user_status = buildApiRequest('GET',
+                '/youtube/v3/subscriptions',
+                {'forChannelId': 'UCOeG8V5kWy9hwA3m1jmw5PQ',
+                 'mine': 'true',
+                 'part': 'snippet,contentDetails'});
+            console.log("foo = " + executeRequest(user_status));*/
+            
+        console.log("Пользователь авторизован. Проверяем подписку пользователя");
+    } else {
+        console.log("Пользователь не авторизирован");
+        $("#subscribe-button").removeClass("subscribe-ok").addClass(".subscribe-none").html("Подписаться");
+        $("#like-button, #dislike-button").removeClass("selected");
+    }
   }
 
-  /*function updateSigninStatus(isSignedIn) {
+  function updateSigninStatus(isSignedIn) {
     setSigninStatus();
-  }*/
+    console.log("статус пользователя изменился");
+  }
 
-  /*function createResource(properties) {
+  function createResource(properties) {
     var resource = {};
     var normalizedProps = properties;
     for (var p in properties) {
@@ -85,7 +97,7 @@
       };
     }
     return resource;
-  }*/
+  }
 
   function removeEmptyParams(params) {
     for (var p in params) {
@@ -101,7 +113,7 @@
       console.log(response);
     });
   }
-
+  
   function buildApiRequest(requestMethod, path, params, properties) {
     params = removeEmptyParams(params);
     var request;
@@ -132,74 +144,148 @@
 }
 
 /*события по клику like*/
-$("#like-button").on("click", function(){
-    setSigninStatus();
-    if (isAuthorized) {
-        if ($("#dislike-button").hasClass("selected")) {
-            $("#dislike-button").removeClass("selected");
-        }
-        
-        if ($(this).hasClass("selected")) {
-            $(this).removeClass("selected");
-        } else {
-            $(this).addClass("selected");
-            $("body").append("<div class='message' id='like-message' style='display:none'><p>Отметка &laquo;Мне нравится&raquo; поставлена</p></div>");
-            console.log("Пользователь авторизован");
-            videosRate({'id': $(".video-items").find(".playing").attr("data-videoid"), 'rating': 'like'});
-            $("#like-message.message").slideDown(500);
-            remove_message();
-        }
-    } else {
-        console.log("Пользователь не авторизован");
-        GoogleAuth.signIn();//Показываем окно с просьбой авторизации
-    };
-});
 
-/*событие по клику dislike*/
-$("#dislike-button").on("click", function(){
-    setSigninStatus();
+var present_like_count, present_dislike_count;
+
+$("#like-button").on("click", function () {
+    
+    present_like_count = parseInt($(this).find("#like-count").text());
+    present_dislike_count = parseInt($("#dislike-button").find("#dislike-count").text());
+    
     if (isAuthorized) {
         if ($("#like-button").hasClass("selected")) {
-            $("#like-button").removeClass("selected");
-        }
-        if ($(this).hasClass("selected")) {
-            $(this).removeClass("selected");
+           $("#like-button").removeClass("selected");
+           $("#like-button").find("#like-count").empty().append(present_like_count - 1);
+           console.log(present_like_count - 1);
         } else {
-            $(this).addClass("selected");
-            $("body").append($("<div class='message' id='dislike-message' style='display:none'><p>Отметка &laquo;Мне не нравится&raquo; поставлена</p></div>"));
-            console.log("Пользователь авторизован");
-            videosRate({'id': $(".video-items").find(".playing").attr("data-videoid"), 'rating': 'dislike'});
-            $("#dislike-message.message").slideDown(500);
-            remove_message();
+            if ($("#dislike-button").hasClass("selected")) {
+               $("#dislike-button").removeClass("selected");
+               $("#like-button").addClass("selected");
+               $("#dislike-button").find("#dislike-count").empty().append(present_dislike_count - 1);
+               $("#like-button").find("#like-count").empty().append(present_like_count + 1);
+               console.log(present_dislike_count - 1);
+            } else {
+               $("#like-button").addClass("selected");
+               $("#like-button").find("#like-count").empty().append(present_like_count + 1);
+               console.log(present_like_count + 1);
+               $("body").append("<div class='message' id='like-message' style='display:none'><p>Отметка &laquo;Мне нравится&raquo; поставлена</p></div>");
+                //videosRate({'id': $(".video-items").find(".playing").attr("data-videoid"), 'rating': 'like'});
+                $("#like-message.message").slideDown(500);
+                remove_message();
+           }
         }
     } else {
-        console.log("Пользователь не авторизован");
         GoogleAuth.signIn();//Показываем окно с просьбой авторизации
-    };
+    }
 });
 
-/*событие подписаться*/
-$("#subscribe-button").on("click", function () {
-    setSigninStatus();
+
+$("#dislike-button").on("click", function () {
+    
+    present_like_count = parseInt($("#like-button").find("#like-count").text());
+    present_dislike_count = parseInt($(this).find("#dislike-count").text());
+    
     if (isAuthorized) {
-        $("body").append("<div class='message' id='subscribe-message' style='display:none'><p>Вы подписались на канал &laquo;Здравоохранение Брянской области&raquo;</p></div>");
-        $("#subscribe-message.message").slideDown(500);
-        remove_message();
+        if ($("#dislike-button").hasClass("selected")) {
+           $("#dislike-button").removeClass("selected");
+           $("#dislike-button").find("#dislike-count").empty().append(present_dislike_count - 1);
+           console.log(present_dislike_count - 1);
+        } else {
+            if ($("#like-button").hasClass("selected")) {
+               $("#like-button").removeClass("selected");
+               $("#dislike-button").addClass("selected");
+               $("#like-count").empty().append(present_like_count - 1);
+               $("#dislike-count").empty().append(present_dislike_count + 1);
+               console.log(present_like_count - 1);
+            } else {
+               $("#dislike-button").addClass("selected");
+               $("#dislike-button").find("#dislike-count").empty().append(present_dislike_count + 1);
+               console.log(present_dislike_count + 1);
+               $("body").append("<div class='message' id='dislike-message' style='display:none'><p>Отметка &laquo;Мне нравится&raquo; поставлена</p></div>");
+                //videosRate({'id': $(".video-items").find(".playing").attr("data-videoid"), 'rating': 'dislike'});
+                $("#dislike-message.message").slideDown(500);
+                remove_message();
+            }
+        }
     } else {
-        console.log("Пользователь не авторизован");
         GoogleAuth.signIn();//Показываем окно с просьбой авторизации
     }
 });
 
 /*событие по клику shared*/
 $("#shared-button").on("click", function () {
-    //if ($(this).hasClass("shared")) {
-        //$(this).removeClass("shared");
-    //} else {
-        //$(this).addClass("shared");
-        $("#shared-container").append("<div class='shared-block'><div class='large-12 medium-12 small-12 columns text-left'><span>Поделиться</span></div><input type='text' id='shared-link-input' value='https://youtu.be/" + $(".video-items").find(".playing").attr("data-videoid") + "'></input><div class='large-12 medium-12 small-12 columns'><button type='button' class='float-right' id='copy-shared-link-button'>Скопировать</button></div></div>");
-   //}
+    $(".shared-block").fadeIn(300, function() {
+        $(this).show();
+    });
+    $("#shared-link-input").val("https://youtu.be/" + $(".playlists").find(".playing").attr("data-videoid"));
+    $("#shared-link-input").select();
 });
+
+$("#shared-container").on("click", "#close-shared-block", function (e) {
+    e.preventDefault();
+    $(this).parents(".shared-block").fadeOut(300, function () {
+        $(this).hide();
+    });
+    $("#shared-link-input").val("");
+    $("#shared-link-input").attr("value","");
+});
+
+$("#shared-container").on("click", "#shared-link-input", function () {
+    $("#shared-link-input").select();
+});
+
+$(document).mouseup(function(event) {
+    if ($(event.target).closest(".shared-block").length) return;
+    $(".shared-block").fadeOut(300, function(){
+        $(this).hide();
+    });
+    event.stopPropagation();
+});
+
+$("#copy-shared-link-button").on("click", function(){
+    document.execCommand('copy');
+    $("#shared-link-input").select();
+    $("body").append("<div class='message' id='copy-shared-link' style='display:none'><p>Ссылка скопирована в буфер обмена</p></div>");
+    $("#copy-shared-link.message").slideDown(500);
+    remove_message();
+});
+
+/*событие подписаться*/
+$("#subscribe-button").on("click", function(){
+    console.log("Нажата кнопка подписаться");
+    if($(this).hasClass("subscribe-none") && isAuthorized){
+        console.log("Пользователь авторизован и не подписан. Подписываем пользователя");
+        buildApiRequest('POST',
+                '/youtube/v3/subscriptions',
+                {'part': 'snippet'},
+                {'snippet.resourceId.kind': 'youtube#channel',
+                 'snippet.resourceId.channelId': 'UCOeG8V5kWy9hwA3m1jmw5PQ'
+        });//отправляем запрос на подписку
+        
+        $("#subscribe-button").removeClass("subscribe-none").addClass("subscribe-ok").html("Подписка оформлена");
+        $("body").append("<div class='message' id='subscribe-message' style='display:none'><p>Подписка оформлена</p></div>");
+        $("#subscribe-message.message").slideDown(500);
+        remove_message();
+        //$("#subscribe-button").unbind("click");
+    } else if($(this).hasClass("subscribe-none") && !isAuthorized){
+        console.log("пользователь не подписан и не авторизован. Авторизируем пользователя, и подписываем на канал");
+        GoogleAuth.signIn();
+        //Авторизируем пользователя, и отправляем запрос на подписку
+    } else if($(this).hasClass("subscribe-ok") && isAuthorized) {
+        console.log("Пользователь подписан и авторизирован. Отписываем пользователя");
+        buildApiRequest('DELETE',
+            '/youtube/v3/subscriptions',
+            {'id': 't9CM-VVhabRzhGNgbTuzPQo6XfjkPjYJLqSuPJ8HusA'}); //отправляем запрос на отписку от канала
+        $("#subscribe-button").removeClass("subscribe-ok").addClass("subscribe-none").html("Подписаться");
+        $("body").append("<div class='message' id='subscribe-message' style='display:none'><p>Подписка отменена</p></div>");
+        $("#subscribe-message.message").slideDown(500);
+        remove_message();
+    } else {
+        console.log("else");
+        return false
+    }
+});
+
 
 
 
